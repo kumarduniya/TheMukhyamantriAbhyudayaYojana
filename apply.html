@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>आवेदन प्रक्रिया मार्गदर्शन - गवर्नमेंट आईएएस पीसीएस कोचिंग सेंटर निजामपुर हापुड़</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Color scheme from provided code */
+      --primary: #ff5722;
+      --primary-light: #ff8a50;
+      --secondary: #ff9800;
+      --accent: #ffc107;
+      --background: #121212;
+      --surface: #1e1e1e;
+      --surface-alt: #252525;
+      --text: #f5f5f5;
+      --text-secondary: #ccc;
+      --text-gray: #757575;
+      --shadow: rgba(0, 0, 0, 0.3);
+      --shadow-hover: rgba(255, 87, 34, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', 'Noto Serif Devanagari', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 60px 15px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+      background-size: cover;
+      z-index: 1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header h1 {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+      margin-bottom: 15px;
+      animation: fadeInDown 1s ease;
+    }
+
+    .header-subtitle {
+      font-size: 20px;
+      opacity: 0.9;
+      color: #fff;
+      animation: fadeIn 1.5s ease;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
+                  url('https://images.unsplash.com/photo-1516321318423-ffd391c81b39?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center/cover;
+      position: relative;
+      margin-top: -50px;
+      z-index: 1;
+      clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 100%);
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h2 {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 36px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 25px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero h2::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      border-radius: 3px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #eee;
+      max-width: 700px;
+      margin: 25px auto 0;
+    }
+
+    /* Main Sections */
+    .section {
+      padding: 80px 20px;
+      position: relative;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 36px;
+      color: var(--accent);
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h2::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 3px;
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: linear-gradient(145deg, var(--surface), var(--surface-alt));
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px var(--shadow);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 40px var(--shadow-hover);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+      transition: all 0.4s ease;
+    }
+
+    .card:hover::before {
+      width: 100%;
+      opacity: 0.1;
+    }
+
+    .card h3 {
+      font-family: 'Noto Serif Devanagari', serif;
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .card p, .card li {
+      color: var(--text-secondary);
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .card li {
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .card li::before {
+      content: '\f058';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 18px;
+    }
+
+    .important-note, .success-note {
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 15px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      background: rgba(255, 45, 45, 0.15);
+      border: 1px solid rgba(255, 45, 45, 0.4);
+      color: var(--primary);
+    }
+
+    .success-note {
+      background: rgba(0, 200, 83, 0.15);
+      border: 1px solid rgba(0, 200, 83, 0.4);
+      color: #00c853;
+    }
+
+    /* Timeline Section */
+    .timeline {
+      padding: 80px 20px;
+      background: linear-gradient(135deg, var(--surface), var(--surface-alt));
+    }
+
+    .timeline-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .timeline-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .timeline-content {
+      background: var(--surface-alt);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px var(--shadow);
+      width: 45%;
+      text-align: left;
+    }
+
+    .timeline-content h3 {
+      font-family: 'Noto Serif Devanagari', serif;
+      color: var(--accent);
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .timeline-content p {
+      color: var(--text-secondary);
+      font-size: 16px;
+    }
+
+    .timeline-dot {
+      width: 15px;
+      height: 15px;
+      background: var(--primary);
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--primary-light);
+      transform: translateX(-50%);
+    }
+
+    /* Stats Section */
+    .stats {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 100px 20px;
+      text-align: center;
+      clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+      margin: 60px 0;
+    }
+
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .stat-item {
+      color: white;
+      padding: 20px;
+      position: relative;
+    }
+
+    .stat-item::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: white;
+      opacity: 0.3;
+    }
+
+    .stat-number {
+      font-size: 60px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    /* FAQ Section */
+    .faq-item {
+      background: var(--surface);
+      border-radius: 10px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .faq-question {
+      padding: 20px;
+      background: var(--surface-alt);
+      color: var(--text);
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background: var(--surface);
+    }
+
+    .faq-question i {
+      color: var(--primary);
+      transition: all 0.3s ease;
+    }
+
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      color: var(--text-secondary);
+    }
+
+    .faq-item.active .faq-question {
+      background: var(--primary);
+      color: white;
+    }
+
+    .faq-item.active .faq-question i {
+      color: white;
+      transform: rotate(180deg);
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 20px;
+      max-height: 500px;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 80px 20px;
+      background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), 
+                  url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-item {
+      background: var(--surface);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px var(--shadow);
+      text-align: center;
+      transition: all 0.4s ease;
+    }
+
+    .contact-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px var(--shadow-hover);
+    }
+
+    .contact-item i {
+      font-size: 30px;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .contact-item p {
+      color: var(--text-secondary);
+      font-size: 16px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 40px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 5px 20px var(--shadow);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 25px var(--shadow-hover);
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: 0.5s;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn i {
+      margin-left: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(to right, var(--background), var(--surface));
+      padding: 60px 20px 30px;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      text-align: left;
+    }
+
+    .footer-column h3 {
+      font-family: 'Noto Serif Devanagari', serif;
+      color: var(--accent);
+      margin-bottom: 25px;
+      font-size: 20px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-column h3::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--primary);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+      transform: translateX(5px);
+    }
+
+    .newsletter form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .newsletter input[type="email"] {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 50px;
+      width: 100%;
+      max-width: 300px;
+      font-size: 14px;
+      background: var(--surface-alt);
+      color: var(--text);
+    }
+
+    .newsletter button {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 50px;
+      background: var(--primary);
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter button:hover {
+      background: var(--secondary);
+    }
+
+    .social-links a {
+      color: var(--text-secondary);
+      margin: 0 10px;
+      font-size: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-gray);
+      font-size: 14px;
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 5px 20px var(--shadow);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--secondary);
+      transform: translateY(-5px);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 992px) {
+      header h1 { font-size: 42px; }
+      .hero h2 { font-size: 32px; }
+      .section-title h2 { font-size: 32px; }
+    }
+
+    @media screen and (max-width: 768px) {
+      header h1 { font-size: 36px; }
+      .header-subtitle { font-size: 18px; }
+      .hero h2 { font-size: 28px; }
+      .hero p { font-size: 16px; }
+      .section-title h2 { font-size: 28px; }
+      .stat-number { font-size: 48px; }
+      .timeline-item { flex-direction: column; text-align: center; }
+      .timeline-content { width: 100%; }
+      .timeline-dot, .timeline-line { display: none; }
+      .contact-container { grid-template-columns: 1fr; }
+    }
+
+    @media screen and (max-width: 576px) {
+      header h1 { font-size: 32px; }
+      .header-subtitle { font-size: 16px; }
+      .hero h2 { font-size: 24px; }
+      .section { padding: 60px 20px; }
+      .section-title h2 { font-size: 24px; }
+      .card { padding: 30px 20px; }
+      .card h3 { font-size: 20px; }
+      .stats { padding: 60px 20px; }
+      .stat-number { font-size: 40px; }
+      .footer-content { grid-template-columns: 1fr; text-align: center; }
+      .footer-column h3::after { left: 50%; transform: translateX(-50%); }
+      .newsletter form { flex-direction: column; }
+      .newsletter input[type="email"] { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <h1>आवेदन प्रक्रिया मार्गदर्शन</h1>
+      <p class="header-subtitle">गवर्नमेंट आईएएस पीसीएस कोचिंग सेंटर निजामपुर हापुड़</p>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>अपनी IAS/PCS यात्रा शुरू करें</h2>
+      <p>गवर्नमेंट आईएएस पीसीएस कोचिंग सेंटर निजामपुर हापुड़ में शामिल हों और विशेषज्ञ मार्गदर्शन और मुफ्त संसाधनों के साथ अपने सपनों के करियर की तैयारी करें।</p>
+      <div class="hero-btns">
+        <a href="#steps" class="btn">शुरू करें <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Steps Section -->
+  <section class="section" id="steps">
+    <div class="section-title">
+      <h2>आवेदन के चरण</h2>
+    </div>
+    <div class="cards-container">
+      <div class="card">
+        <h3>चरण 1: परीक्षा के लिए आवेदन करें</h3>
+        <p>प्रवेश परीक्षा के लिए आवेदन करने के लिए इन चरणों का पालन करें:</p>
+        <ul>
+          <li>कोचिंग सेंटर द्वारा प्रदान की गई आधिकारिक आवेदन फॉर्म पेज पर जाएं।</li>
+          <li>सभी आवश्यक विवरण सावधानी से भरें, जिसमें व्यक्तिगत जानकारी, शैक्षिक योग्यता और संपर्क विवरण शामिल हैं।</li>
+          <li>आवश्यक दस्तावेज अपलोड करें (नीचे देखें)।</li>
+          <li>फॉर्म जमा करने से पहले सभी जानकारी दोबारा जांचें।</li>
+          <li>फॉर्म जमा करें और पंजीकरण संख्या प्राप्त करें।</li>
+        </ul>
+        <div class="important-note">
+          <i class="fas fa-exclamation-circle"></i>
+          <span>सुनिश्चित करें कि सभी विवरण सटीक हैं। गलत जानकारी से अयोग्यता हो सकती है।</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>आवश्यक दस्तावेज</h3>
+        <p>आवेदन करते समय निम्नलिखित दस्तावेज अपलोड करें:</p>
+        <ul>
+          <li>फोटो आईडी प्रमाण (आधार, पैन, पासपोर्ट) - पीडीएफ (20 KB - 300 KB)</li>
+          <li>हाल का पासपोर्ट साइज फोटो - JPG (20 KB - 300 KB)</li>
+          <li>हस्ताक्षर - JPG (20 KB - 300 KB)</li>
+          <li>हाई स्कूल मार्कशीट - पीडीएफ (20 KB - 300 KB)</li>
+          <li>इंटरमीडिएट मार्कशीट - पीडीएफ (20 KB - 300 KB)</li>
+          <li>स्नातक मार्कशीट (यदि लागू) - पीडीएफ (20 KB - 300 KB)</li>
+          <li>निवास प्रमाण पत्र - पीडीएफ (20 KB - 300 KB)</li>
+          <li>आधार कार्ड - पीडीएफ (20 KB - 300 KB)</li>
+        </ul>
+        <div class="important-note">
+          <i class="fas fa-exclamation-circle"></i>
+          <span>सभी दस्तावेज स्पष्ट और पठनीय हों। अस्पष्ट दस्तावेज से आवेदन खारिज हो सकता है।</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>चरण 2: पंजीकरण संख्या नोट करें</h3>
+        <p>फॉर्म जमा करने पर एक अद्वितीय <strong>पंजीकरण संख्या</strong> प्राप्त होगी।</p>
+        <ul>
+          <li>पंजीकरण संख्या सावधानी से नोट करें।</li>
+          <li>यह स्क्रीन पर दिखेगी और ईमेल/मोबाइल पर भेजी जाएगी।</li>
+          <li>प्रवेश पत्र डाउनलोड और भविष्य के लिए इसकी आवश्यकता होगी।</li>
+        </ul>
+        <div class="success-note">
+          <i class="fas fa-check-circle"></i>
+          <span>पंजीकरण संख्या सुरक्षित रखें। यह प्रवेश पत्र डाउनलोड के लिए जरूरी है।</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>चरण 3: प्रवेश पत्र डाउनलोड करें</h3>
+        <p>प्रवेश पत्र 10 जून, 2025 से उपलब्ध होंगे।</p>
+        <ul>
+          <li>आधिकारिक वेबसाइट पर जाएं: <a href="https://govtiaspcscoachingcenternizampurhapur.netlify.app/" target="_blank" style="color: var(--primary-light);">वेबसाइट</a></li>
+          <li>"प्रवेश पत्र डाउनलोड" अनुभाग पर जाएं।</li>
+          <li>पंजीकरण संख्या और जन्म तिथि (DD/MM/YYYY) दर्ज करें।</li>
+          <li>प्रवेश पत्र डाउनलोड करें और प्रिंट करें।</li>
+        </ul>
+        <div class="important-note">
+          <i class="fas fa-exclamation-circle"></i>
+          <span>प्रवेश पत्र की मुद्रित प्रति परीक्षा हॉल में लानी होगी।</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>चरण 4: परीक्षा दिवस की प्रक्रिया</h3>
+        <p>प्रवेश परीक्षा निम्नलिखित तरीके से होगी:</p>
+        <ul>
+          <li>OMR शीट में <strong>150 प्रश्न</strong> होंगे।</li>
+          <li>OMR शीट पर विवरण (रोल नंबर, कक्षा, आदि) भरें।</li>
+          <li>निरीक्षक OMR शीट भरने के लिए मार्गदर्शन करेंगे।</li>
+          <li>सही विकल्प को काले/नीले पेन से छायांकित करें।</li>
+        </ul>
+        <div class="important-note">
+          <i class="fas fa-exclamation-circle"></i>
+          <span>निरीक्षक के निर्देशों का सावधानी से पालन करें।</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>अंकन योजना और नकारात्मक अंकन</h3>
+        <p>परीक्षा की अंकन योजना:</p>
+        <ul>
+          <li><strong>सही उत्तर:</strong> +1.33 अंक</li>
+          <li><strong>गलत उत्तर:</strong> -0.45 अंक</li>
+          <li><strong>उत्तर न दिए गए प्रश्न:</strong> 0 अंक</li>
+        </ul>
+        <div class="important-note">
+          <i class="fas fa-exclamation-circle"></i>
+          <span>नकारात्मक अंकन स्कोर को प्रभावित कर सकता है, सावधानी बरतें।</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>चयन मानदंड</h3>
+        <p>छात्रों का चयन रैंक के आधार पर:</p>
+        <ul>
+          <li><strong>शीर्ष 40 लड़के:</strong> प्रवेश के लिए पात्र।</li>
+          <li><strong>शीर्ष 35 लड़कियां:</strong> प्रवेश के लिए पात्र।</li>
+          <li><strong>प्रतीक्षा सूची:</strong> चयनित छात्र के प्रवेश न लेने पर अगले को प्राथमिकता।</li>
+        </ul>
+        <div class="success-note">
+          <i class="fas fa-check-circle"></i>
+          <span>परीक्षा के बाद मेरिट सूची वेबसाइट पर प्रकाशित होगी।</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>महत्वपूर्ण तिथियां</h3>
+        <ul>
+          <li><strong>प्रवेश पत्र डाउनलोड:</strong> 10 जून, 2025 से</li>
+          <li><strong>परीक्षा तिथि:</strong> प्रवेश पत्र पर घोषित</li>
+          <li><strong>परिणाम:</strong> वेबसाइट पर घोषित</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="timeline">
+    <div class="section-title">
+      <h2>आवेदन प्रक्रिया समयरेखा</h2>
+    </div>
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>चरण 1: ऑनलाइन आवेदन</h3>
+          <p>आधिकारिक वेबसाइट के माध्यम से आवेदन जमा करें।</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>चरण 2: पंजीकरण संख्या</h3>
+          <p>अद्वितीय पंजीकरण संख्या नोट करें।</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>चरण 3: प्रवेश पत्र</h3>
+          <p>10 जून, 2025 से डाउनलोड करें।</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>चरण 4: प्रवेश परीक्षा</h3>
+          <p>परीक्षा प्रक्रिया का पालन करें और 150 प्रश्नों का प्रयास करें।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="stats-container">
+      <div class="stat-item">
+        <div class="stat-number">75</div>
+        <div class="stat-label">प्रति वर्ष चयनित छात्र</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">150</div>
+        <div class="stat-label">परीक्षा प्रश्न</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">मुफ्त कोचिंग</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="section-title">
+      <h2>अक्सर पूछे जाने वाले प्रश्न</h2>
+    </div>
+    <div class="cards-container">
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>कोचिंग सेंटर के लिए कौन आवेदन कर सकता है?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>कोई भी छात्र जो पात्रता मानदंडों को पूरा करता हो और प्रवेश परीक्षा पास करता हो, आवेदन कर सकता है।</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>क्या कोचिंग मुफ्त है?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>हां, चयनित छात्रों के लिए कोचिंग पूरी तरह मुफ्त है।</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>प्रवेश परीक्षा का प्रारूप क्या है?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>परीक्षा में OMR शीट पर 150 प्रश्न होते हैं, सही उत्तर के लिए +1.33 अंक और गलत के लिए -0.45 अंक।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <div class="section-title">
+      <h2>हमसे संपर्क करें</h2>
+    </div>
+    <div class="contact-container">
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <p>+91-639-581-0477</p>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <p>support@iaspcscoachinghapur.in</p>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>निजामपुर, हापुड़, उत्तर प्रदेश</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>हमारे बारे में</h3>
+        <p>गवर्नमेंट आईएएस पीसीएस कोचिंग सेंटर निजामपुर हापुड़ UPSC और UPPCS उम्मीदवारों के लिए मुफ्त कोचिंग प्रदान करता है।</p>
+      </div>
+      <div class="footer-column">
+        <h3>त्वरित लिंक</h3>
+        <ul class="footer-links">
+          <li><a href="#">होम</a></li>
+          <li><a href="#steps">आवेदन प्रक्रिया</a></li>
+          <li><a href="#contact">संपर्क</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>न्यूज़लेटर</h3>
+        <p>अपडेट और संसाधनों के लिए सब्सक्राइब करें।</p>
+        <form class="newsletter">
+          <input type="email" placeholder="अपना ईमेल दर्ज करें" required aria-label="ईमेल">
+          <button type="submit">सब्सक्राइब करें</button>
+        </form>
+      </div>
+    <div class="copyright">
+      © 2025 गवर्नमेंट आईएएस पीसीएस कोचिंग सेंटर निजामपुर हापुड़ | सभी अधिकार सुरक्षित
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <a href="#" class="back-to-top" aria-label="शीर्ष पर वापस जाएं"><i class="fas fa-chevron-up"></i></a>
+
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+
+    // Back to Top Button
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</
