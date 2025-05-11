@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>मुख्यमंत्री अभ्युदय योजना - UPSC/UPPCS निःशुल्क कोचिंग</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Dark Theme (default) */
+      --primary: #ff5722;
+      --primary-light: #ff8a50;
+      --secondary: #ff9800;
+      --accent: #ffc107;
+      --background: #121212;
+      --surface: #1e1e1e;
+      --surface-alt: #252525;
+      --text: #f5f5f5;
+      --text-secondary: #ccc;
+      --text-gray: #757575;
+      --shadow: rgba(0, 0, 0, 0.3);
+      --shadow-hover: rgba(255, 87, 34, 0.3);
+    }
+
+    [data-theme="light"] {
+      /* Light Theme */
+      --primary: #ff5722;
+      --primary-light: #ff8a50;
+      --secondary: #ff9800;
+      --accent: #ffc107;
+      --background: #f5f5f5;
+      --surface: #ffffff;
+      --surface-alt: #e0e0e0;
+      --text: #333333;
+      --text-secondary: #555555;
+      --text-gray: #757575;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --shadow-hover: rgba(255, 87, 34, 0.2);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 60px 15px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+      background-size: cover;
+      z-index: 1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header h1 {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #fff;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+      margin-bottom: 15px;
+      animation: fadeInDown 1s ease;
+    }
+
+    .header-subtitle {
+      font-size: 20px;
+      opacity: 0.9;
+      position: relative;
+      animation: fadeIn 1.5s ease;
+      margin-bottom: 30px;
+      color: #fff;
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: rgba(0,0,0,0.3);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 14px;
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease;
+      color: #fff;
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.3);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #fff;
+      font-size: 20px;
+      z-index: 3;
+      transition: background 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
+                  url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+      position: relative;
+      margin-top: -50px;
+      z-index: 1;
+      clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 100%);
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 25px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero h2::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      border-radius: 3px;
+    }
+
+    .hero p {
+      margin: 25px auto 0;
+      font-size: 18px;
+      color: #eee;
+      max-width: 700px;
+    }
+
+    .hero-btns {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Video Modal */
+    .video-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      z-index: 2000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .video-modal.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .video-container {
+      width: 80%;
+      max-width: 900px;
+      position: relative;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* Main Sections */
+    .section {
+      padding: 80px 20px;
+      position: relative;
+    }
+
+    .section-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.03;
+      z-index: -1;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    .section-title h2 {
+      display: inline-block;
+      font-size: 36px;
+      color: var(--accent);
+      position: relative;
+    }
+
+    .section-title h2::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 3px;
+    }
+
+    .section-title p {
+      max-width: 700px;
+      margin: 20px auto 0;
+      color: var(--text-gray);
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: linear-gradient(145deg, var(--surface), var(--surface-alt));
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px var(--shadow);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 40px var(--shadow-hover);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+      transition: all 0.4s ease;
+    }
+
+    .card:hover::before {
+      width: 100%;
+      opacity: 0.1;
+    }
+
+    .card-icon {
+      font-size: 50px;
+      margin-bottom: 25px;
+      color: var(--accent);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover .card-icon {
+      transform: scale(1.1);
+    }
+
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-size: 24px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .card h3::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--primary);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover h3::after {
+      width: 80px;
+    }
+
+    .card p {
+      color: var(--text-secondary);
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--primary-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .card-link:hover {
+      color: var(--accent);
+      transform: translateX(5px);
+    }
+
+    .card-link i {
+      margin-left: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .card-link:hover i {
+      transform: translateX(3px);
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background: linear-gradient(135deg, var(--surface), var(--surface-alt));
+    }
+
+    .testimonial-slider {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .testimonial {
+      background: var(--surface-alt);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px var(--shadow);
+      margin: 0 20px;
+      position: relative;
+    }
+
+    .testimonial::before {
+      content: '"';
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      font-size: 80px;
+      color: rgba(255,152,0,0.1);
+      font-family: serif;
+      line-height: 1;
+    }
+
+    .testimonial-content {
+      margin-bottom: 20px;
+      font-style: italic;
+      color: var(--text);
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+
+    .author-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+      border: 3px solid var(--primary);
+    }
+
+    .author-info h4 {
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    .author-info p {
+      color: var(--text-gray);
+      font-size: 14px;
+    }
+
+    /* Stats Section */
+    .stats {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 100px 20px;
+      text-align: center;
+      clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+      margin: 60px 0;
+    }
+
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .stat-item {
+      color: white;
+      position: relative;
+      padding: 20px;
+    }
+
+    .stat-item::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: white;
+      opacity: 0.3;
+    }
+
+    .stat-number {
+      font-size: 60px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    /* Registration Section */
+    .registration {
+      background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+    }
+
+    /* FAQ Section */
+    .faq-item {
+      background: var(--surface);
+      border-radius: 10px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .faq-question {
+      padding: 20px;
+      background: var(--surface-alt);
+      color: var(--text);
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background: var(--surface);
+    }
+
+    .faq-question i {
+      transition: all 0.3s ease;
+    }
+
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      color: var(--text-secondary);
+    }
+
+    .faq-item.active .faq-question {
+      background: var(--primary);
+      color: white;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 20px;
+      max-height: 500px;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    /* Conclusion */
+    .conclusion {
+      text-align: center;
+      background: linear-gradient(135deg, var(--background), var(--surface));
+      padding: 100px 20px;
+      position: relative;
+      clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+      margin-top: 60px;
+    }
+
+    .conclusion::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,152,0,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+      background-size: cover;
+    }
+
+    .conclusion-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .conclusion h2 {
+      color: var(--accent);
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .conclusion p {
+      font-size: 18px;
+      color: var(--text);
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 40px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 5px 20px var(--shadow);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn i {
+      margin-left: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 25px var(--shadow-hover);
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: 0.5s;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(to right, var(--background), var(--surface));
+      padding: 60px 20px 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      text-align: left;
+    }
+
+    .footer-column h3 {
+      color: var(--accent);
+      margin-bottom: 25px;
+      font-size: 20px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-column h3::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--primary);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+      transform: translateX(5px);
+    }
+
+    .footer-links a i {
+      margin-right: 8px;
+      color: var(--primary);
+    }
+
+    .contact-info {
+      list-style: none;
+    }
+
+    .contact-info li {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .contact-info i {
+      color: var(--primary);
+      margin-right: 10px;
+      margin-top: 4px;
+    }
+
+    .contact-info span {
+      color: var(--text-secondary);
+    }
+
+    .copyright {
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-gray);
+      font-size: 14px;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 5px 20px var(--shadow);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--secondary);
+      transform: translateY(-5px);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 992px) {
+      header h1 {
+        font-size: 42px;
+      }
+      
+      .hero h2 {
+        font-size: 32px;
+      }
+      
+      .section-title h2 {
+        font-size: 32px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 36px;
+      }
+
+      .header-subtitle {
+        font-size: 18px;
+      }
+
+      .hero h2 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .section-title h2 {
+        font-size: 28px;
+      }
+
+      .stat-number {
+        font-size: 48px;
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      header h1 {
+        font-size: 32px;
+      }
+      
+      .header-subtitle {
+        font-size: 16px;
+      }
+      
+      .hero h2 {
+        font-size: 24px;
+      }
+      
+      .hero-btns {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+      
+      .section {
+        padding: 60px 20px;
+      }
+      
+      .section-title h2 {
+        font-size: 24px;
+      }
+      
+      .card {
+        padding: 30px 20px;
+      }
+      
+      .card-icon {
+        font-size: 40px;
+      }
+      
+      .card h3 {
+        font-size: 20px;
+      }
+      
+      .conclusion h2 {
+        font-size: 28px;
+      }
+      
+      .conclusion p {
+        font-size: 16px;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .footer-column h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .footer-links a:hover {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body data-theme="dark">
+
+  <!-- Header -->
+  <header id="home">
+    <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+      <i class="fas fa-moon"></i>
+    </button>
+    <div class="header-content">
+      <h1>मुख्यमंत्री अभ्युदय योजना</h1>
+      <p class="header-subtitle">UPSC और UPPCS की तैयारी के लिए प्रदेश सरकार की महत्वाकांक्षी योजना</p>
+      <span class="header-badge"><i class="fas fa-award"></i> सरकार द्वारा प्रमाणित</span>
+      <div class="hero-btns">
+        <a href="#registration" class="btn">पंजीकरण करें <i class="fas fa-arrow-right"></i></a>
+        <button class="btn btn-outline" id="watchVideoBtn">
+          <i class="fas fa-play"></i> वीडियो देखें
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Video Modal -->
+  <div class="video-modal" id="videoModal">
+    <div class="video-container">
+      <span class="close-modal" id="closeModal">×</span>
+      <iframe width="100%" height="500" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>UPSC व UPPCS की तैयारी अब बिना किसी खर्च के</h2>
+      <p>मुख्यमंत्री अभ्युदय योजना के तहत प्रदेश के मेधावी छात्र-छात्राओं को UPSC और UPPCS जैसी प्रतिष्ठित परीक्षाओं की निःशुल्क कोचिंग प्रदान की जाती है। इस योजना के माध्यम से सैकड़ों छात्रों ने पहले ही प्रयास में सफलता प्राप्त की है।</p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section" id="features">
+    <div class="section-title">
+      <h2>योजना के प्रमुख लाभ</h2>
+      <p>अभ्युदय योजना छात्रों को प्रतियोगी परीक्षाओं की तैयारी के लिए सर्वोत्तम संसाधन प्रदान करती है</p>
+    </div>
+    
+    <div class="cards-container">
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-chalkboard-teacher"></i>
+        </div>
+        <h3>निःशुल्क कोचिंग</h3>
+        <p>UPSC और UPPCS जैसी प्रतियोगी परीक्षाओं के लिए विशेषज्ञ शिक्षकों द्वारा गुणवत्तापूर्ण शिक्षा प्रदान की जाती है। पूर्णतः निःशुल्क पाठ्यक्रम जिसमें सभी विषयों का समावेश है।</p>
+        <a href="#" class="card-link">विस्तृत जानकारी प्राप्त करें <i class="fas fa-arrow-right"></i></a>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-laptop-house"></i>
+        </div>
+        <h3>हाइब्रिड लर्निंग मोड</h3>
+        <p>ऑनलाइन लाइव क्लासेस और जिलेवार ऑफलाइन केंद्रों के माध्यम से छात्र आसानी से पढ़ सकते हैं। अपनी सुविधानुसार शिक्षण मोड चुनें।</p>
+        <a href="#" class="card-link">विस्तृत जानकारी प्राप्त करें <i class="fas fa-arrow-right"></i></a>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <h3>वरिष्ठ अधिकारियों का मार्गदर्शन</h3>
+        <p>सेवारत और रिटायर्ड IAS/PCS अधिकारियों द्वारा क्लासेज और करियर गाइडेंस दिया जाता है। वास्तविक अनुभव और साक्षात्कार तकनीक साझा की जाती है।</p>
+        <a href="#" class="card-link">विस्तृत जानकारी प्राप्त करें <i class="fas fa-arrow-right"></i></a>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-book-open"></i>
+        </div>
+        <h3>सम्पूर्ण पाठ्यक्रम कवरेज</h3>
+        <p>संपूर्ण UPSC/UPPCS पाठ्यक्रम के साथ Pre, Mains और Interview तीनों स्तरों की तैयारी कराई जाती है। विशेष फोकस के साथ समग्र विकास।</p>
+        <a href="#" class="card-link">विस्तृत जानकारी प्राप्त करें <i class="fas fa-arrow-right"></i></a>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-edit"></i>
+        </div>
+        <h3>नियमित मूल्यांकन</h3>
+        <p>साप्ताहिक मॉक टेस्ट, उत्तर लेखन अभ्यास और व्यक्तिगत समीक्षा की सुविधा। विस्तृत प्रदर्शन विश्लेषण और सुधार के सुझाव।</p>
+        <a href="#" class="card-link">विस्तृत जानकारी प्राप्त करें <i class="fas fa-arrow-right"></i></a>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-book"></i>
+        </div>
+        <h3>प्रीमियम अध्ययन सामग्री</h3>
+        <p>विषयवार PDF, करंट अफेयर्स बुलेटिन, पूर्व वर्षों के पेपर और विशेष नोट्स उपलब्ध। सभी संसाधन निःशुल्क और अपडेटेड।</p>
+        <a href="#" class="card-link">विस्तृत जानकारी प्राप्त करें <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+    <div class="section-title">
+      <h2>योजना के बारे में</h2>
+      <p>मुख्यमंत्री अभ्युदय योजना प्रदेश सरकार की एक महत्वाकांक्षी पहल</p>
+    </div>
+    
+    <div class="cards-container">
+      <div class="card">
+        <h3>योजना का उद्देश्य</h3>
+        <p>मुख्यमंत्री अभ्युदय योजना का मुख्य उद्देश्य प्रदेश के मेधावी छात्र-छात्राओं को UPSC और UPPCS जैसी प्रतिष्ठित परीक्षाओं की निःशुल्क कोचिंग प्रदान करना है, ताकि वे बिना किसी आर्थिक बाधा के अपनी तैयारी पूरी कर सकें।</p>
+        <p>इस योजना के माध्यम से सरकार का लक्ष्य प्रशासनिक सेवाओं में प्रदेश के युवाओं की भागीदारी बढ़ाना है।</p>
+      </div>
+      
+      <div class="card">
+        <h3>पात्रता मानदंड</h3>
+        <ul style="color: var(--text-secondary); margin-left: 20px; margin-bottom: 20px;">
+          <li style="margin-bottom: 10px;">आवेदक का प्रदेश का स्थायी निवासी होना आवश्यक है</li>
+          <li style="margin-bottom: 10px;">स्नातक (Graduation) उत्तीर्ण होना चाहिए</li>
+          <li style="margin-bottom: 10px;">UPSC/UPPCS की परीक्षा देने के इच्छुक</li>
+          <li style="margin-bottom: 10px;">आयु सीमा: UPSC के लिए 21-32 वर्ष, UPPCS के लिए 21-40 वर्ष</li>
+          <li style="margin-bottom: 10px;">पिछड़े वर्ग/अल्पसंख्यक/महिला उम्मीदवारों को प्राथमिकता</li>
+          <li style="margin-bottom: 10px;">सभी प्रकार की श्रेणी का छात्र आवेदन कर सकता है</li>
+        </ul>
+        <a href="#" class="card-link">पूर्ण पात्रता के लिए विस्तृत जानकारी प्राप्त करें <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section testimonials" id="testimonials">
+    <div class="section-title">
+      <h2>हमारे सफल छात्र</h2>
+      <p>अभ्युदय योजना के माध्यम से सफलता प्राप्त कर चुके छात्रों के अनुभव</p>
+    </div>
+    
+    <div class="testimonial-slider">
+      <div class="testimonial">
+        <div class="testimonial-content">
+          "अभ्युदय योजना ने मेरे सपनों को पंख दिए। यहाँ मिले विशेषज्ञ मार्गदर्शन और गुणवत्तापूर्ण अध्ययन सामग्री के कारण मैंने पहले ही प्रयास में UPSC 2024 की परीक्षा पास की।"
+        </div>
+        <div class="testimonial-author">
+          <img src="https://i.postimg.cc/3NKLbBNP/images.jpg" alt="Rahul Sharma" class="author-img">
+          <div class="author-info">
+            <h4>मयंक बाजपाई </h4>
+            <p>UPPCS 2024 टॉपर RANK 149 (IPS)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Section -->
+  <section class="section registration" id="registration">
+    <div class="section-title">
+      <h2>पंजीकरण करें</h2>
+      <p>मुख्यमंत्री अभ्युदय योजना के लिए निःशुल्क पंजीकरण</p>
+    </div>
+    
+    <div class="hero-btns" style="max-width: 800px; margin: 0 auto;">
+      <a href="/register" class="btn" style="width: 100%;">पंजीकरण करें <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="section-title">
+      <h2>सामान्य प्रश्न</h2>
+      <p>अभ्युदय योजना के बारे में अक्सर पूछे जाने वाले प्रश्न</p>
+    </div>
+    
+    <div class="cards-container" style="grid-template-columns: 1fr; max-width: 800px;">
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>अभ्युदय योजना के लिए आवेदन कैसे करें?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>आवेदन प्रक्रिया बेहद सरल है। आप हमारी वेबसाइट पर उपलब्ध आवेदन फॉर्म भरकर ऑनलाइन आवेदन कर सकते हैं। आवेदन के बाद आपको एक एंट्रेंस टेस्ट देना होगा जिसके आधार पर चयन किया जाएगा।</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>क्या यह योजना वास्तव में निःशुल्क है?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>हाँ, मुख्यमंत्री अभ्युदय योजना पूर्णतः निःशुल्क है। इसमें कोचिंग फीस, अध्ययन सामग्री, मॉक टेस्ट सभी निःशुल्क उपलब्ध कराए जाते हैं।</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>क्या ऑफलाइन क्लासेस भी उपलब्ध हैं?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>जी हाँ, प्रदेश के सभी जिला मुख्यालयों पर ऑफलाइन केंद्र संचालित हैं। आप अपने नजदीकी केंद्र में जाकर भी पढ़ाई कर सकते हैं।</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>चयन प्रक्रिया क्या है?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>चयन दो चरणों में होता है - पहले चरण में ऑनलाइन एंट्रेंस टेस्ट और दूसरे चरण में साक्षात्कार। मेरिट के आधार पर अंतिम चयन किया जाता है।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conclusion -->
+  <section class="conclusion">
+    <div class="conclusion-content">
+      <h2>अपने सपनों को उड़ान दें</h2>
+      <p>मुख्यमंत्री अभ्युदय योजना न केवल एक कोचिंग कार्यक्रम है, बल्कि यह प्रदेश के युवाओं के सपनों को पंख देने का एक माध्यम है। इस योजना के तहत हम न केवल ज्ञान प्रदान करते हैं, बल्कि छात्रों में आत्मविश्वास जगाते हैं और उन्हें सही दिशा दिखाते हैं। हमारा उद्देश्य प्रतिभाशाली युवाओं को उचित मार्गदर्शन प्रदान कर उन्हें सफलता के शिखर तक पहुँचाना है। आप भी इस योजना से जुड़कर अपने सपनों को साकार कर सकते हैं।</p>
+      <div class="hero-btns">
+        <a href="#registration" class="btn">पंजीकरण करें <i class="fas fa-arrow-right"></i></a>
+        <a href="#contact" class="btn btn-outline">संपर्क करें <i class="fas fa-phone-alt"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>अभ्युदय योजना</h3>
+        <p>UPSC और UPPCS की तैयारी के लिए प्रदेश सरकार की महत्वाकांक्षी योजना जो हजारों युवाओं के सपनों को साकार कर रही है।</p>
+      </div>
+      
+      <div class="footer-column">
+        <h3>त्वरित लिंक</h3>
+        <ul class="footer-links">
+          <li><a href="#home"><i class="fas fa-chevron-right"></i> होम</a></li>
+          <li><a href="#features"><i class="fas fa-chevron-right"></i> विशेषताएं</a></li>
+          <li><a href="#about"><i class="fas fa-chevron-right"></i> योजना के बारे में</a></li>
+          <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> सफल छात्र</a></li>
+          <li><a href="#registration"><i class="fas fa-chevron-right"></i> पंजीकरण करें</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>संपर्क करें</h3>
+        <ul class="contact-info">
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>गाँव निजामपुर हापुड़ , उत्तर प्रदेश 245101</span>
+          </li>
+          <li>
+            <i class="fas fa-phone-alt"></i>
+            <span>+91 8273684939 </span>
+          </li>
+          <li>
+            <i class="fas fa-envelope"></i>
+            <span>info@abhyudayup.in</span>
+          </li>
+          <li>
+            <i class="fas fa-clock"></i>
+            <span>सोम-शनि: 9:00 AM - 6:00 PM</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      © 2025 मुख्यमंत्री अभ्युदय योजना, उत्तर प्रदेश सरकार | सभी अधिकार सुरक्षित
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    
+    // Load saved theme from localStorage
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    body.setAttribute('data-theme', savedTheme);
+    themeToggle.innerHTML = savedTheme === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+    
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      body.setAttribute('data-theme', newTheme);
+      themeToggle.innerHTML = newTheme === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+      localStorage.setItem('theme', newTheme);
+    });
+
+    // Video Modal
+    const watchVideoBtn = document.getElementById('watchVideoBtn');
+    const videoModal = document.getElementById('videoModal');
+    const closeModal = document.getElementById('closeModal');
+    
+    watchVideoBtn.addEventListener('click', () => {
+      videoModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+    
+    closeModal.addEventListener('click', () => {
+      videoModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      
+      question.addEventListener('click', () => {
+        item.classList.toggle('active');
+        
+        // Close other open items
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item && otherItem.classList.contains('active')) {
+            otherItem.classList.remove('active');
+          }
+        });
+      });
+    });
+
+    // Back to Top Button
+    const backToTop = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+
+    // Smooth Scrolling for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
