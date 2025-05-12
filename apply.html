@@ -21,6 +21,38 @@
       --text-gray: #757575;
       --shadow: rgba(0, 0, 0, 0.3);
       --shadow-hover: rgba(255, 87, 34, 0.3);
+      /* Navbar colors from subpage.html */
+      --navbar-primary: #ff6200; /* Bhagwa */
+      --navbar-primary-light: #ff8533;
+      --navbar-secondary: #ffca28; /* Gold */
+      --navbar-text-logo: #ffffff;
+      --navbar-text-contrast: #ffffff;
+      --navbar-icon-color: #ffeb3b;
+      --navbar-shadow-hover: rgba(255, 98, 0, 0.3);
+    }
+
+    [data-theme="light"] {
+      /* Light Theme */
+      --primary: #ff5722;
+      --primary-light: #ff8a50;
+      --secondary: #ff9800;
+      --accent: #ffc107;
+      --background: #f5f5f5;
+      --surface: #ffffff;
+      --surface-alt: #e0e0e0;
+      --text: #333333;
+      --text-secondary: #555555;
+      --text-gray: #757575;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --shadow-hover: rgba(255, 87, 34, 0.2);
+      /* Navbar colors remain bhagwa */
+      --navbar-primary: #ff6200;
+      --navbar-primary-light: #ff8533;
+      --navbar-secondary: #ffca28;
+      --navbar-text-logo: #ffffff;
+      --navbar-text-contrast: #ffffff;
+      --navbar-icon-color: #ffeb3b;
+      --navbar-shadow-hover: rgba(255, 98, 0, 0.2);
     }
 
     * {
@@ -31,20 +63,100 @@
 
     body {
       font-family: 'Poppins', 'Noto Serif Devanagari', sans-serif;
-      background-color: var(--background);
+      background-color: var(--background) !important;
       color: var(--text);
       line-height: 1.7;
       overflow-x: hidden;
+      z-index: 0 !important; /* Ensure body stays behind navbar */
+    }
+
+    /* Navbar (fixed, bhagwa background locked) */
+    .navbar {
+      background: linear-gradient(135deg, var(--navbar-primary), var(--navbar-primary-light)) !important;
+      background-color: var(--navbar-primary) !important; /* Fallback */
+      padding: 15px 0;
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      z-index: 10000 !important; /* High z-index to avoid overlap */
+      box-shadow: 0 5px 15px var(--shadow) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+      transition: none !important; /* Prevent background/visibility transitions */
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .navbar .logo {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--navbar-text-logo);
+      text-decoration: none;
+      text-shadow: 0 0 8px rgba(255, 98, 0, 0.5);
+      transition: text-shadow 0.3s ease;
+    }
+
+    .navbar .logo:hover {
+      text-shadow: 0 0 12px rgba(255, 98, 0, 0.8);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--navbar-text-contrast);
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--navbar-secondary);
+    }
+
+    /* Theme Toggle in Navbar */
+    .theme-toggle {
+      background: rgba(0, 0, 0, 0.3);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--navbar-text-contrast);
+      font-size: 20px;
+      transition: background 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(0, 0, 0, 0.5);
     }
 
     /* Header */
     header {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       padding: 60px 15px 80px;
+      margin-top: 70px; /* Offset for fixed navbar */
       text-align: center;
       position: relative;
       overflow: hidden;
       clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      z-index: 1; /* Below navbar */
     }
 
     header::before {
@@ -134,6 +246,7 @@
     .section {
       padding: 80px 20px;
       position: relative;
+      z-index: 1;
     }
 
     .section-title {
@@ -257,6 +370,7 @@
     .timeline {
       padding: 80px 20px;
       background: linear-gradient(135deg, var(--surface), var(--surface-alt));
+      z-index: 1;
     }
 
     .timeline-container {
@@ -325,6 +439,7 @@
       text-align: center;
       clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
       margin: 60px 0;
+      z-index: 1;
     }
 
     .stats-container {
@@ -424,6 +539,7 @@
       padding: 80px 20px;
       background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), 
                   url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+      z-index: 1;
     }
 
     .contact-container {
@@ -506,6 +622,7 @@
       background: linear-gradient(to right, var(--background), var(--surface));
       padding: 60px 20px 30px;
       text-align: center;
+      z-index: 1;
     }
 
     .footer-content {
@@ -660,6 +777,23 @@
       header h1 { font-size: 42px; }
       .hero h2 { font-size: 32px; }
       .section-title h2 { font-size: 32px; }
+      .navbar .container {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav-links a {
+        margin: 5px 0;
+      }
+      .theme-toggle {
+        margin-top: 10px;
+      }
+      header {
+        margin-top: 100px; /* Adjust for stacked navbar */
+      }
     }
 
     @media screen and (max-width: 768px) {
@@ -673,6 +807,9 @@
       .timeline-content { width: 100%; }
       .timeline-dot, .timeline-line { display: none; }
       .contact-container { grid-template-columns: 1fr; }
+      header {
+        margin-top: 120px;
+      }
     }
 
     @media screen and (max-width: 576px) {
@@ -689,12 +826,31 @@
       .footer-column h3::after { left: 50%; transform: translateX(-50%); }
       .newsletter form { flex-direction: column; }
       .newsletter input[type="email"] { max-width: 100%; }
+      .navbar .logo { font-size: 22px; }
+      header {
+        margin-top: 140px; /* Adjust for taller stacked navbar */
+      }
     }
   </style>
 </head>
-<body>
+<body data-theme="dark">
   <!-- Header -->
   <header>
+    <!-- Navbar from subpage.html -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">मुख्यमंत्री अभ्युदय योजना</a>
+        <div class="nav-links">
+          <a href="specialty.html">विशेषताएँ</a>
+          <a href="apply.html">प्रवेश प्रक्रिया</a>
+          <a href="formstudents.html">पंजीकरण</a>
+          <a href="contact.html">संपर्क</a>
+          <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
     <div class="header-content">
       <h1>आवेदन प्रक्रिया मार्गदर्शन</h1>
       <p class="header-subtitle">गवर्नमेंट आईएएस पीसीएस कोचिंग सेंटर निजामपुर हापुड़</p>
@@ -922,7 +1078,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section class="contact">
+  <section class="contact" id="contact">
     <div class="section-title">
       <h2>हमसे संपर्क करें</h2>
     </div>
@@ -952,7 +1108,7 @@
       <div class="footer-column">
         <h3>त्वरित लिंक</h3>
         <ul class="footer-links">
-          <li><a href="#">होम</a></li>
+          <li><a href="index.html">होम</a></li>
           <li><a href="#steps">आवेदन प्रक्रिया</a></li>
           <li><a href="#contact">संपर्क</a></li>
         </ul>
@@ -965,6 +1121,7 @@
           <button type="submit">सब्सक्राइब करें</button>
         </form>
       </div>
+    </div>
     <div class="copyright">
       © 2025 गवर्नमेंट आईएएस पीसीएस कोचिंग सेंटर निजामपुर हापुड़ | सभी अधिकार सुरक्षित
     </div>
@@ -974,10 +1131,34 @@
   <a href="#" class="back-to-top" aria-label="शीर्ष पर वापस जाएं"><i class="fas fa-chevron-up"></i></a>
 
   <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    
+    // Load saved theme from localStorage
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    body.setAttribute('data-theme', savedTheme);
+    themeToggle.innerHTML = savedTheme === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+    
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      body.setAttribute('data-theme', newTheme);
+      themeToggle.innerHTML = newTheme === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+      localStorage.setItem('theme', newTheme);
+    });
+
     // FAQ Accordion
     document.querySelectorAll('.faq-item').forEach(item => {
-      item.addEventListener('click', () => {
+      const question = item.querySelector('.faq-question');
+      question.addEventListener('click', () => {
         item.classList.toggle('active');
+        // Close other open items
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          if (otherItem !== item && otherItem.classList.contains('active')) {
+            otherItem.classList.remove('active');
+          }
+        });
       });
     });
 
@@ -990,6 +1171,44 @@
         backToTop.classList.remove('active');
       }
     });
+
+    // Smooth Scrolling for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Safeguard: Enforce navbar visibility and bhagwa background on scroll
+    function enforceNavbarStyles() {
+      const navbar = document.querySelector('.navbar');
+      if (navbar) {
+        navbar.style.background = 'linear-gradient(135deg, #ff6200, #ff8533) !important';
+        navbar.style.backgroundColor = '#ff6200 !important';
+        navbar.style.opacity = '1 !important';
+        navbar.style.visibility = 'visible !important';
+        navbar.style.transform = 'none !important';
+        navbar.style.position = 'fixed !important';
+        navbar.style.top = '0 !important';
+        navbar.style.width = '100% !important';
+        navbar.style.zIndex = '10000 !important';
+      }
+      requestAnimationFrame(enforceNavbarStyles); // Continuous enforcement
+    }
+
+    // Start enforcement on page load and scroll
+    window.addEventListener('scroll', enforceNavbarStyles);
+    window.addEventListener('load', enforceNavbarStyles);
+    enforceNavbarStyles(); // Immediate call
   </script>
 </body>
 </html>
