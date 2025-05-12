@@ -1,62 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Document Upload Form</title>
+  <title>Student Document Upload Form - गवर्नमेंट आईएएस पीसीएस कोचिंग सेंटर</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #ff2d2d;
-      --primary-dark: #cc0000;
-      --secondary: #00bfff;
-      --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      --border-radius: 12px;
+      /* Colors from apply.html for navbar and instructions */
+      --primary: #ff5722;
+      --primary-light: #ff8a50;
+      --secondary: #ff9800;
+      --accent: #ffc107;
+      --background: #121212;
+      --surface: #1e1e1e;
+      --surface-alt: #252525;
+      --text: #f5f5f5;
+      --text-secondary: #ccc;
+      --text-gray: #757575;
+      --shadow: rgba(0, 0, 0, 0.3);
+      --shadow-hover: rgba(255, 87, 34, 0.3);
+      /* Navbar colors */
+      --navbar-primary: #ff6200; /* Bhagwa */
+      --navbar-primary-light: #ff8533;
+      --navbar-secondary: #ffca28; /* Gold */
+      --navbar-text-logo: #ffffff;
+      --navbar-text-contrast: #ffffff;
+      --navbar-icon-color: #ffeb3b;
+      --navbar-shadow-hover: rgba(255, 98, 0, 0.3);
     }
 
-    /* Night Theme (default) */
-    [data-theme="night"] {
-      --dark-bg: #111;
-      --card-bg: #1e1e1e;
-      --text-light: #f0f0f0;
-      --text-muted: #aaa;
-      --input-bg: rgba(30, 30, 30, 0.8);
-      --input-border: rgba(255, 255, 255, 0.1);
-      --file-input-border: rgba(255, 255, 255, 0.2);
-      --file-input-bg: rgba(30, 30, 30, 0.8);
-      --file-input-bg-hover: rgba(40, 40, 40, 0.8);
-      --form-border: rgba(255, 255, 255, 0.05);
-      --progress-bg: rgba(255, 255, 255, 0.1);
-      --success-bg: rgba(0, 200, 83, 0.1);
-      --success-border: rgba(0, 200, 83, 0.3);
-      --error-bg: rgba(255, 45, 45, 0.1);
-      --error-border: rgba(255, 45, 45, 0.3);
-      --select-arrow: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
-      --reg-number-bg: rgba(0, 191, 255, 0.1);
-      --reg-number-border: var(--secondary);
+    [data-theme="light"] {
+      /* Light Theme for navbar and instructions */
+      --primary: #ff5722;
+      --primary-light: #ff8a50;
+      --secondary: #ff9800;
+      --accent: #ffc107;
+      --background: #f5f5f5;
+      --surface: #ffffff;
+      --surface-alt: #e0e0e0;
+      --text: #333333;
+      --text-secondary: #555555;
+      --text-gray: #757575;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --shadow-hover: rgba(255, 87, 34, 0.2);
+      --navbar-primary: #ff6200;
+      --navbar-primary-light: #ff8533;
+      --navbar-secondary: #ffca28;
+      --navbar-text-logo: #ffffff;
+      --navbar-text-contrast: #ffffff;
+      --navbar-icon-color: #ffeb3b;
+      --navbar-shadow-hover: rgba(255, 98, 0, 0.2);
     }
 
-    /* Day Theme */
-    [data-theme="day"] {
-      --dark-bg: #f5f5f5;
-      --card-bg: #ffffff;
-      --text-light: #333;
-      --text-muted: #666;
-      --input-bg: #f0f0f0;
-      --input-border: #d1d1d1;
-      --file-input-border: #d1d1d1;
-      --file-input-bg: #f0f0f0;
-      --file-input-bg-hover: #e0e0e0;
-      --form-border: #d1d1d1;
-      --progress-bg: #e0e0e0;
-      --success-bg: rgba(0, 200, 83, 0.05);
-      --success-border: rgba(0, 200, 83, 0.2);
-      --error-bg: rgba(255, 45, 45, 0.05);
-      --error-border: rgba(255, 45, 45, 0.2);
-      --select-arrow: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
-      --reg-number-bg: rgba(0, 191, 255, 0.05);
-      --reg-number-border: #00bfff;
-      --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    /* Form-specific theme (unchanged from original) */
+    [data-form-theme="night"] {
+      --form-primary: #ff2d2d;
+      --form-primary-dark: #cc0000;
+      --form-secondary: #00bfff;
+      --form-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      --form-border-radius: 12px;
+      --form-dark-bg: #111;
+      --form-card-bg: #1e1e1e;
+      --form-text-light: #f0f0f0;
+      --form-text-muted: #aaa;
+      --form-input-bg: rgba(30, 30, 30, 0.8);
+      --form-input-border: rgba(255, 255, 255, 0.1);
+      --form-file-input-border: rgba(255, 255, 255, 0.2);
+      --form-file-input-bg: rgba(30, 30, 30, 0.8);
+      --form-file-input-bg-hover: rgba(40, 40, 40, 0.8);
+      --form-form-border: rgba(255, 255, 255, 0.05);
+      --form-progress-bg: rgba(255, 255, 255, 0.1);
+      --form-success-bg: rgba(0, 200, 83, 0.1);
+      --form-success-border: rgba(0, 200, 83, 0.3);
+      --form-error-bg: rgba(255, 45, 45, 0.1);
+      --form-error-border: rgba(255, 45, 45, 0.3);
+      --form-select-arrow: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+      --form-reg-number-bg: rgba(0, 191, 255, 0.1);
+      --form-reg-number-border: var(--form-secondary);
+    }
+
+    [data-form-theme="day"] {
+      --form-primary: #ff2d2d;
+      --form-primary-dark: #cc0000;
+      --form-secondary: #00bfff;
+      --form-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      --form-border-radius: 12px;
+      --form-dark-bg: #f5f5f5;
+      --form-card-bg: #ffffff;
+      --form-text-light: #333;
+      --form-text-muted: #666;
+      --form-input-bg: #f0f0f0;
+      --form-input-border: #d1d1d1;
+      --form-file-input-border: #d1d1d1;
+      --form-file-input-bg: #f0f0f0;
+      --form-file-input-bg-hover: #e0e0e0;
+      --form-form-border: #d1d1d1;
+      --form-progress-bg: #e0e0e0;
+      --form-success-bg: rgba(0, 200, 83, 0.05);
+      --form-success-border: rgba(0, 200, 83, 0.2);
+      --form-error-bg: rgba(255, 45, 45, 0.05);
+      --form-error-border: rgba(255, 45, 45, 0.2);
+      --form-select-arrow: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+      --form-reg-number-bg: rgba(0, 191, 255, 0.05);
+      --form-reg-number-border: #00bfff;
     }
 
     * {
@@ -64,51 +112,134 @@
       margin: 0;
       padding: 0;
     }
-    
+
     body {
-      background-color: var(--dark-bg);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--text-light);
+      font-family: 'Poppins', 'Noto Serif Devanagari', sans-serif;
+      background-color: var(--form-dark-bg);
+      color: var(--form-text-light);
       line-height: 1.6;
       padding: 20px;
       background-image: 
         radial-gradient(circle at 25% 25%, rgba(255, 45, 45, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 75% 75%, rgba(0, 191, 255, 0.1) 0%, transparent 50%);
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
-    
-    .container {
-      max-width: 600px;
-      margin: 30px auto;
-      animation: fadeIn 0.8s ease-out;
-      position: relative;
+
+    /* Navbar (from apply.html) */
+    .navbar {
+      background: linear-gradient(135deg, var(--navbar-primary), var(--navbar-primary-light)) !important;
+      background-color: var(--navbar-primary) !important;
+      padding: 15px 0;
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      z-index: 10000 !important;
+      box-shadow: 0 5px 15px var(--shadow) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+      transition: none !important;
     }
-    
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .navbar .logo {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--navbar-text-logo);
+      text-decoration: none;
+      text-shadow: 0 0 8px rgba(255, 98, 0, 0.5);
+      transition: text-shadow 0.3s ease;
+    }
+
+    .navbar .logo:hover {
+      text-shadow: 0 0 12px rgba(255, 98, 0, 0.8);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--navbar-text-contrast);
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--navbar-secondary);
+    }
+
+    .theme-toggle {
+      background: rgba(0, 0, 0, 0.3);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--navbar-text-contrast);
+      font-size: 20px;
+      transition: background 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    /* Form container (adjusted for navbar) */
+    .form-container {
+      max-width: 1200px;
+      margin: 90px auto 30px; /* Adjusted for navbar height */
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr; /* Left instructions, form, right instructions */
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    /* Form (unchanged from original) */
+    .form-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      animation: fadeIn 0.8s ease-out;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    
+
     .form-header {
       text-align: center;
       margin-bottom: 30px;
       position: relative;
     }
-    
+
     .form-header h2 {
       font-size: 28px;
       margin-bottom: 10px;
-      background: linear-gradient(to right, var(--primary), var(--secondary));
+      background: linear-gradient(to right, var(--form-primary), var(--form-secondary));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       position: relative;
       display: inline-block;
     }
-    
+
     .form-header h2::after {
       content: '';
       position: absolute;
@@ -117,47 +248,47 @@
       transform: translateX(-50%);
       width: 80px;
       height: 3px;
-      background: linear-gradient(to right, var(--primary), var(--secondary));
+      background: linear-gradient(to right, var(--form-primary), var(--form-secondary));
       border-radius: 3px;
     }
-    
+
     .form-header p {
-      color: var(--text-muted);
+      color: var(--form-text-muted);
       font-size: 14px;
     }
-    
+
     form {
-      background: var(--card-bg);
+      background: var(--form-card-bg);
       padding: 30px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      border: 1px solid var(--form-border);
+      border-radius: var(--form-border-radius);
+      box-shadow: var(--form-box-shadow);
+      border: 1px solid var(--form-form-border);
       transition: transform 0.3s ease, background 0.3s ease, border 0.3s ease;
     }
-    
+
     form:hover {
       transform: translateY(-5px);
     }
-    
+
     .form-group {
       margin-bottom: 20px;
       position: relative;
     }
-    
+
     label {
       display: block;
       margin-bottom: 8px;
       font-weight: 600;
-      color: var(--text-light);
+      color: var(--form-text-light);
       font-size: 14px;
     }
-    
+
     label::after {
       content: ' *';
-      color: var(--primary);
+      color: var(--form-primary);
       display: inline;
     }
-    
+
     input[type="text"],
     input[type="date"],
     input[type="file"],
@@ -168,72 +299,72 @@
     textarea {
       width: 100%;
       padding: 12px 15px;
-      border: 1px solid var(--input-border);
-      border-radius: var(--border-radius);
-      background-color: var(--input-bg);
-      color: var(--text-light);
+      border: 1px solid var(--form-input-border);
+      border-radius: var(--form-border-radius);
+      background-color: var(--form-input-bg);
+      color: var(--form-text-light);
       font-size: 14px;
       transition: all 0.3s ease;
     }
-    
+
     input:focus,
     select:focus,
     textarea:focus {
       outline: none;
-      border-color: var(--primary);
+      border-color: var(--form-primary);
       box-shadow: 0 0 0 2px rgba(255, 45, 45, 0.2);
     }
-    
+
     textarea {
       min-height: 100px;
       resize: vertical;
     }
-    
+
     select {
       appearance: none;
-      background-image: var(--select-arrow);
+      background-image: var(--form-select-arrow);
       background-repeat: no-repeat;
       background-position: right 15px center;
       background-size: 15px;
     }
-    
+
     .file-input-container {
       position: relative;
       overflow: hidden;
-      border-radius: var(--border-radius);
+      border-radius: var(--form-border-radius);
     }
-    
+
     .file-input-label {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 12px 15px;
-      background-color: var(--file-input-bg);
-      border: 1px dashed var(--file-input-border);
-      border-radius: var(--border-radius);
+      background-color: var(--form-file-input-bg);
+      border: 1px dashed var(--form-file-input-border);
+      border-radius: var(--form-border-radius);
       cursor: pointer;
       transition: all 0.3s ease;
     }
-    
+
     .file-input-label:hover {
-      background-color: var(--file-input-bg-hover);
-      border-color: var(--primary);
+      background-color: var(--form-file-input-bg-hover);
+      border-color: var(--form-primary);
     }
-    
+
     .file-input-text {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      color: var(--text-muted);
+      color: var(--form-text-muted);
       font-size: 13px;
     }
-    
+
     .file-input-icon {
-      color: var(--primary);
+      color: var(--form-primary);
       margin-left: 10px;
       flex-shrink: 0;
     }
-    
+
     input[type="file"] {
       position: absolute;
       left: 0;
@@ -243,15 +374,15 @@
       height: 100%;
       cursor: pointer;
     }
-    
+
     button[type="submit"] {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      background: linear-gradient(135deg, var(--form-primary), var(--form-primary-dark));
       border: none;
       color: white;
       padding: 15px;
       font-size: 16px;
       font-weight: 600;
-      border-radius: var(--border-radius);
+      border-radius: var(--form-border-radius);
       cursor: pointer;
       width: 100%;
       display: flex;
@@ -261,133 +392,133 @@
       box-shadow: 0 4px 15px rgba(255, 45, 45, 0.3);
       margin-top: 10px;
     }
-    
+
     button[type="submit"]:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(255, 45, 45, 0.4);
     }
-    
+
     button[type="submit"]:active {
       transform: translateY(0);
     }
-    
+
     button[type="submit"] i {
       margin-right: 10px;
     }
-    
+
     #progress {
       display: none;
       margin-top: 25px;
       text-align: center;
     }
-    
+
     .progress-text {
       margin-bottom: 10px;
       font-size: 14px;
-      color: var(--text-muted);
+      color: var(--form-text-muted);
     }
-    
+
     #progressBarContainer {
       width: 100%;
       height: 8px;
-      background-color: var(--progress-bg);
+      background-color: var(--form-progress-bg);
       border-radius: 4px;
       overflow: hidden;
       margin-bottom: 5px;
     }
-    
+
     #progressBar {
       width: 0%;
       height: 100%;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      background: linear-gradient(90deg, var(--form-primary), var(--form-secondary));
       border-radius: 4px;
       transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    
+
     .progress-percentage {
       font-size: 12px;
-      color: var(--text-muted);
+      color: var(--form-text-muted);
     }
-    
+
     #response {
       margin-top: 20px;
       padding: 15px;
-      border-radius: var(--border-radius);
+      border-radius: var(--form-border-radius);
       text-align: center;
       font-size: 14px;
       display: none;
     }
-    
+
     .success {
-      background-color: var(--success-bg);
+      background-color: var(--form-success-bg);
       color: #00c853;
-      border: 1px solid var(--success-border);
+      border: 1px solid var(--form-success-border);
     }
-    
+
     .error {
-      background-color: var(--error-bg);
-      color: var(--primary);
-      border: 1px solid var(--error-border);
+      background-color: var(--form-error-bg);
+      color: var(--form-primary);
+      border: 1px solid var(--form-error-border);
     }
-    
+
     #popup {
       display: none;
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: var(--card-bg);
+      background: var(--form-card-bg);
       padding: 30px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
+      border-radius: var(--form-border-radius);
+      box-shadow: var(--form-box-shadow);
       text-align: center;
       z-index: 1000;
       max-width: 90%;
       width: 400px;
       animation: popIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      border: 1px solid var(--form-border);
+      border: 1px solid var(--form-form-border);
     }
-    
+
     @keyframes popIn {
       0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
       100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
     }
-    
+
     #popup h3 {
-      color: var(--primary);
+      color: var(--form-primary);
       margin-bottom: 15px;
       font-size: 22px;
     }
-    
+
     #popup p {
       margin-bottom: 20px;
-      color: var(--text-light);
+      color: var(--form-text-light);
     }
-    
+
     #popup .success-icon {
       font-size: 50px;
       color: #00c853;
       margin-bottom: 20px;
       animation: bounce 1s infinite alternate;
     }
-    
+
     @keyframes bounce {
       from { transform: translateY(0); }
       to { transform: translateY(-10px); }
     }
-    
+
     #regNumber {
-      background: var(--reg-number-bg);
+      background: var(--form-reg-number-bg);
       padding: 10px;
       border-radius: 6px;
       font-family: monospace;
       margin: 15px 0;
-      color: var(--secondary);
-      border: 1px dashed var(--reg-number-border);
+      color: var(--form-secondary);
+      border: 1px dashed var(--form-reg-number-border);
     }
-    
+
     #popup button {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      background: linear-gradient(135deg, var(--form-primary), var(--form-primary-dark));
       border: none;
       color: white;
       padding: 12px 25px;
@@ -398,12 +529,12 @@
       transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(255, 45, 45, 0.3);
     }
-    
+
     #popup button:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(255, 45, 45, 0.4);
     }
-    
+
     #overlay {
       display: none;
       position: fixed;
@@ -415,97 +546,259 @@
       backdrop-filter: blur(5px);
       z-index: 999;
     }
-    
-    @media (max-width: 768px) {
-      .container {
-        padding: 10px;
-      }
-      
-      form {
-        padding: 20px;
-      }
-      
-      .form-header h2 {
-        font-size: 24px;
-      }
-      
-      input, select, textarea, button {
-        font-size: 14px;
-        padding: 10px 12px;
-      }
-      
-      #popup {
-        width: 90%;
-        padding: 20px;
-      }
-      
-      #popup h3 {
-        font-size: 20px;
-      }
-      
-      #popup p {
-        font-size: 14px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .form-header h2 {
-        font-size: 20px;
-      }
-      
-      label {
-        font-size: 13px;
-      }
-      
-      input, select, textarea, button {
-        font-size: 13px;
-        padding: 8px 10px;
-      }
-      
-      #progressBarContainer {
-        height: 6px;
-      }
-    }
-    
-    .floating {
-      animation: floating 6s ease-in-out infinite;
-    }
-    
-    @keyframes floating {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
-    }
-    
-    .conditional-field {
-      display: none;
-      margin-top: 10px;
+
+    /* Instructions (styled like apply.html cards) */
+    .instructions-column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
-    /* Theme Toggle Button */
-    .theme-toggle {
+    .instruction-card {
+      background: linear-gradient(145deg, var(--surface), var(--surface-alt));
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px var(--shadow);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .instruction-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 40px var(--shadow-hover);
+    }
+
+    .instruction-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+      transition: all 0.4s ease;
+    }
+
+    .instruction-card:hover::before {
+      width: 100%;
+      opacity: 0.1;
+    }
+
+    .instruction-card h3 {
+      font-family: 'Noto Serif Devanagari', serif;
+      color: var(--accent);
+      margin-bottom: 15px;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .instruction-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .instruction-card li {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .instruction-card li::before {
+      content: '\f058';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 16px;
+    }
+
+    /* Form-specific theme toggle (unchanged) */
+    .form-theme-toggle {
       position: fixed;
       top: 20px;
       right: 20px;
       background: none;
       border: none;
-      color: var(--text-light);
+      color: var(--form-text-light);
       font-size: 24px;
       cursor: pointer;
       z-index: 1000;
       transition: color 0.3s ease;
     }
 
-    .theme-toggle:hover {
-      color: var(--primary);
+    .form-theme-toggle:hover {
+      color: var(--form-primary);
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 992px) {
+      .form-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .instructions-column {
+        order: -1; /* Move instructions above form */
+      }
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .nav-links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+      }
+      .nav-links a {
+        margin: 0 8px;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+      .theme-toggle {
+        margin-left: 8px;
+      }
+      .form-container {
+        margin-top: 70px; /* Adjusted for navbar */
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .form-container {
+        padding: 0 10px;
+      }
+      form {
+        padding: 20px;
+      }
+      .form-header h2 {
+        font-size: 24px;
+      }
+      input, select, textarea, button {
+        font-size: 14px;
+        padding: 10px 12px;
+      }
+      #popup {
+        width: 90%;
+        padding: 20px;
+      }
+      #popup h3 {
+        font-size: 20px;
+      }
+      #popup p {
+        font-size: 14px;
+      }
+      .nav-links a {
+        margin: 0 6px;
+        font-size: 13px;
+      }
+      .theme-toggle {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+      }
+      .navbar .logo {
+        font-size: 22px;
+      }
+      .instruction-card {
+        padding: 15px;
+      }
+      .instruction-card h3 {
+        font-size: 16px;
+      }
+      .instruction-card li {
+        font-size: 13px;
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      .form-header h2 {
+        font-size: 20px;
+      }
+      label {
+        font-size: 13px;
+      }
+      input, select, textarea, button {
+        font-size: 13px;
+        padding: 8px 10px;
+      }
+      #progressBarContainer {
+        height: 6px;
+      }
+      .navbar .logo {
+        font-size: 20px;
+      }
+      .nav-links a {
+        margin: 0 5px;
+        font-size: 12px;
+        padding: 5px;
+      }
+      .theme-toggle {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        margin-left: 5px;
+      }
+      .navbar .container {
+        padding: 0 10px;
+      }
+      .instruction-card {
+        padding: 10px;
+      }
+      .instruction-card h3 {
+        font-size: 14px;
+      }
+      .instruction-card li {
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+    }
+
+    .floating {
+      animation: floating 6s ease-in-out infinite;
+    }
+
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .conditional-field {
+      display: none;
+      margin-top: 10px;
     }
   </style>
 </head>
-<body data-theme="night">
-  <button class="theme-toggle" id="themeToggle">
+<body data-theme="dark" data-form-theme="night">
+  <!-- Navbar (from apply.html) -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">मुख्यमंत्री अभ्युदय योजना</a>
+      <div class="nav-links">
+        <a href="specialty.html">विशेषताएँ</a>
+        <a href="apply.html">प्रवेश प्रक्रिया</a>
+        <a href="formstudents.html">पंजीकरण</a>
+        <a href="contact.html">संपर्क</a>
+        <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Form Theme Toggle (unchanged) -->
+  <button class="form-theme-toggle" id="formThemeToggle">
     <i class="fas fa-moon"></i>
   </button>
 
+  <!-- Popup and Overlay (unchanged) -->
   <div id="overlay"></div>
   <div id="popup">
     <div class="success-icon floating">
@@ -518,255 +811,455 @@
     <button onclick="closePopup()"><i class="fas fa-check"></i> Confirm</button>
   </div>
 
-  <div class="container">
-    <div class="form-header">
-      <h2>Student Document Upload</h2>
-      <p>Please fill all the required details carefully</p>
+  <!-- Form Container with Instructions -->
+  <div class="form-container">
+    <!-- Left Instructions Column -->
+    <div class="instructions-column">
+      <div class="instruction-card">
+        <h3><i class="fas fa-user"></i> छात्र का नाम</h3>
+        <ul>
+          <li>आधार कार्ड के अनुसार पूरा नाम दर्ज करें।</li>
+          <li>उदाहरण: रमेश कुमार शर्मा</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-user-tie"></i> पिता का नाम</h3>
+        <ul>
+          <li>पिता का पूरा नाम दर्ज करें।</li>
+          <li>उदाहरण: सुरेश कुमार</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-user-alt"></i> माता का नाम</h3>
+        <ul>
+          <li>माता का पूरा नाम दर्ज करें।</li>
+          <li>उदाहरण: सुमन देवी</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-calendar-alt"></i> जन्म तिथि</h3>
+        <ul>
+          <li>YYYY-MM-DD प्रारूप में जन्म तिथि चुनें।</li>
+          <li>उदाहरण: 2000-05-15</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-venus-mars"></i> लिंग</h3>
+        <ul>
+          <li>पुरुष, महिला, या अन्य चुनें।</li>
+          <li>आवश्यकतानुसार सही विकल्प का चयन करें।</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-users"></i> श्रेणी</h3>
+        <ul>
+          <li>सामान्य, ओबीसी, एससी, या एसटी चुनें।</li>
+          <li>आधिकारिक दस्तावेजों के अनुसार चयन करें।</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-graduation-cap"></i> हाई स्कूल अंक</h3>
+        <ul>
+          <li>प्रतिशत में अंक दर्ज करें (0–100)।</li>
+          <li>उदाहरण: 85.50</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-graduation-cap"></i> इंटरमीडिएट अंक</h3>
+        <ul>
+          <li>प्रतिशत में अंक दर्ज करें (0–100)।</li>
+          <li>उदाहरण: 78.25</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-graduation-cap"></i> स्नातक अंक</h3>
+        <ul>
+          <li>प्रतिशत में अंक दर्ज करें (0–100)।</li>
+          <li>उदाहरण: 65.75</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-book"></i> स्नातक विषय</h3>
+        <ul>
+          <li>स्नातक का मुख्य विषय दर्ज करें।</li>
+          <li>उदाहरण: भौतिकी, इतिहास</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-university"></i> स्नातक विश्वविद्यालय</h3>
+        <ul>
+          <li>विश्वविद्यालय का पूरा नाम दर्ज करें।</li>
+          <li>उदाहरण: दिल्ली विश्वविद्यालय</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-question-circle"></i> UPSC प्रीलिम्स</h3>
+        <ul>
+          <li>हां/नहीं चुनें।</li>
+          <li>यदि हां, तो योग्यता का वर्ष दर्ज करें (2000–2025)।</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-question-circle"></i> UPPCS प्रीलिम्स</h3>
+        <ul>
+          <li>हां/नहीं चुनें।</li>
+          <li>यदि हां, तो योग्यता का वर्ष दर्ज करें (2000–2025)।</li>
+        </ul>
+      </div>
     </div>
-    
-    <form id="dataForm">
-      <div class="form-group">
-        <label>Student Name</label>
-        <input type="text" name="name" required placeholder="Enter your full name">
+
+    <!-- Form (unchanged) -->
+    <div class="form-inner">
+      <div class="form-header">
+        <h2>छात्र दस्तावेज अपलोड</h2>
+        <p>कृपया सभी आवश्यक विवरण सावधानी से भरें</p>
       </div>
       
-      <div class="form-group">
-        <label>Father's Name</label>
-        <input type="text" name="fatherName" required placeholder="Enter father's name">
-      </div>
-      
-      <div class="form-group">
-        <label>Mother's Name</label>
-        <input type="text" name="motherName" required placeholder="Enter mother's name">
-      </div>
-      
-      <div class="form-group">
-        <label>Date of Birth</label>
-        <input type="date" name="dob" required>
-      </div>
-      
-      <div class="form-group">
-        <label>Gender</label>
-        <select name="gender" required>
-          <option value="" disabled selected>Select Gender</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-      
-      <div class="form-group">
-        <label>Category</label>
-        <select name="category" required>
-          <option value="" disabled selected>Select Category</option>
-          <option value="General">General</option>
-          <option value="OBC">OBC</option>
-          <option value="SC">SC</option>
-          <option value="ST">ST</option>
-        </select>
-      </div>
-      
-      <div class="form-group">
-        <label>High School Marks Percentage</label>
-        <input type="number" name="highSchoolPercentage" step="0.01" min="0" max="100" required placeholder="Enter percentage">
-      </div>
-      
-      <div class="form-group">
-        <label>Intermediate Marks Percentage</label>
-        <input type="number" name="interPercentage" step="0.01" min="0" max="100" required placeholder="Enter percentage">
-      </div>
-      
-      <div class="form-group">
-        <label>Graduation Marks Percentage</label>
-        <input type="number" name="graduationPercentage" step="0.01" min="0" max="100" required placeholder="Enter percentage">
-      </div>
-      
-      <div class="form-group">
-        <label>Graduation Subject</label>
-        <input type="text" name="graduationSubject" required placeholder="Enter your graduation subject (e.g., Physics)">
-      </div>
-      
-      <div class="form-group">
-        <label>Graduation University</label>
-        <input type="text" name="graduationUniversity" required placeholder="Enter your graduation university">
-      </div>
-      
-      <div class="form-group">
-        <label>Have you passed UPSC Prelims in previous years?</label>
-        <select name="upscPrelims" id="upscPrelims" required>
-          <option value="" disabled selected>Select Option</option>
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
-        </select>
-        <div id="upscPrelimsYearField" class="conditional-field">
-          <label>Year of UPSC Prelims Qualification</label>
-          <input type="number" name="upscPrelimsYear" min="2000" max="2025" placeholder="Enter year (e.g., 2023)">
+      <form id="dataForm">
+        <div class="form-group">
+          <label>छात्र का नाम</label>
+          <input type="text" name="name" required placeholder="अपना पूरा नाम दर्ज करें">
         </div>
-      </div>
-      
-      <div class="form-group">
-        <label>Have you passed UPPCS Prelims in previous years?</label>
-        <select name="uppcsPrelims" id="uppcsPrelims" required>
-          <option value="" disabled selected>Select Option</option>
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
-        </select>
-        <div id="uppcsPrelimsYearField" class="conditional-field">
-          <label>Year of UPPCS Prelims Qualification</label>
-          <input type="number" name="uppcsPrelimsYear" min="2000" max="2025" placeholder="Enter year (e.g., 2023)">
+        
+        <div class="form-group">
+          <label>पिता का नाम</label>
+          <input type="text" name="fatherName" required placeholder="पिता का नाम दर्ज करें">
         </div>
-      </div>
-      
-      <div class="form-group">
-        <label>Mobile Number</label>
-        <input type="tel" name="mobileNumber" pattern="[0-9]{10}" required placeholder="Enter 10-digit mobile number">
-      </div>
-      
-      <div class="form-group">
-        <label>Aadhaar Number</label>
-        <input type="text" name="aadhaarNumber" pattern="[0-9]{12}" required placeholder="Enter 12-digit Aadhaar number">
-      </div>
-      
-      <div class="form-group">
-        <label>Email ID</label>
-        <input type="email" name="emailId" required placeholder="Enter your email address">
-      </div>
-      
-      <div class="form-group">
-        <label>Address</label>
-        <textarea name="address" required placeholder="Enter your complete address"></textarea>
-      </div>
-      
-      <div class="form-group">
-        <label>District</label>
-        <input type="text" name="district" required placeholder="Enter your district">
-      </div>
-      
-      <div class="form-group">
-        <label>Upload Aadhaar Card (PDF)</label>
-        <div class="file-input-container">
-          <label class="file-input-label">
-            <span class="file-input-text" id="aadhaarFileName">Choose file...</span>
-            <span class="file-input-icon"><i class="fas fa-file-pdf"></i></span>
-            <input type="file" id="aadhaarFile" accept="application/pdf" required>
-          </label>
+        
+        <div class="form-group">
+          <label>माता का नाम</label>
+          <input type="text" name="motherName" required placeholder="माता का नाम दर्ज करें">
         </div>
-      </div>
-      
-      <div class="form-group">
-        <label>Upload High School Marksheet (PDF)</label>
-        <div class="file-input-container">
-          <label class="file-input-label">
-            <span class="file-input-text" id="marksheetFileName">Choose file...</span>
-            <span class="file-input-icon"><i class="fas fa-file-pdf"></i></span>
-            <input type="file" id="marksheetFile" accept="application/pdf" required>
-          </label>
+        
+        <div class="form-group">
+          <label>जन्म तिथि</label>
+          <input type="date" name="dob" required>
         </div>
-      </div>
-      
-      <div class="form-group">
-        <label>Upload Inter Marksheet (PDF)</label>
-        <div class="file-input-container">
-          <label class="file-input-label">
-            <span class="file-input-text" id="interFileName">Choose file...</span>
-            <span class="file-input-icon"><i class="fas fa-file-pdf"></i></span>
-            <input type="file" id="interFile" accept="application/pdf" required>
-          </label>
+        
+        <div class="form-group">
+          <label>लिंग</label>
+          <select name="gender" required>
+            <option value="" disabled selected>लिंग चुनें</option>
+            <option value="Male">पुरुष</option>
+            <option value="Female">महिला</option>
+            <option value="Other">अन्य</option>
+          </select>
         </div>
-      </div>
-      
-      <div class="form-group">
-        <label>Upload Graduation Marksheet (PDF)</label>
-        <div class="file-input-container">
-          <label class="file-input-label">
-            <span class="file-input-text" id="graduationFileName">Choose file...</span>
-            <span class="file-input-icon"><i class="fas fa-file-pdf"></i></span>
-            <input type="file" id="graduationFile" accept="application/pdf" required>
-          </label>
+        
+        <div class="form-group">
+          <label>श्रेणी</label>
+          <select name="category" required>
+            <option value="" disabled selected>श्रेणी चुनें</option>
+            <option value="General">सामान्य</option>
+            <option value="OBC">ओबीसी</option>
+            <option value="SC">एससी</option>
+            <option value="ST">एसटी</option>
+          </select>
         </div>
-      </div>
-      
-      <div class="form-group">
-        <label>Upload Domicile Certificate (PDF)</label>
-        <div class="file-input-container">
-          <label class="file-input-label">
-            <span class="file-input-text" id="domicileFileName">Choose file...</span>
-            <span class="file-input-icon"><i class="fas fa-file-pdf"></i></span>
-            <input type="file" id="domicileFile" accept="application/pdf" required>
-          </label>
+        
+        <div class="form-group">
+          <label>हाई स्कूल अंक प्रतिशत</label>
+          <input type="number" name="highSchoolPercentage" step="0.01" min="0" max="100" required placeholder="प्रतिशत दर्ज करें">
         </div>
-      </div>
-      
-      <div class="form-group">
-        <label>Upload Photo (JPG/PNG)</label>
-        <div class="file-input-container">
-          <label class="file-input-label">
-            <span class="file-input-text" id="photoFileName">Choose file...</span>
-            <span class="file-input-icon"><i class="fas fa-image"></i></span>
-            <input type="file" id="photoFile" accept="image/*" required>
-          </label>
+        
+        <div class="form-group">
+          <label>इंटरमीडिएट अंक प्रतिशत</label>
+          <input type="number" name="interPercentage" step="0.01" min="0" max="100" required placeholder="प्रतिशत दर्ज करें">
         </div>
-      </div>
-      
-      <button type="submit"><i class="fas fa-paper-plane"></i> Submit Application</button>
-      
-      <div id="progress">
-        <div class="progress-text">Uploading your documents, please wait...</div>
-        <div id="progressBarContainer">
-          <div id="progressBar"></div>
+        
+        <div class="form-group">
+          <label>स्नातक अंक प्रतिशत</label>
+          <input type="number" name="graduationPercentage" step="0.01" min="0" max="100" required placeholder="प्रतिशत दर्ज करें">
         </div>
-        <div class="progress-percentage" id="progressPercentage">0%</div>
+        
+        <div class="form-group">
+          <label>स्नातक विषय</label>
+          <input type="text" name="graduationSubject" required placeholder="स्नातक विषय दर्ज करें (उदाहरण: भौतिकी)">
+        </div>
+        
+        <div class="form-group">
+          <label>स्नातक विश्वविद्यालय</label>
+          <input type="text" name="graduationUniversity" required placeholder="स्नातक विश्वविद्यालय दर्ज करें">
+        </div>
+        
+        <div class="form-group">
+          <label>क्या आपने पिछले वर्षों में UPSC प्रीलिम्स पास किया है?</label>
+          <select name="upscPrelims" id="upscPrelims" required>
+            <option value="" disabled selected>विकल्प चुनें</option>
+            <option value="Yes">हां</option>
+            <option value="No">नहीं</option>
+          </select>
+          <div id="upscPrelimsYearField" class="conditional-field">
+            <label>UPSC प्रीलिम्स योग्यता का वर्ष</label>
+            <input type="number" name="upscPrelimsYear" min="2000" max="2025" placeholder="वर्ष दर्ज करें (उदाहरण: 2023)">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>क्या आपने पिछले वर्षों में UPPCS प्रीलिम्स पास किया है?</label>
+          <select name="uppcsPrelims" id="uppcsPrelims" required>
+            <option value="" disabled selected>विकल्प चुनें</option>
+            <option value="Yes">हां</option>
+            <option value="No">नहीं</option>
+          </select>
+          <div id="uppcsPrelimsYearField" class="conditional-field">
+            <label>UPPCS प्रीलिम्स योग्यता का वर्ष</label>
+            <input type="number" name="uppcsPrelimsYear" min="2000" max="2025" placeholder="वर्ष दर्ज करें (उदाहरण: 2023)">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>मोबाइल नंबर</label>
+          <input type="tel" name="mobileNumber" pattern="[0-9]{10}" required placeholder="10 अंकों का मोबाइल नंबर दर्ज करें">
+        </div>
+        
+        <div class="form-group">
+          <label>आधार नंबर</label>
+          <input type="text" name="aadhaarNumber" pattern="[0-9]{12}" required placeholder="12 अंकों का आधार नंबर दर्ज करें">
+        </div>
+        
+        <div class="form-group">
+          <label>ईमेल आईडी</label>
+          <input type="email" name="emailId" required placeholder="अपना ईमेल पता दर्ज करें">
+        </div>
+        
+        <div class="form-group">
+          <label>पता</label>
+          <textarea name="address" required placeholder="अपना पूरा पता दर्ज करें"></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label>जिला</label>
+          <input type="text" name="district" required placeholder="अपना जिला दर्ज करें">
+        </div>
+        
+        <div class="form-group">
+          <label>आधार कार्ड अपलोड करें (PDF)</label>
+          <div class="file-input-container">
+            <label class="file-input-label">
+              <span class="file-input-text" id="aadhaarFileName">फाइल चुनें...</span>
+              <span class="file-input-icon"><i class="fas fa-file-pdf"></i></span>
+              <input type="file" id="aadhaarFile" accept="application/pdf" required>
+            </label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>हाई स्कूल मार्कशीट अपलोड करें (PDF)</label>
+          <div class="file-input-container">
+            <label class="file-input-label">
+              <span class="file-input-text" id="marksheetFileName">फाइल चुनें...</span>
+              <span class="file-input-icon"><i class="fas fa-file-pdf"></i></span>
+              <input type="file" id="marksheetFile" accept="application/pdf" required>
+            </label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>इंटर मार्कशीट अपलोड करें (PDF)</label>
+          <div class="file-input-container">
+            <label class="file-input-label">
+              <span class="file-input-text" id="interFileName">फाइल चुनें...</span>
+              <span class="file-input-icon"><i class="fas fa-file-pdf"></i></span>
+              <input type="file" id="interFile" accept="application/pdf" required>
+            </label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>स्नातक मार्कशीट अपलोड करें (PDF)</label>
+          <div class="file-input-container">
+            <label class="file-input-label">
+              <span class="file-input-text" id="graduationFileName">फाइल चुनें...</span>
+              <span class="file-input-icon"><i class="fas fa-file-pdf"></i></span>
+              <input type="file" id="graduationFile" accept="application/pdf" required>
+            </label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>निवास प्रमाण पत्र अपलोड करें (PDF)</label>
+          <div class="file-input-container">
+            <label class="file-input-label">
+              <span class="file-input-text" id="domicileFileName">फाइल चुनें...</span>
+              <span class="file-input-icon"><i class="fas fa-file-pdf"></i></span>
+              <input type="file" id="domicileFile" accept="application/pdf" required>
+            </label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>फोटो अपलोड करें (JPG/PNG)</label>
+          <div class="file-input-container">
+            <label class="file-input-label">
+              <span class="file-input-text" id="photoFileName">फाइल चुनें...</span>
+              <span class="file-input-icon"><i class="fas fa-image"></i></span>
+              <input type="file" id="photoFile" accept="image/*" required>
+            </label>
+          </div>
+        </div>
+        
+        <button type="submit"><i class="fas fa-paper-plane"></i> आवेदन जमा करें</button>
+        
+        <div id="progress">
+          <div class="progress-text">आपके दस्तावेज अपलोड हो रहे हैं, कृपया प्रतीक्षा करें...</div>
+          <div id="progressBarContainer">
+            <div id="progressBar"></div>
+          </div>
+          <div class="progress-percentage" id="progressPercentage">0%</div>
+        </div>
+        
+        <div id="response"></div>
+      </form>
+    </div>
+
+    <!-- Right Instructions Column -->
+    <div class="instructions-column">
+      <div class="instruction-card">
+        <h3><i class="fas fa-phone"></i> मोबाइल नंबर</h3>
+        <ul>
+          <li>10 अंकों का वैध मोबाइल नंबर दर्ज करें।</li>
+          <li>उदाहरण: 9876543210</li>
+        </ul>
       </div>
-      
-      <div id="response"></div>
-    </form>
+      <div class="instruction-card">
+        <h3><i class="fas fa-id-card"></i> आधार नंबर</h3>
+        <ul>
+          <li>12 अंकों का आधार नंबर दर्ज करें।</li>
+          <li>उदाहरण: 123456789012</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-envelope"></i> ईमेल आईडी</h3>
+        <ul>
+          <li>वैध ईमेल पता दर्ज करें।</li>
+          <li>उदाहरण: example@gmail.com</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-home"></i> पता</h3>
+        <ul>
+          <li>पूरा स्थायी पता दर्ज करें।</li>
+          <li>उदाहरण: 123, मुख्य मार्ग, निजामपुर, हापुड़</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-map-marker-alt"></i> जिला</h3>
+        <ul>
+          <li>अपने जिले का नाम दर्ज करें।</li>
+          <li>उदाहरण: हापुड़</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-file-pdf"></i> आधार कार्ड</h3>
+        <ul>
+          <li>PDF प्रारूप में अपलोड करें।</li>
+          <li>आकार: 20KB–300KB</li>
+          <li>सुनिश्चित करें कि दस्तावेज स्पष्ट हो।</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-file-pdf"></i> हाई स्कूल मार्कशीट</h3>
+        <ul>
+          <li>PDF प्रारूप में अपलोड करें।</li>
+          <li>आकार: 20KB–300KB</li>
+          <li>स्पष्ट और पठनीय हो।</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-file-pdf"></i> इंटर मार्कशीट</h3>
+        <ul>
+          <li>PDF प्रारूप में अपलोड करें।</li>
+          <li>आकार: 20KB–300KB</li>
+          <li>स्पष्ट और पठनीय हो।</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-file-pdf"></i> स्नातक मार्कशीट</h3>
+        <ul>
+          <li>PDF प्रारूप में अपलोड करें।</li>
+          <li>आकार: 20KB–300KB</li>
+          <li>स्पष्ट और पठनीय हो।</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-file-pdf"></i> निवास प्रमाण पत्र</h3>
+        <ul>
+          <li>PDF प्रारूप में अपलोड करें।</li>
+          <li>आकार: 20KB–300KB</li>
+          <li>स्पष्ट और पठनीय हो।</li>
+        </ul>
+      </div>
+      <div class="instruction-card">
+        <h3><i class="fas fa-image"></i> फोटो</h3>
+        <ul>
+          <li>JPG या PNG प्रारूप में अपलोड करें।</li>
+          <li>आकार: 20KB–300KB</li>
+          <li>हाल का पासपोर्ट साइज फोटो हो।</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <script>
-    // Theme Toggle Functionality
+    // Navbar Theme Toggle (from apply.html)
     const themeToggle = document.getElementById('themeToggle');
     const body = document.body;
-
-    // Load saved theme from localStorage
-    const savedTheme = localStorage.getItem('theme') || 'night';
+    
+    const savedTheme = localStorage.getItem('theme') || 'dark';
     body.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
-
+    themeToggle.innerHTML = savedTheme === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+    
     themeToggle.addEventListener('click', () => {
       const currentTheme = body.getAttribute('data-theme');
-      const newTheme = currentTheme === 'night' ? 'day' : 'night';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       body.setAttribute('data-theme', newTheme);
+      themeToggle.innerHTML = newTheme === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
       localStorage.setItem('theme', newTheme);
-      updateThemeIcon(newTheme);
     });
 
-    function updateThemeIcon(theme) {
-      themeToggle.innerHTML = theme === 'night' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+    // Form Theme Toggle (unchanged)
+    const formThemeToggle = document.getElementById('formThemeToggle');
+    
+    const savedFormTheme = localStorage.getItem('formTheme') || 'night';
+    body.setAttribute('data-form-theme', savedFormTheme);
+    updateFormThemeIcon(savedFormTheme);
+
+    formThemeToggle.addEventListener('click', () => {
+      const currentFormTheme = body.getAttribute('data-form-theme');
+      const newFormTheme = currentFormTheme === 'night' ? 'day' : 'night';
+      body.setAttribute('data-form-theme', newFormTheme);
+      localStorage.setItem('formTheme', newFormTheme);
+      updateFormThemeIcon(newFormTheme);
+    });
+
+    function updateFormThemeIcon(theme) {
+      formThemeToggle.innerHTML = theme === 'night' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
     }
 
-    // Existing Form Functionality
+    // Form Functionality (unchanged)
     document.getElementById('aadhaarFile').addEventListener('change', function(e) {
-      document.getElementById('aadhaarFileName').textContent = e.target.files[0]?.name || 'Choose file...';
+      document.getElementById('aadhaarFileName').textContent = e.target.files[0]?.name || 'फाइल चुनें...';
     });
     
     document.getElementById('marksheetFile').addEventListener('change', function(e) {
-      document.getElementById('marksheetFileName').textContent = e.target.files[0]?.name || 'Choose file...';
+      document.getElementById('marksheetFileName').textContent = e.target.files[0]?.name || 'फाइल चुनें...';
     });
     
     document.getElementById('interFile').addEventListener('change', function(e) {
-      document.getElementById('interFileName').textContent = e.target.files[0]?.name || 'Choose file...';
+      document.getElementById('interFileName').textContent = e.target.files[0]?.name || 'फाइल चुनें...';
     });
     
     document.getElementById('graduationFile').addEventListener('change', function(e) {
-      document.getElementById('graduationFileName').textContent = e.target.files[0]?.name || 'Choose file...';
+      document.getElementById('graduationFileName').textContent = e.target.files[0]?.name || 'फाइल चुनें...';
     });
     
     document.getElementById('domicileFile').addEventListener('change', function(e) {
-      document.getElementById('domicileFileName').textContent = e.target.files[0]?.name || 'Choose file...';
+      document.getElementById('domicileFileName').textContent = e.target.files[0]?.name || 'फाइल चुनें...';
     });
     
     document.getElementById('photoFile').addEventListener('change', function(e) {
-      document.getElementById('photoFileName').textContent = e.target.files[0]?.name || 'Choose file...';
+      document.getElementById('photoFileName').textContent = e.target.files[0]?.name || 'फाइल चुनें...';
     });
 
     document.getElementById('upscPrelims').addEventListener('change', function(e) {
@@ -804,7 +1297,7 @@
       const popup = document.getElementById('popup');
       const regNumberElement = document.getElementById('regNumber');
       const overlay = document.getElementById('overlay');
-      regNumberElement.innerText = `Registration Number: ${regNumber}`;
+      regNumberElement.innerText = `पंजीकरण संख्या: ${regNumber}`;
       popup.style.display = 'block';
       overlay.style.display = 'block';
     }
@@ -837,7 +1330,7 @@
       for (let key in files) {
         if (!files[key]) {
           responseDiv.className = 'error';
-          responseDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please upload all required files.';
+          responseDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> कृपया सभी आवश्यक फाइलें अपलोड करें।';
           responseDiv.style.display = 'block';
           progress.style.display = 'none';
           return;
@@ -909,7 +1402,7 @@
             showPopup(data.message, data.registrationNumber);
             document.getElementById('dataForm').reset();
             document.querySelectorAll('.file-input-text').forEach(el => {
-              el.textContent = 'Choose file...';
+              el.textContent = 'फाइल चुनें...';
             });
             document.getElementById('upscPrelimsYearField').style.display = 'none';
             document.getElementById('uppcsPrelimsYearField').style.display = 'none';
@@ -924,11 +1417,32 @@
         .catch(error => {
           progress.style.display = 'none';
           responseDiv.className = 'error';
-          responseDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error: ' + error.message;
+          responseDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> त्रुटि: ' + error.message;
           responseDiv.style.display = 'block';
         });
       });
     });
+
+    // Navbar Enforcement (from apply.html)
+    function enforceNavbarStyles() {
+      const navbar = document.querySelector('.navbar');
+      if (navbar) {
+        navbar.style.background = 'linear-gradient(135deg, #ff6200, #ff8533) !important';
+        navbar.style.backgroundColor = '#ff6200 !important';
+        navbar.style.opacity = '1 !important';
+        navbar.style.visibility = 'visible !important';
+        navbar.style.transform = 'none !important';
+        navbar.style.position = 'fixed !important';
+        navbar.style.top = '0 !important';
+        navbar.style.width = '100% !important';
+        navbar.style.zIndex = '10000 !important';
+      }
+      requestAnimationFrame(enforceNavbarStyles);
+    }
+
+    window.addEventListener('scroll', enforceNavbarStyles);
+    window.addEventListener('load', enforceNavbarStyles);
+    enforceNavbarStyles();
   </script>
 </body>
 </html>
