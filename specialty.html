@@ -75,7 +75,7 @@
     .navbar {
       background: linear-gradient(135deg, var(--navbar-primary), var(--navbar-primary-light)) !important;
       background-color: var(--navbar-primary) !important; /* Fallback */
-      padding: 15px 0;
+      padding: 12px 0;
       position: fixed !important;
       top: 0 !important;
       left: 0 !important;
@@ -94,7 +94,7 @@
       align-items: center;
       max-width: 1200px;
       margin: auto;
-      padding: 0 20px;
+      padding: 0 15px;
     }
 
     .navbar .logo {
@@ -104,6 +104,7 @@
       text-decoration: none;
       text-shadow: 0 0 8px rgba(255, 98, 0, 0.5);
       transition: text-shadow 0.3s ease;
+      white-space: nowrap;
     }
 
     .navbar .logo:hover {
@@ -112,7 +113,15 @@
 
     .nav-links {
       display: flex;
+      flex-direction: row;
       align-items: center;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none;
     }
 
     .nav-links a {
@@ -120,11 +129,18 @@
       text-decoration: none;
       margin: 0 15px;
       font-weight: 600;
-      transition: color 0.3s ease;
+      font-size: 16px;
+      transition: color 0.3s ease, transform 0.2s ease;
+      white-space: nowrap;
     }
 
     .nav-links a:hover {
       color: var(--navbar-secondary);
+      transform: translateY(-2px);
+    }
+
+    .nav-links a:active {
+      transform: scale(0.95);
     }
 
     /* Theme Toggle in Navbar */
@@ -140,18 +156,25 @@
       cursor: pointer;
       color: var(--navbar-text-contrast);
       font-size: 20px;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease;
+      min-height: 48px;
+      flex-shrink: 0;
     }
 
     .theme-toggle:hover {
       background: rgba(0, 0, 0, 0.5);
+      transform: scale(1.1);
+    }
+
+    .theme-toggle:active {
+      transform: scale(0.95);
     }
 
     /* Header */
     header {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       padding: 60px 15px 100px;
-      margin-top: 70px; /* Offset for fixed navbar */
+      margin-top: 60px; /* Offset for fixed navbar */
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -654,7 +677,7 @@
     .conclusion h2 {
       color: var(--accent);
       font-size: 36px;
-      margin-bottom: 30 DATA Controls
+      margin-bottom: 30px;
     }
 
     .conclusion p {
@@ -674,15 +697,14 @@
       text-decoration: none;
       border-radius: 50px;
       font-weight: 600;
-      box-shadow: 0 5px  raw.githubusercontent
-
-20px var(--shadow);
+      box-shadow: 0 5px 20px var(--shadow);
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       position: relative;
       overflow: hidden;
       border: none;
       cursor: pointer;
       font-size: 16px;
+      min-height: 48px;
     }
 
     .btn-outline {
@@ -833,6 +855,7 @@
       visibility: hidden;
       transition: all 0.3s ease;
       z-index: 999;
+      min-height: 48px;
     }
 
     .back-to-top.active {
@@ -883,25 +906,26 @@
       }
 
       .navbar .container {
-        flex-direction: column;
-        gap: 10px;
+        padding: 0 12px;
       }
 
-      .nav-links {
-        flex-direction: column;
-        align-items: center;
+      .navbar .logo {
+        font-size: 24px;
       }
 
       .nav-links a {
-        margin: 5px 0;
+        margin: 0 10px;
+        font-size: 15px;
       }
 
       .theme-toggle {
-        margin-top: 10px;
+        width: 38px;
+        height: 38px;
+        font-size: 19px;
       }
 
       header {
-        margin-top: 100px; /* Adjust for stacked navbar */
+        margin-top: 70px; /* Adjust for navbar height */
       }
     }
 
@@ -930,8 +954,27 @@
         font-size: 48px;
       }
 
+      .navbar .container {
+        padding: 0 10px;
+      }
+
+      .navbar .logo {
+        font-size: 22px;
+      }
+
+      .nav-links a {
+        margin: 0 8px;
+        font-size: 14px;
+      }
+
+      .theme-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+      }
+
       header {
-        margin-top: 120px;
+        margin-top: 80px;
       }
     }
 
@@ -999,45 +1042,79 @@
         transform: none;
       }
 
+      .navbar .container {
+        padding: 0 10px;
+      }
+
       .navbar .logo {
-        font-size: 22px;
+        font-size: 20px;
+      }
+
+      .nav-links a {
+        margin: 0 6px;
+        font-size: 13px;
+      }
+
+      .theme-toggle {
+        width: 34px;
+        height: 34px;
+        font-size: 17px;
       }
 
       header {
-        margin-top: 140px; /* Adjust for taller stacked navbar */
+        margin-top: 80px; /* Adjust for navbar height */
+      }
+    }
+
+    @media screen and (max-width: 360px) {
+      .navbar .logo {
+        font-size: 18px;
+      }
+
+      .nav-links a {
+        margin: 0 5px;
+        font-size: 12px;
+      }
+
+      .theme-toggle {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+      }
+
+      header {
+        margin-top: 80px;
       }
     }
   </style>
 </head>
 <body data-theme="dark">
 
+<!-- Navbar (Fixed at the Top) -->
+<nav class="navbar" aria-label="मुख्य नेविगेशन">
+  <div class="container">
+    <a href="index.html" class="logo" aria-label="होम पेज">मुख्यमंत्री अभ्युदय योजना</a>
+    <div class="nav-links">
+      <a href="specialty.html" aria-label="विशेषताएँ पेज">विशेषताएँ</a>
+      <a href="apply.html" aria-label="प्रवेश प्रक्रिया पेज">प्रवेश प्रक्रिया</a>
+      <a href="formstudents.html" aria-label="पंजीकरण पेज">पंजीकरण</a>
+      <a href="contact.html" aria-label="संपर्क पेज">संपर्क</a>
+      <button class="theme-toggle" id="themeToggle" title="थीम टॉगल करें" aria-label="थीम टॉगल करें">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
 <!-- Header -->
 <header id="home">
-  <!-- Navbar from main page, fixed with bhagwa background locked -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="logo">मुख्यमंत्री अभ्युदय योजना</a>
-      <div class="nav-links">
-        <a href="specialty.html">विशेषताएँ</a>
-        <a href="apply.html">प्रवेश प्रक्रिया</a>
-        <a href="formstudents.html">पंजीकरण</a>
-        <a href="contact.html">संपर्क</a>
-        <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
-          <i class="fas fa-moon"></i>
-        </button>
-      </div>
-    </div>
-  </nav>
   <div class="header-content">
     <h1>मुख्यमंत्री अभ्युदय योजना</h1>
     <p class="header-subtitle">UPSC और UPPCS की तैयारी के लिए प्रदेश सरकार की महत्वाकांक्षी योजना</p>
     <span class="header-badge"><i class="fas fa-award"></i> सरकार द्वारा प्रमाणित</span>
     
     <div class="hero-btns">
-      <!-- पंजीकरण करें बटन - नए पेज पर ले जाएगा -->
       <a href="formstudents.html" class="btn" target="_blank">पंजीकरण करें <i class="fas fa-arrow-right"></i></a>
-      
-      <!-- वीडियो देखें बटन -->
       <button class="btn btn-outline" id="watchVideoBtn">
         <i class="fas fa-play"></i> वीडियो देखें
       </button>
@@ -1240,6 +1317,52 @@
   </div>
 </section>
 
+<!-- Subpage Content (Specialty.html - विशेषताएँ) -->
+<section class="section" id="specialty">
+  <div class="section-title">
+    <h2>विशेषताएँ</h2>
+    <p>मुख्यमंत्री अभ्युदय योजना की मुख्य विशेषताएँ जो इसे अनूठा बनाती हैं</p>
+  </div>
+  
+  <div class="cards-container">
+    <div class="card">
+      <div class="card-icon">
+        <i class="fas fa-chalkboard-teacher"></i>
+      </div>
+      <h3>विशेषज्ञ शिक्षक</h3>
+      <p>हमारे पास अनुभवी और विशेषज्ञ शिक्षक हैं जो UPSC और UPPCS के पाठ्यक्रम को गहराई से समझते हैं। वे छात्रों को व्यक्तिगत मार्गदर्शन प्रदान करते हैं।</p>
+      <a href="#" class="card-link">और जानें <i class="fas fa-arrow-right"></i></a>
+    </div>
+    
+    <div class="card">
+      <div class="card-icon">
+        <i class="fas fa-laptop-code"></i>
+      </div>
+      <h3>आधुनिक तकनीक</h3>
+      <p>ऑनलाइन लर्निंग प्लेटफॉर्म के साथ-साथ स्मार्ट क्लासरूम और डिजिटल संसाधनों का उपयोग। छात्रों को नवीनतम तकनीक के साथ पढ़ाई करने का अवसर।</p>
+      <a href="#" class="card-link">और जानें <i class="fas fa-arrow-right"></i></a>
+    </div>
+    
+    <div class="card">
+      <div class="card-icon">
+        <i class="fas fa-users"></i>
+      </div>
+      <h3>छात्र समुदाय</h3>
+      <p>सहपाठियों के साथ ग्रुप डिस्कशन और पीयर लर्निंग का अवसर। एक सहायक समुदाय जो प्रेरणा और सहयोग प्रदान करता है।</p>
+      <a href="#" class="card-link">और जानें <i class="fas fa-arrow-right"></i></a>
+    </div>
+    
+    <div class="card">
+      <div class="card-icon">
+        <i class="fas fa-calendar-check"></i>
+      </div>
+      <h3>लचीला समय</h3>
+      <p>छात्र अपनी सुविधा के अनुसार ऑनलाइन या ऑफलाइन कक्षाओं में शामिल हो सकते हैं। लचीले समय के साथ पढ़ाई को अपने शेड्यूल में फिट करें।</p>
+      <a href="#" class="card-link">और जानें <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer id="contact">
   <div class="footer-content">
@@ -1256,6 +1379,7 @@
         <li><a href="#about"><i class="fas fa-chevron-right"></i> योजना के बारे में</a></li>
         <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> सफल छात्र</a></li>
         <li><a href="#registration"><i class="fas fa-chevron-right"></i> पंजीकरण करें</a></li>
+        <li><a href="#specialty"><i class="fas fa-chevron-right"></i> विशेषताएँ</a></li>
       </ul>
     </div>
     
@@ -1288,7 +1412,7 @@
 </footer>
 
 <!-- Back to Top Button -->
-<a href="#" class="back-to-top" id="backToTop">
+<a href="#" class="back-to-top" id="backToTop" aria-label="शीर्ष पर वापस जाएं">
   <i class="fas fa-arrow-up"></i>
 </a>
 
@@ -1373,9 +1497,11 @@
   });
 
   // Safeguard: Enforce navbar visibility and bhagwa background on scroll
+  let lastScrollY = window.scrollY;
   function enforceNavbarStyles() {
     const navbar = document.querySelector('.navbar');
-    if (navbar) {
+    if (navbar && Math.abs(window.scrollY - lastScrollY) > 5) {
+      lastScrollY = window.scrollY;
       navbar.style.background = 'linear-gradient(135deg, #ff6200, #ff8533) !important';
       navbar.style.backgroundColor = '#ff6200 !important';
       navbar.style.opacity = '1 !important';
@@ -1386,10 +1512,8 @@
       navbar.style.width = '100% !important';
       navbar.style.zIndex = '10000 !important';
     }
-    requestAnimationFrame(enforceNavbarStyles); // Continuous enforcement
   }
 
-  // Start enforcement on page load and scroll
   window.addEventListener('scroll', enforceNavbarStyles);
   window.addEventListener('load', enforceNavbarStyles);
   enforceNavbarStyles(); // Immediate call
