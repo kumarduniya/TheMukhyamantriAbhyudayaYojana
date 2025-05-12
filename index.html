@@ -2,46 +2,75 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="मुख्यमंत्री अभ्युदय योजना 2024 के तहत राजकीय IAS/PCS कोचिंग केंद्र, निजामपुर, हापुड़ में प्रवेश शुरू। मुफ्त कोचिंग, आधुनिक सुविधाएँ और विशेषज्ञ मार्गदर्शन।">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="मुख्यमंत्री अभ्युदय योजना 2025 के तहत राजकीय IAS/PCS कोचिंग केंद्र, निजामपुर, हापुड़ में प्रवेश शुरू। मुफ्त कोचिंग, आधुनिक सुविधाएँ और विशेषज्ञ मार्गदर्शन।">
   <meta name="keywords" content="मुख्यमंत्री अभ्युदय योजना, IAS कोचिंग, PCS कोचिंग, हापुड़, निजामपुर, मुफ्त कोचिंग">
   <meta name="author" content="राजकीय IAS/PCS कोचिंग केंद्र, निजामपुर, हापुड़">
   <title>मुख्यमंत्री अभ्युदय योजना 2025 - निजामपुर, हापुड़</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
     :root {
-      --primary-color: #00695c; /* Teal */
-      --secondary-color: #ffca28; /* Gold */
-      --text-color: #333;
-      --bg-light: #f4f7f6;
-      --card-bg: #ffffff;
-      --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      /* Dark Theme (default) */
+      --primary: #00695c;
+      --primary-light: #439889;
+      --secondary: #ffca28;
+      --accent: #ffca28;
+      --icon-color: #ffeb3b; /* Bright yellow for icons */
+      --text-logo: #ffffff; /* White for logo text */
+      --background: #121212;
+      --surface: #1e1e1e;
+      --surface-alt: #252525;
+      --text: #f5f5f5;
+      --text-secondary: #ccc;
+      --text-gray: #757575;
+      --shadow: rgba(0, 0, 0, 0.3);
+      --shadow-hover: rgba(0, 105, 92, 0.3);
+    }
+
+    [data-theme="light"] {
+      /* Light Theme */
+      --primary: #00695c;
+      --primary-light: #439889;
+      --secondary: #ffca28;
+      --accent: #ffca28;
+      --icon-color: #ffeb3b;
+      --text-logo: #ffffff;
+      --background: #f4f7f6;
+      --surface: #ffffff;
+      --surface-alt: #e0e0e0;
+      --text: #333333;
+      --text-secondary: #555555;
+      --text-gray: #757575;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --shadow-hover: rgba(0, 105, 92, 0.2);
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
     }
 
     body {
-      background: var(--bg-light);
-      color: var(--text-color);
-      line-height: 1.6;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      scroll-behavior: smooth;
     }
 
+    /* Navbar */
     .navbar {
-      background: var(--primary-color);
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
       padding: 15px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: var(--shadow);
+      box-shadow: 0 5px 15px var(--shadow);
     }
 
     .navbar .container {
@@ -53,247 +82,342 @@
       padding: 0 20px;
     }
 
-    .navbar a {
-      color: #fff;
+    .navbar .logo {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text-logo);
+      text-decoration: none;
+      text-shadow: 0 0 8px rgba(255, 202, 40, 0.5);
+      transition: text-shadow 0.3s ease;
+    }
+
+    .navbar .logo:hover {
+      text-shadow: 0 0 12px rgba(255, 202, 40, 0.8);
+    }
+
+    .nav-links a {
+      color: var(--text-logo);
       text-decoration: none;
       margin: 0 15px;
       font-weight: 600;
       transition: color 0.3s ease;
     }
 
-    .navbar a:hover {
-      color: var(--secondary-color);
+    .nav-links a:hover {
+      color: var(--secondary);
     }
 
-    .hero {
-      background: linear-gradient(rgba(0, 105, 92, 0.8), rgba(0, 105, 92, 0.8)), url('https://source.unsplash.com/1600x900/?education,study') no-repeat center/cover;
-      color: #fff;
-      text-align: center;
-      padding: 120px 20px;
-      position: relative;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
+    /* Theme Toggle Button */
+    .theme-toggle {
+      background: rgba(0, 0, 0, 0.3);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--icon-color);
       font-size: 20px;
-      font-weight: 300;
-      margin-bottom: 20px;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
-    .cta-button {
-      background: var(--secondary-color);
-      color: #333;
-      padding: 12px 30px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s ease, transform 0.3s ease;
-      display: inline-block;
+    .theme-toggle:hover {
+      background: rgba(0, 0, 0, 0.5);
+      color: var(--primary-light);
     }
 
-    .cta-button:hover {
-      background: #ffb300;
-      transform: scale(1.05);
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .features-section {
-      background: linear-gradient(135deg, var(--primary-color), #004d40);
-      padding: 50px 20px;
-      border-radius: 20px;
-      margin: 40px 0;
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      padding: 80px 15px 100px;
+      text-align: center;
       position: relative;
       overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     }
 
-    .features-section::before {
-      content: '';
+    header::before {
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('https://source.unsplash.com/200x200/?pattern') repeat;
-      opacity: 0.1;
-    }
-
-    .features {
-      position: relative;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+      background-size: cover;
       z-index: 1;
+      opacity: 0.3;
     }
 
-    .feature-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 30px;
-    }
-
-    .feature-card {
-      background: var(--card-bg);
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: var(--shadow);
-      transition: transform 0.3s ease;
-      opacity: 0;
-      animation: fadeInUp 0.8s ease forwards;
-      flex: 1;
-      min-height: 300px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .feature-card:nth-child(1) { animation-delay: 0.2s; }
-    .feature-card:nth-child(2) { animation-delay: 0.4s; }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .feature-card .icon {
-      font-size: 40px;
-      color: var(--primary-color);
-      margin-bottom: 20px;
-      display: block;
-      text-align: center;
-    }
-
-    .feature-card h3 {
-      font-size: 22px;
-      color: var(--primary-color);
-      margin-bottom: 15px;
-      font-weight: 600;
-      text-align: center;
-      position: relative;
-    }
-
-    .feature-card h3::after {
-      content: '';
-      width: 50px;
-      height: 3px;
-      background: var(--secondary-color);
-      position: absolute;
-      bottom: -5px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .feature-card ul {
-      list-style: none;
-      text-align: center;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .feature-card ul li {
-      margin-bottom: 12px;
-      font-size: 16px;
-      color: #555;
-      transition: color 0.3s ease;
-    }
-
-    .feature-card:hover ul li {
-      color: var(--primary-color);
-    }
-
-    .feature-card::before {
-      content: '';
+    header::after {
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, var(--secondary-color), transparent);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .feature-card:hover::before {
+      background: url('https://i.postimg.cc/j5w6n4Nb/2023-02-19.webp') no-repeat center/cover;
       opacity: 0.1;
+      z-index: 0;
     }
 
-    .feature-horizontal {
-      background: var(--card-bg);
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: var(--shadow);
-      opacity: 0;
-      animation: fadeInUp 0.8s ease forwards;
-      animation-delay: 0.6s;
-    }
-
-    .feature-horizontal .icon {
-      font-size: 40px;
-      color: var(--primary-color);
-      margin-bottom: 20px;
-      display: block;
-      text-align: center;
-    }
-
-    .feature-horizontal h3 {
-      font-size: 22px;
-      color: var(--primary-color);
-      margin-bottom: 15px;
-      font-weight: 600;
-      text-align: center;
+    .header-content {
       position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    .feature-horizontal h3::after {
-      content: '';
-      width: 50px;
-      height: 3px;
-      background: var(--secondary-color);
-      position: absolute;
-      bottom: -5px;
-      left: 50%;
-      transform: translateX(-50%);
+    header h1 {
+      font-size: 52px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease;
+      background: linear-gradient(to right, var(--secondary), var(--text-logo));
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
-    .feature-horizontal ul {
-      list-style: none;
-      display: flex;
-      justify-content: space-around;
+    .header-subtitle {
+      font-size: 22px;
+      font-weight: 300;
+      opacity: 0.9;
+      animation: fadeIn 1.5s ease;
+      margin-bottom: 30px;
+      color: var(--text-logo);
+      position: relative;
+      padding: 10px 20px;
+      border-left: 4px solid var(--secondary);
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+    }
+
+    .header-badge {
+      display: inline-flex;
       align-items: center;
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 30px;
+      animation: pulse 2s infinite;
+      box-shadow: 0 5px 15px var(--shadow);
+    }
+
+    .header-badge i {
+      margin-right: 8px;
+      color: var(--icon-color);
+    }
+
+    .header-btns {
+      display: flex;
+      justify-content: center;
       gap: 20px;
+      flex-wrap: wrap;
       margin-top: 20px;
     }
 
-    .feature-horizontal ul li {
-      font-size: 16px;
-      color: #555;
+    /* Hero Section */
+    .hero {
       text-align: center;
-      transition: color 0.3s ease;
-      flex: 1;
+      padding: 80px 20px;
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
+                  url('https://i.postimg.cc/j5w6n4Nb/2023-02-19.webp') no-repeat center/cover;
+      position: relative;
+      margin-top: -50px;
+      z-index: 1;
+      clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 100%);
     }
 
-    .feature-horizontal:hover ul li {
-      color: var(--primary-color);
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 25px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero h2::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: var(--secondary);
+      border-radius: 3px;
+    }
+
+    .hero p {
+      margin: 25px auto 0;
+      font-size: 18px;
+      color: #eee;
+      max-width: 700px;
+    }
+
+    /* Main Sections */
+    .section {
+      padding: 80px 20px;
+      position: relative;
+    }
+
+    .section-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.postimg.cc/j5w6n4Nb/2023-02-19.webp') no-repeat center/cover;
+      opacity: 0.05;
+      z-index: -1;
     }
 
     .section-title {
       text-align: center;
-      font-size: 32px;
-      color: #fff;
-      margin-bottom: 40px;
-      font-weight: 700;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      margin-bottom: 60px;
+      position: relative;
     }
 
+    .section-title h2 {
+      display: inline-block;
+      font-size: 36px;
+      color: var(--primary);
+      position: relative;
+    }
+
+    .section-title h2::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--secondary);
+      border-radius: 3px;
+    }
+
+    .section-title p {
+      max-width: 700px;
+      margin: 20px auto 0;
+      color: var(--text-gray);
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: linear-gradient(145deg, var(--surface), var(--surface-alt));
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px var(--shadow);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 40px var(--shadow-hover);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+      transition: all 0.4s ease;
+    }
+
+    .card:hover::before {
+      width: 100%;
+      opacity: 0.1;
+    }
+
+    .card-icon {
+      font-size: 50px;
+      margin-bottom: 25px;
+      color: var(--icon-color);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover .card-icon {
+      transform: scale(1.1);
+      color: var(--primary-light);
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 24px;
+      position: relative;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .card h3::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: var(--secondary);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover h3::after {
+      width: 80px;
+    }
+
+    .card ul {
+      list-style: none;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 16px;
+    }
+
+    .card ul li {
+      margin-bottom: 12px;
+      transition: color 0.3s ease;
+    }
+
+    .card:hover ul li {
+      color: var(--text);
+    }
+
+    /* Timeline */
     .admission-timeline {
       position: relative;
       max-width: 800px;
@@ -304,7 +428,7 @@
       content: '';
       position: absolute;
       width: 4px;
-      background: var(--primary-color);
+      background: var(--primary);
       top: 0;
       bottom: 0;
       left: 50%;
@@ -312,13 +436,14 @@
     }
 
     .timeline-item {
-      background: var(--card-bg);
+      background: var(--surface);
       border-radius: 12px;
       padding: 20px;
       margin: 20px 0;
       position: relative;
       width: 45%;
-      box-shadow: var(--shadow);
+      box-shadow: 0 5px 15px var(--shadow);
+      animation: fadeInUp 0.8s ease forwards;
     }
 
     .timeline-item:nth-child(odd) {
@@ -334,7 +459,7 @@
       position: absolute;
       width: 20px;
       height: 20px;
-      background: var(--secondary-color);
+      background: var(--secondary);
       border-radius: 50%;
       top: 20px;
       right: -30px;
@@ -345,14 +470,20 @@
       right: auto;
     }
 
-    .register-section {
-      text-align: center;
-      margin: 40px 0;
+    .timeline-item p {
+      color: var(--text-secondary);
     }
 
+    /* Registration Section */
+    .registration {
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), 
+                  url('https://i.postimg.cc/j5w6n4Nb/2023-02-19.webp') no-repeat center/cover;
+    }
+
+    /* Contact Section */
     .contact-section {
-      background: var(--primary-color);
-      color: #fff;
+      background: linear-gradient(135deg, var(--surface), var(--surface-alt));
       padding: 40px;
       border-radius: 12px;
       text-align: center;
@@ -360,29 +491,282 @@
     }
 
     .contact-section a {
-      color: var(--secondary-color);
+      color: var(--secondary);
       text-decoration: none;
       font-weight: 600;
     }
 
-    .footer {
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
+    .contact-section a:hover {
+      color: var(--primary);
     }
 
-    @media (max-width: 768px) {
-      .hero h1 {
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 40px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 5px 20px var(--shadow);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--secondary);
+      color: var(--secondary);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+
+    .btn i {
+      margin-left: 10px;
+      color: var(--icon-color);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover i {
+      color: var(--primary-light);
+      transform: scale(1.2);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 25px var(--shadow-hover);
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: 0.5s;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(to right, var(--background), var(--surface));
+      padding: 60px 20px 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      text-align: left;
+    }
+
+    .footer-column h3 {
+      color: var(--secondary);
+      margin-bottom: 25px;
+      font-size: 20px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-column h3::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--primary);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .footer-links a:hover {
+      color: var(--secondary);
+      transform: translateX(5px);
+    }
+
+    .footer-links a i {
+      margin-right: 8px;
+      color: var(--icon-color);
+    }
+
+    .footer-links a:hover i {
+      color: var(--primary-light);
+    }
+
+    .contact-info {
+      list-style: none;
+    }
+
+    .contact-info li {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .contact-info i {
+      color: var(--icon-color);
+      margin-right: 10px;
+      margin-top: 4px;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info i:hover {
+      color: var(--primary-light);
+    }
+
+    .contact-info span {
+      color: var(--text-secondary);
+    }
+
+    .copyright {
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-gray);
+      font-size: 14px;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      color: var(--icon-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 5px 20px var(--shadow);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--secondary);
+      color: var(--primary-light);
+      transform: translateY(-5px);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 992px) {
+      header h1 {
+        font-size: 42px;
+      }
+
+      .hero h2 {
         font-size: 32px;
+      }
+
+      .section-title h2 {
+        font-size: 32px;
+      }
+
+      .navbar .container {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-links a {
+        margin: 5px 10px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 36px;
+      }
+
+      .header-subtitle {
+        font-size: 18px;
+      }
+
+      .hero h2 {
+        font-size: 28px;
       }
 
       .hero p {
         font-size: 16px;
       }
 
-      .section-title {
-        font-size: 24px;
+      .section-title h2 {
+        font-size: 28px;
       }
 
       .admission-timeline::before {
@@ -400,90 +784,156 @@
         right: auto;
       }
 
-      .feature-row {
-        flex-direction: column;
-        gap: 20px;
+      .cards-container {
+        grid-template-columns: 1fr;
       }
 
-      .feature-card {
-        max-width: 400px;
-        margin: 0 auto;
-      }
-
-      .feature-horizontal ul {
+      .header-btns {
         flex-direction: column;
         gap: 15px;
       }
     }
 
-    @media (max-width: 480px) {
-      .hero h1 {
+    @media screen and (max-width: 576px) {
+      header h1 {
+        font-size: 32px;
+      }
+
+      .header-subtitle {
+        font-size: 16px;
+      }
+
+      .navbar .logo {
+        font-size: 22px;
+      }
+
+      .hero h2 {
         font-size: 24px;
       }
 
-      .navbar a {
-        margin: 5px;
-        font-size: 14px;
+      .btn {
+        width: 100%;
+      }
+
+      .section {
+        padding: 60px 20px;
+      }
+
+      .section-title h2 {
+        font-size: 24px;
+      }
+
+      .card {
+        padding: 30px 20px;
+      }
+
+      .card-icon {
+        font-size: 40px;
+      }
+
+      .card h3 {
+        font-size: 20px;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-column h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .footer-links a:hover {
+        transform: none;
       }
     }
   </style>
 </head>
-<body>
+<body data-theme="dark">
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="container">
+      <a href="index.html" class="logo">मुख्यमंत्री अभ्युदय योजना</a>
       <div class="nav-links">
-        <a href="specialty.html" target="_blank">विशेषताएँ</a>
-        <a href="apply.html" target="_blank">प्रवेश प्रक्रिया</a>
-         <a href="formstudents.html" target="_blank">पंजीकरण</a>
-         <a href="contact.html" target="_blank">संपर्क</a>
+        <a href="specialty.html">विशेषताएँ</a>
+        <a href="apply.html">प्रवेश प्रक्रिया</a>
+        <a href="formstudents.html">पंजीकरण</a>
+        <a href="contact.html">संपर्क</a>
       </div>
+      <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+        <i class="fas fa-moon"></i>
+      </button>
     </div>
   </nav>
 
+  <!-- Header -->
+  <header id="home">
+    <div class="header-content">
+      <h1>मुख्यमंत्री अभ्युदय योजना 2025</h1>
+      <p class="header-subtitle">राजकीय IAS/PCS कोचिंग केंद्र निजामपुर, हापुड़ में प्रवेश प्रारम्भ (दिवा कक्षाओं)</p>
+      <div class="header-badge"><i class="fas fa-award"></i> निःशुल्क कोचिंग, विश्वस्तरीय सुविधाएँ</div>
+      <div class="header-btns">
+        <a href="formstudents.html" class="btn">पंजीकरण करें <i class="fas fa-arrow-right"></i></a>
+        <a href="#contact" class="btn btn-outline">संपर्क करें <i class="fas fa-phone-alt"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
   <section class="hero">
-    <h1>मुख्यमंत्री अभ्युदय योजना 2025</h1>
-    <p>राजकीय IAS/PCS कोचिंग केंद्र निजामपुर, हापुड़ में प्रवेश प्रारम्भ (दिवा कक्षाओं)</p>
-    <a href="formstudents.html" class="cta-button">अभी पंजीकरण करें</a>
+    <div class="hero-content">
+      <h2>IAS/PCS की मुफ्त कोचिंग</h2>
+      <p>मुख्यमंत्री अभ्युदय योजना के तहत निजामपुर, हापुड़ में राजकीय कोचिंग केंद्र प्रदान करता है विशेषज्ञ मार्गदर्शन, आधुनिक सुविधाएँ, और निःशुल्क अध्ययन सामग्री। अपने सपनों को साकार करने का अवसर प्राप्त करें!</p>
+    </div>
   </section>
 
-  <div class="container">
-    <section class="features-section" id="features">
-      <h2 class="section-title">मुख्यमंत्री अभ्युदय योजना की प्रमुख विशेषताएँ</h2>
-      <div class="features">
-        <div class="feature-row">
-          <div class="feature-card">
-            <i class="fas fa-chalkboard-teacher icon"></i>
-            <h3>व्यापक कोचिंग</h3>
-            <ul>
-              <li>विशेषज्ञ शिक्षक</li>
-              <li>इंटरएक्टिव कक्षाएं</li>
-              <li>टेस्ट सीरीज</li>
-            </ul>
-          </div>
-          <div class="feature-card">
-            <i class="fas fa-university icon"></i>
-            <h3>आधुनिक सुविधाएँ</h3>
-            <ul>
-              <li>पुस्तकालय की सुविधा</li>
-              <li>स्व-अध्ययन हेतु सुविधा</li>
-              <li>नि:शुल्क इंटरनेट</li>
-              <li>एयर-कंडीशंड क्लासरूम</li>
-            </ul>
-          </div>
-        </div>
-        <div class="feature-horizontal">
-          <i class="fas fa-users icon"></i>
-          <h3>सकारात्मक अध्ययन वातावरण</h3>
-          <ul>
-            <li>नियमित मूल्यांकन</li>
-            <li>सहपाठियों से नियमित चर्चा</li>
-            <li>आईएएस, पी.सी.एस., पी.एस.आई. अधिकारियों द्वारा मार्गदर्शन कार्यकम</li>
-          </ul>
-        </div>
+  <!-- Features Section -->
+  <section class="section" id="features">
+    <div class="section-bg"></div>
+    <div class="section-title">
+      <h2>मुख्य विशेषताएँ</h2>
+      <p>मुख्यमंत्री अभ्युदय योजना की सुविधाएँ जो आपको सफलता की ओर ले जाएंगी</p>
+    </div>
+    <div class="cards-container">
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+        <h3>व्यापक कोचिंग</h3>
+        <ul>
+          <li>विशेषज्ञ शिक्षक</li>
+          <li>इंटरएक्टिव कक्षाएं</li>
+          <li>टेस्ट सीरीज</li>
+        </ul>
       </div>
-    </section>
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-university"></i></div>
+        <h3>आधुनिक सुविधाएँ</h3>
+        <ul>
+          <li>पुस्तकालय की सुविधा</li>
+          <li>स्व-अध्ययन हेतु सुविधा</li>
+          <li>नि:शुल्क इंटरनेट</li>
+          <li>एयर-कंडीशंड क्लासरूम</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-users"></i></div>
+        <h3>सकारात्मक अध्ययन वातावरण</h3>
+        <ul>
+          <li>नियमित मूल्यांकन</li>
+          <li>सहपाठियों से नियमित चर्चा</li>
+          <li>IAS/PCS/PSI अधिकारियों द्वारा मार्गदर्शन</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <h2 class="section-title" id="admission" style="color: var(--primary-color);">प्रवेश प्रक्रिया</h2>
+  <!-- Admission Timeline Section -->
+  <section class="section" id="admission">
+    <div class="section-title">
+      <h2>प्रवेश प्रक्रिया</h2>
+      <p>चयन प्रक्रिया और महत्वपूर्ण तिथियाँ</p>
+    </div>
     <div class="admission-timeline">
       <div class="timeline-item">
         <p>ऑनलाइन पंजीकरण नीचे दिए गए लिंक पर क्लिक करके ऑनलाइन पंजीकरण शुरू करें।</p>
@@ -495,23 +945,103 @@
         <p><strong>पंजीकरण तिथि:</strong> 10 MAY 2025 से 10 JUNE 2025 तक होगी।</p>
       </div>
     </div>
+  </section>
 
-    <div class="register-section" id="register">
-      <h2 class="section-title" style="color: var(--primary-color);">पंजीकरण लिंक</h2>
-      <p>पंजीकरण 10 MAY 2025 से 10 JUNE 2025 तक होगी।</p>
-      <a href="formstudents.html" class="cta-button">अभी पंजीकरण करें</a>
+  <!-- Registration Section -->
+  <section class="section registration" id="register">
+    <div class="section-title">
+      <h2>पंजीकरण करें</h2>
+      <p>मुख्यमंत्री अभ्युदय योजना के लिए निःशुल्क पंजीकरण</p>
     </div>
+    <div class="header-btns">
+      <a href="formstudents.html" class="btn">पंजीकरण करें <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
 
-    <div class="contact-section" id="contact">
-      <h2 class="section-title" style="color: #fff;">संपर्क करें</h2>
+  <!-- Contact Section -->
+  <section class="section contact-section" id="contact">
+    <div class="section-title">
+      <h2>संपर्क करें</h2>
       <p>मुख्यमंत्री अभ्युदय योजना के साथ, आपकी परीक्षा पूर्व तैयारी हेतु नई ऊँचाइयों तक पहुंचें!</p>
-      <p>किसी भी समस्या के लिए, हमें <a href="mailto:govt.ias.pcs.coaching.hapur@gmail.com">govt.ias.pcs.coaching.hapur@gmail.com</a> पर ईमेल करें या <a href="tel:+916395810477">6395810477</a> पर कॉल करें।</p>
-      <p style="margin-top: 20px;">पता: VILL-NIZAMPUR, HAPUR (DELHI ROAD), PIN-245101</p>
     </div>
-  </div>
+    <p>किसी भी समस्या के लिए, हमें <a href="mailto:govt.ias.pcs.coaching.hapur@gmail.com">govt.ias.pcs.coaching.hapur@gmail.com</a> पर ईमेल करें या <a href="tel:+916395810477">6395810477</a> पर कॉल करें।</p>
+    <p style="margin-top: 20px;">पता: गाँव निजामपुर, हापुड़ (दिल्ली रोड), पिन-245101</p>
+  </section>
 
-  <footer class="footer">
-    <p>© 2024 राजकीय IAS/PCS कोचिंग केंद्र, निजामपुर, हापुड़। सर्वाधिकार सुरक्षित।</umed>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>अभ्युदय योजना</h3>
+        <p>UPSC और UPPCS की तैयारी के लिए प्रदेश सरकार की महत्वाकांक्षी योजना जो हजारों युवाओं के सपनों को साकार कर रही है।</p>
+      </div>
+      <div class="footer-column">
+        <h3>त्वरित लिंक</h3>
+        <ul class="footer-links">
+          <li><a href="#home"><i class="fas fa-chevron-right"></i> होम</a></li>
+          <li><a href="#features"><i class="fas fa-chevron-right"></i> विशेषताएँ</a></li>
+          <li><a href="#admission"><i class="fas fa-chevron-right"></i> प्रवेश प्रक्रिया</a></li>
+          <li><a href="#register"><i class="fas fa-chevron-right"></i> पंजीकरण</a></li>
+          <li><a href="#contact"><i class="fas fa-chevron-right"></i> संपर्क</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>संपर्क करें</h3>
+        <ul class="contact-info">
+          <li><i class="fas fa-map-marker-alt"></i><span>गाँव निजामपुर, हापुड़, उत्तर प्रदेश 245101</span></li>
+          <li><i class="fas fa-phone-alt"></i><span>+91 6395810477</span></li>
+          <li><i class="fas fa-envelope"></i><span>govt.ias.pcs.coaching.hapur@gmail.com</span></li>
+          <li><i class="fas fa-clock"></i><span>सोम-शनि: 9:00 AM - 6:00 PM</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2025 राजकीय IAS/PCS कोचिंग केंद्र, निजामपुर, हापुड़। सर्वाधिकार सुरक्षित।
+    </div>
   </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    body.setAttribute('data-theme', savedTheme);
+    themeToggle.innerHTML = savedTheme === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      body.setAttribute('data-theme', newTheme);
+      themeToggle.innerHTML = newTheme === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+      localStorage.setItem('theme', newTheme);
+    });
+
+    // Back to Top Button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('active', window.pageYOffset > 300);
+    });
+
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
