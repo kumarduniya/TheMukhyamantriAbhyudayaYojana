@@ -98,6 +98,7 @@
       text-decoration: none;
       text-shadow: 0 0 6px rgba(255, 98, 0, 0.5);
       transition: text-shadow 0.3s ease;
+      white-space: nowrap;
     }
 
     .navbar .logo:hover {
@@ -106,7 +107,15 @@
 
     .nav-links {
       display: flex;
+      flex-direction: row;
       align-items: center;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none;
     }
 
     .nav-links a {
@@ -116,6 +125,7 @@
       font-weight: 500;
       font-size: 16px;
       transition: color 0.3s ease, transform 0.2s ease;
+      white-space: nowrap;
     }
 
     .nav-links a:hover {
@@ -141,6 +151,7 @@
       font-size: 18px;
       transition: background 0.3s ease, transform 0.2s ease;
       min-height: 48px;
+      flex-shrink: 0;
     }
 
     .theme-toggle:hover {
@@ -697,6 +708,8 @@
       header h1 { font-size: 44px; }
       .section-title h2 { font-size: 34px; }
       .contact-card img { width: 160px; height: 160px; }
+      .navbar .container { padding: 0 12px; }
+      .nav-links a { margin: 0 10px; font-size: 15px; }
     }
 
     @media screen and (max-width: 992px) {
@@ -707,24 +720,11 @@
       .coaching-details h3 { font-size: 26px; }
       .contact-form h3 { font-size: 26px; }
       .contact-card img { width: 150px; height: 150px; }
-      .navbar .container {
-        flex-direction: column;
-        gap: 8px;
-      }
-      .nav-links {
-        flex-direction: column;
-        align-items: center;
-      }
-      .nav-links a {
-        margin: 4px 0;
-        font-size: 15px;
-      }
-      .theme-toggle {
-        margin-top: 8px;
-      }
-      header {
-        margin-top: 100px;
-      }
+      .navbar .container { padding: 0 10px; }
+      .navbar .logo { font-size: 22px; }
+      .nav-links a { margin: 0 8px; font-size: 14px; }
+      .theme-toggle { width: 34px; height: 34px; font-size: 17px; }
+      header { margin-top: 70px; }
     }
 
     @media screen and (max-width: 768px) {
@@ -740,10 +740,10 @@
       .contact-form { padding: 40px 10px; }
       .contact-form h3 { font-size: 24px; }
       .sidebar-credit { position: static; margin: 15px auto; width: fit-content; }
-      header {
-        margin-top: 120px;
-      }
-      .navbar .logo { font-size: 22px; }
+      .navbar .logo { font-size: 20px; }
+      .nav-links a { margin: 0 6px; font-size: 13px; }
+      .theme-toggle { width: 32px; height: 32px; font-size: 16px; }
+      header { margin-top: 80px; }
     }
 
     @media screen and (max-width: 576px) {
@@ -776,11 +776,11 @@
       .popup h3 { font-size: 20px; }
       .popup p { font-size: 14px; }
       .popup .btn { font-size: 14px; padding: 8px 20px; }
-      .navbar .logo { font-size: 20px; }
       .navbar { padding: 10px 0; }
-      header {
-        margin-top: 140px;
-      }
+      .navbar .logo { font-size: 18px; }
+      .nav-links a { margin: 0 5px; font-size: 12px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 15px; }
+      header { margin-top: 80px; }
     }
 
     @media screen and (max-width: 360px) {
@@ -790,9 +790,9 @@
       .contact-card h3 { font-size: 16px; }
       .coaching-details h3 { font-size: 20px; }
       .contact-form h3 { font-size: 20px; }
-      .navbar .logo { font-size: 18px; }
-      .nav-links a { font-size: 14px; }
-      .theme-toggle { width: 32px; height: 32px; font-size: 16px; }
+      .navbar .logo { font-size: 16px; }
+      .nav-links a { margin: 0 4px; font-size: 11px; }
+      .theme-toggle { width: 28px; height: 28px; font-size: 14px; }
     }
   </style>
 </head>
