@@ -772,27 +772,61 @@
       100% { transform: scale(1); }
     }
 
+    /* Separator for Specialty Section */
+    .section-divider {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, var(--surface), var(--surface-alt));
+      margin: 60px 0;
+    }
+
+    .section-divider h2 {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 36px;
+      color: var(--accent);
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-divider h2::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 3px;
+    }
+
     /* Responsive */
     @media screen and (max-width: 992px) {
       header h1 { font-size: 42px; }
       .hero h2 { font-size: 32px; }
       .section-title h2 { font-size: 32px; }
       .navbar .container {
-        flex-direction: column;
-        gap: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap; /* Allow wrapping if needed */
       }
       .nav-links {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row; /* Keep menu items horizontal */
         align-items: center;
+        flex-wrap: nowrap; /* Prevent menu items from wrapping */
       }
       .nav-links a {
-        margin: 5px 0;
+        margin: 0 8px; /* Reduced margin for tighter spacing */
+        font-size: 14px; /* Slightly smaller font size to fit */
+        white-space: nowrap; /* Prevent text wrapping */
       }
       .theme-toggle {
-        margin-top: 10px;
+        margin-left: 8px; /* Align with menu items */
       }
       header {
-        margin-top: 100px; /* Adjust for stacked navbar */
+        margin-top: 70px; /* Adjusted for navbar height */
       }
     }
 
@@ -808,7 +842,19 @@
       .timeline-dot, .timeline-line { display: none; }
       .contact-container { grid-template-columns: 1fr; }
       header {
-        margin-top: 120px;
+        margin-top: 70px; /* Consistent with navbar height */
+      }
+      .nav-links a {
+        margin: 0 6px; /* Further reduced margin */
+        font-size: 13px; /* Smaller font for tablet */
+      }
+      .theme-toggle {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+      }
+      .navbar .logo {
+        font-size: 22px; /* Slightly smaller logo */
       }
     }
 
@@ -826,31 +872,46 @@
       .footer-column h3::after { left: 50%; transform: translateX(-50%); }
       .newsletter form { flex-direction: column; }
       .newsletter input[type="email"] { max-width: 100%; }
-      .navbar .logo { font-size: 22px; }
+      .navbar .logo { font-size: 20px; }
       header {
-        margin-top: 140px; /* Adjust for taller stacked navbar */
+        margin-top: 70px; /* Consistent with navbar height */
+      }
+      .nav-links a {
+        margin: 0 5px; /* Minimal margin for mobile */
+        font-size: 12px; /* Smallest font size to fit all items */
+        padding: 5px; /* Add padding for touch targets */
+      }
+      .theme-toggle {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        margin-left: 5px;
+      }
+      .navbar .container {
+        padding: 0 10px; /* Reduced padding for more space */
       }
     }
   </style>
 </head>
 <body data-theme="dark">
+  <!-- Navbar (Fixed at Top) -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">मुख्यमंत्री अभ्युदय योजना</a>
+      <div class="nav-links">
+        <a href="specialty.html">विशेषताएँ</a>
+        <a href="apply.html">प्रवेश प्रक्रिया</a>
+        <a href="formstudents.html">पंजीकरण</a>
+        <a href="contact.html">संपर्क</a>
+        <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
   <!-- Header -->
   <header>
-    <!-- Navbar from subpage.html -->
-    <nav class="navbar">
-      <div class="container">
-        <a href="index.html" class="logo">मुख्यमंत्री अभ्युदय योजना</a>
-        <div class="nav-links">
-          <a href="specialty.html">विशेषताएँ</a>
-          <a href="apply.html">प्रवेश प्रक्रिया</a>
-          <a href="formstudents.html">पंजीकरण</a>
-          <a href="contact.html">संपर्क</a>
-          <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
-            <i class="fas fa-moon"></i>
-          </button>
-        </div>
-      </div>
-    </nav>
     <div class="header-content">
       <h1>आवेदन प्रक्रिया मार्गदर्शन</h1>
       <p class="header-subtitle">गवर्नमेंट आईएएस पीसीएस कोचिंग सेंटर निजामपुर हापुड़</p>
@@ -1111,6 +1172,111 @@
           <li><a href="index.html">होम</a></li>
           <li><a href="#steps">आवेदन प्रक्रिया</a></li>
           <li><a href="#contact">संपर्क</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>न्यूज़लेटर</h3>
+        <p>अपडेट और संसाधनों के लिए सब्सक्राइब करें।</p>
+        <form class="newsletter">
+          <input type="email" placeholder="अपना ईमेल दर्ज करें" required aria-label="ईमेल">
+          <button type="submit">सब्सक्राइब करें</button>
+        </form>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2025 गवर्नमेंट आईएएस पीसीएस कोचिंग सेंटर निजामपुर हापुड़ | सभी अधिकार सुरक्षित
+    </div>
+  </footer>
+
+  <!-- Separator for Specialty Section -->
+  <div class="section-divider">
+    <h2>विशेषताएँ</h2>
+  </div>
+
+  <!-- Specialty Section (Placeholder Content from specialty.html) -->
+  <!-- Note: Replace this with the actual content of specialty.html -->
+  <header>
+    <div class="header-content">
+      <h1>मुख्यमंत्री अभ्युदय योजना की विशेषताएँ</h1>
+      <p class="header-subtitle">गवर्नमेंट आईएएस पीसीएस कोचिंग सेंटर निजामपुर हापुड़</p>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>हमारी अद्वितीय विशेषताएँ</h2>
+      <p>हमारे कोचिंग सेंटर की विशेष सुविधाएँ और संसाधन जो आपके IAS/PCS सपनों को साकार करने में मदद करेंगे।</p>
+      <div class="hero-btns">
+        <a href="#features" class="btn">और जानें <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="section-title">
+      <h2>प्रमुख विशेषताएँ</h2>
+    </div>
+    <div class="cards-container">
+      <div class="card">
+        <h3>व्यापक कोचिंग</h3>
+        <ul>
+          <li>विशेषज्ञ शिक्षक</li>
+          <li>इंटरएक्टिव कक्षाएं</li>
+          <li>टेस्ट सीरीज</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>आधुनिक सुविधाएँ</h3>
+        <ul>
+          <li>पुस्तकालय की सुविधा</li>
+          <li>स्व-अध्ययन हेतु सुविधा</li>
+          <li>नि:शुल्क इंटरनेट</li>
+          <li>एयर-कंडीशंड क्लासरूम</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>सकारात्मक अध्ययन वातावरण</h3>
+        <ul>
+          <li>नियमित मूल्यांकन</li>
+          <li>सहपाठियों से नियमित चर्चा</li>
+          <li>आईएएस, पी.सी.एस., पी.एस.आई. अधिकारियों द्वारा मार्गदर्शन कार्यकम</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact-specialty">
+    <div class="section-title">
+      <h2>हमसे संपर्क करें</h2>
+    </div>
+    <div class="contact-container">
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <p>+91 8273684939</p>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <p>govt.ias.pcs.coaching.hapur@gmail.com</p>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>निजामपुर, हापुड़, उत्तर प्रदेश 245101</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>हमारे बारे में</h3>
+        <p>गवर्नमेंट आईएएस पीसीएस कोचिंग सेंटर निजामपुर हापुड़ UPSC और UPPCS उम्मीदवारों के लिए मुफ्त कोचिंग प्रदान करता है।</p>
+      </div>
+      <div class="footer-column">
+        <h3>त्वरित लिंक</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">होम</a></li>
+          <li><a href="apply.html">आवेदन प्रक्रिया</a></li>
+          <li><a href="contact.html">संपर्क</a></li>
         </ul>
       </div>
       <div class="footer-column">
