@@ -13,12 +13,13 @@
   <style>
     :root {
       /* Dark Theme (default) */
-      --primary: #00695c;
-      --primary-light: #439889;
-      --secondary: #ffca28;
+      --primary: #ff6200; /* Bhagwa (saffron) */
+      --primary-light: #ff8533; /* Lighter saffron */
+      --secondary: #ffca28; /* Gold, kept for accents */
       --accent: #ffca28;
       --icon-color: #ffeb3b; /* Bright yellow for icons */
       --text-logo: #ffffff; /* White for logo text */
+      --text-contrast: #ffffff; /* White for high-contrast text */
       --background: #121212;
       --surface: #1e1e1e;
       --surface-alt: #252525;
@@ -26,17 +27,18 @@
       --text-secondary: #ccc;
       --text-gray: #757575;
       --shadow: rgba(0, 0, 0, 0.3);
-      --shadow-hover: rgba(0, 105, 92, 0.3);
+      --shadow-hover: rgba(255, 98, 0, 0.3); /* Bhagwa shadow */
     }
 
     [data-theme="light"] {
       /* Light Theme */
-      --primary: #00695c;
-      --primary-light: #439889;
+      --primary: #ff6200;
+      --primary-light: #ff8533;
       --secondary: #ffca28;
       --accent: #ffca28;
       --icon-color: #ffeb3b;
       --text-logo: #ffffff;
+      --text-contrast: #ffffff;
       --background: #f4f7f6;
       --surface: #ffffff;
       --surface-alt: #e0e0e0;
@@ -44,7 +46,7 @@
       --text-secondary: #555555;
       --text-gray: #757575;
       --shadow: rgba(0, 0, 0, 0.1);
-      --shadow-hover: rgba(0, 105, 92, 0.2);
+      --shadow-hover: rgba(255, 98, 0, 0.2);
     }
 
     * {
@@ -87,16 +89,16 @@
       font-weight: 700;
       color: var(--text-logo);
       text-decoration: none;
-      text-shadow: 0 0 8px rgba(255, 202, 40, 0.5);
+      text-shadow: 0 0 8px rgba(255, 98, 0, 0.5);
       transition: text-shadow 0.3s ease;
     }
 
     .navbar .logo:hover {
-      text-shadow: 0 0 12px rgba(255, 202, 40, 0.8);
+      text-shadow: 0 0 12px rgba(255, 98, 0, 0.8);
     }
 
     .nav-links a {
-      color: var(--text-logo);
+      color: var(--text-contrast);
       text-decoration: none;
       margin: 0 15px;
       font-weight: 600;
@@ -125,7 +127,7 @@
 
     .theme-toggle:hover {
       background: rgba(0, 0, 0, 0.5);
-      color: var(--primary-light);
+      color: var(--text-contrast);
     }
 
     /* Header */
@@ -177,9 +179,7 @@
       text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
       margin-bottom: 20px;
       animation: fadeInDown 1s ease;
-      background: linear-gradient(to right, var(--secondary), var(--text-logo));
-      -webkit-background-clip: text;
-      color: transparent;
+      color: #8B0000; /* Dark red */
     }
 
     .header-subtitle {
@@ -188,7 +188,7 @@
       opacity: 0.9;
       animation: fadeIn 1.5s ease;
       margin-bottom: 30px;
-      color: var(--text-logo);
+      color: var(--text-contrast);
       position: relative;
       padding: 10px 20px;
       border-left: 4px solid var(--secondary);
@@ -373,7 +373,7 @@
 
     .card:hover .card-icon {
       transform: scale(1.1);
-      color: var(--primary-light);
+      color: var(--text-contrast);
     }
 
     .card h3 {
@@ -507,7 +507,7 @@
       justify-content: center;
       padding: 15px 40px;
       background: linear-gradient(to right, var(--primary), var(--secondary));
-      color: white;
+      color: var(--text-contrast);
       text-decoration: none;
       border-radius: 50px;
       font-weight: 600;
@@ -523,7 +523,7 @@
     .btn-outline {
       background: transparent;
       border: 2px solid var(--secondary);
-      color: var(--secondary);
+      color: var(--text-contrast);
       box-shadow: none;
     }
 
@@ -539,7 +539,7 @@
     }
 
     .btn:hover i {
-      color: var(--primary-light);
+      color: var(--text-contrast);
       transform: scale(1.2);
     }
 
@@ -585,7 +585,7 @@
     }
 
     .footer-column h3 {
-      color: var(--secondary);
+      color: var(--text-contrast);
       margin-bottom: 25px;
       font-size: 20px;
       position: relative;
@@ -618,7 +618,7 @@
     }
 
     .footer-links a:hover {
-      color: var(--secondary);
+      color: var(--text-contrast);
       transform: translateX(5px);
     }
 
@@ -628,7 +628,7 @@
     }
 
     .footer-links a:hover i {
-      color: var(--primary-light);
+      color: var(--text-contrast);
     }
 
     .contact-info {
@@ -649,7 +649,7 @@
     }
 
     .contact-info i:hover {
-      color: var(--primary-light);
+      color: var(--text-contrast);
     }
 
     .contact-info span {
@@ -692,7 +692,7 @@
 
     .back-to-top:hover {
       background: var(--secondary);
-      color: var(--primary-light);
+      color: var(--text-contrast);
       transform: translateY(-5px);
     }
 
