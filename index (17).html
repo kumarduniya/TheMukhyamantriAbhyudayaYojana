@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>पाठ्यक्रम - मुख्यमंत्री अभ्युदय योजना</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    :root {
+      --primary: #ff6200;
+      --primary-light: #ff8533;
+      --secondary: #ffca28;
+      --accent: #ffeb3b;
+      --background: #121212;
+      --surface: #1e1e1e;
+      --surface-alt: #252525;
+      --text: #f5f5f5;
+      --text-secondary: #ccc;
+      --text-gray: #757575;
+      --shadow: rgba(0, 0, 0, 0.3);
+      --shadow-hover: rgba(255, 98, 0, 0.3);
+      --navbar-primary: #ff6200;
+      --navbar-primary-light: #ff8533;
+      --navbar-secondary: #ffca28;
+      --navbar-text-logo: #ffffff;
+      --navbar-text-contrast: #ffffff;
+      --navbar-icon-color: #ffeb3b;
+      --navbar-shadow-hover: rgba(255, 98, 0, 0.3);
+      --footer-bg: #1e1e1e;
+      --footer-text: #ffffff;
+    }
+
+    [data-theme="light"] {
+      --primary: #ff6200;
+      --primary-light: #ff8533;
+      --secondary: #ffca28;
+      --accent: #ffeb3b;
+      --background: #f5f5f5;
+      --surface: #ffffff;
+      --surface-alt: #e0e0e0;
+      --text: #333333;
+      --text-secondary: #555555;
+      --text-gray: #757575;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --shadow-hover: rgba(255, 98, 0, 0.2);
+      --navbar-primary: #ff6200;
+      --navbar-primary-light: #ff8533;
+      --navbar-secondary: #ffca28;
+      --navbar-text-logo: #ffffff;
+      --navbar-text-contrast: #ffffff;
+      --navbar-icon-color: #ffeb3b;
+      --navbar-shadow-hover: rgba(255, 98, 0, 0.2);
+      --footer-bg: #1e1e1e;
+      --footer-text: #ffffff;
+    }
+
+    [data-form-theme="night"] {
+      --form-primary: #ff6200;
+      --form-primary-dark: #e65100;
+      --form-secondary: #ffca28;
+      --form-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      --form-border-radius: 12px;
+      --form-dark-bg: #111;
+      --form-card-bg: #1e1e1e;
+      --form-text-light: #f0f0f0;
+      --form-text-muted: #aaa;
+      --form-input-bg: rgba(30, 30, 30, 0.8);
+      --form-input-border: rgba(255, 255, 255, 0.1);
+      --form-form-border: rgba(255, 255, 255, 0.05);
+      --form-success-bg: rgba(0, 200, 83, 0.1);
+      --form-success-border: rgba(0, 200, 83, 0.3);
+      --form-error-bg: rgba(255, 98, 0, 0.1);
+      --form-error-border: rgba(255, 98, 0, 0.3);
+    }
+
+    [data-form-theme="day"] {
+      --form-primary: #ff6200;
+      --form-primary-dark: #e65100;
+      --form-secondary: #ffca28;
+      --form-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      --form-border-radius: 12px;
+      --form-dark-bg: #f5f5f5;
+      --form-card-bg: #ffffff;
+      --form-text-light: #333;
+      --form-text-muted: #666;
+      --form-input-bg: #f0f0f0;
+      --form-input-border: #d1d1d1;
+      --form-form-border: #d1d1d1;
+      --form-success-bg: rgba(0, 200, 83, 0.05);
+      --form-success-border: rgba(0, 200, 83, 0.2);
+      --form-error-bg: rgba(255, 98, 0, 0.05);
+      --form-error-border: rgba(255, 98, 0, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--form-dark-bg);
+      color: var(--form-text-light);
+      line-height: 1.6;
+      padding: 20px;
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 98, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 202, 40, 0.1) 0%, transparent 50%);
+      min-height: 100vh;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      background: linear-gradient(135deg, var(--navbar-primary), var(--navbar-primary-light)) !important;
+      padding: 15px 0;
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      z-index: 10000 !important;
+      box-shadow: 0 5px 15px var(--shadow) !important;
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .navbar .logo {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--navbar-text-logo);
+      text-decoration: none;
+      text-shadow: 0 0 8px rgba(255, 98, 0, 0.5);
+      transition: text-shadow 0.3s ease;
+    }
+
+    .navbar .logo:hover {
+      text-shadow: 0 0 12px rgba(255, 98, 0, 0.8);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: 'Noto Serif Devanagari', serif;
+      color: var(--navbar-text-contrast);
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--navbar-secondary);
+    }
+
+    .theme-toggle {
+      background: rgba(0, 0, 0, 0.3);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--navbar-text-contrast);
+      font-size: 20px;
+      transition: background 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      color: var(--navbar-text-contrast);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .form-theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--form-text-light);
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 1000;
+      transition: color 0.3s ease;
+    }
+
+    .form-theme-toggle:hover {
+      color: var(--form-primary);
+    }
+
+    .syllabus-container {
+      max-width: 1200px;
+      margin: 90px auto 30px;
+      padding: 0 20px;
+      flex: 1;
+    }
+
+    .syllabus-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .syllabus-header h2 {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 28px;
+      margin-bottom: 10px;
+      background: linear-gradient(to right, var(--form-primary), var(--form-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+      display: inline-block;
+    }
+
+    .syllabus-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(to right, var(--form-primary), var(--form-secondary));
+      border-radius: 3px;
+    }
+
+    .syllabus-header p {
+      font-family: 'Noto Serif Devanagari', serif;
+      color: var(--form-text-muted);
+      font-size: 14px;
+    }
+
+    .syllabus-section {
+      margin-bottom: 50px;
+      background: var(--form-card-bg);
+      padding: 30px;
+      border-radius: var(--form-border-radius);
+      box-shadow: var(--form-box-shadow);
+      border: 1px solid var(--form-form-border);
+      transition: transform 0.3s ease, background 0.3s ease, border 0.3s ease;
+      position: relative;
+      overflow: visible !important;
+    }
+
+    .syllabus-section:hover {
+      transform: translateY(-5px);
+    }
+
+    .syllabus-section h3 {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 22px;
+      color: var(--form-primary);
+      margin-bottom: 20px;
+    }
+
+    .syllabus-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .syllabus-table th,
+    .syllabus-table td {
+      padding: 12px 15px;
+      border: 1px solid var(--form-input-border);
+      text-align: left;
+    }
+
+    .syllabus-table th {
+      background: linear-gradient(135deg, var(--form-primary), var(--form-primary-dark));
+      color: white;
+      font-weight: 600;
+    }
+
+    .syllabus-table td {
+      color: var(--form-text-light);
+    }
+
+    .syllabus-table tr:nth-child(even) {
+      background-color: var(--form-input-bg);
+    }
+
+    .download-btn {
+      background: linear-gradient(135deg, var(--form-primary), var(--form-primary-dark));
+      border: none;
+      color: white;
+      padding: 12px 25px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 98, 0, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Noto Serif Devanagari', serif;
+      position: relative;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 98, 0, 0.4);
+    }
+
+    .download-btn i {
+      font-size: 16px;
+    }
+
+    .download-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .download-btn.loading::after {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid white;
+      border-top: 2px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-left: 10px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .hindi-text {
+      font-family: 'Noto Serif Devanagari', serif;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 20px 0;
+      text-align: center;
+      width: 100%;
+      margin-top: auto;
+    }
+
+    footer .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    footer p {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    footer .tagline {
+      font-style: italic;
+      font-size: 12px;
+      color: var(--navbar-secondary);
+    }
+
+    /* Enhanced Responsiveness */
+    @media screen and (max-width: 992px) {
+      .syllabus-container {
+        margin-top: 70px;
+      }
+      .syllabus-section {
+        padding: 20px;
+      }
+      .syllabus-table {
+        font-size: 13px;
+      }
+      .syllabus-table th,
+      .syllabus-table td {
+        padding: 10px;
+      }
+      .download-btn {
+        padding: 10px 20px;
+        font-size: 13px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar .container {
+        flex-wrap: wrap;
+      }
+      .hamburger {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: linear-gradient(135deg, var(--navbar-primary), var(--navbar-primary-light));
+        padding: 10px 0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .nav-links a {
+        margin: 10px 0;
+        font-size: 16px;
+      }
+      .theme-toggle {
+        margin: 10px 0;
+      }
+      .syllabus-container {
+        margin-top: 60px;
+      }
+      .syllabus-header h2 {
+        font-size: 24px;
+      }
+      .syllabus-header p {
+        font-size: 13px;
+      }
+      .syllabus-section h3 {
+        font-size: 20px;
+      }
+      .syllabus-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .syllabus-table th,
+      .syllabus-table td {
+        padding: 8px;
+        font-size: 12px;
+        min-width: 120px;
+      }
+      .download-btn {
+        padding: 10px 20px;
+        font-size: 12px;
+      }
+      .form-theme-toggle {
+        top: 15px;
+        right: 15px;
+        font-size: 20px;
+      }
+      footer p {
+        font-size: 12px;
+      }
+      footer .tagline {
+        font-size: 11px;
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      .navbar .logo {
+        font-size: 20px;
+      }
+      .nav-links a {
+        font-size: 14px;
+      }
+      .syllabus-header h2 {
+        font-size: 20px;
+      }
+      .syllabus-header p {
+        font-size: 12px;
+      }
+      .syllabus-section h3 {
+        font-size: 18px;
+      }
+      .syllabus-table th,
+      .syllabus-table td {
+        padding: 6px;
+        font-size: 11px;
+        min-width: 100px;
+      }
+      .download-btn {
+        padding: 8px 15px;
+        font-size: 11px;
+      }
+      .download-btn i {
+        font-size: 14px;
+      }
+      footer p {
+        font-size: 11px;
+      }
+      footer .tagline {
+        font-size: 10px;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .navbar .logo {
+        font-size: 18px;
+      }
+      .hamburger {
+        font-size: 20px;
+      }
+      .form-theme-toggle {
+        font-size: 18px;
+      }
+      .syllabus-container {
+        padding: 0 10px;
+      }
+      .syllabus-table th,
+      .syllabus-table td {
+        min-width: 80px;
+      }
+    }
+  </style>
+</head>
+<body data-theme="dark" data-form-theme="night">
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">मुख्यमंत्री अभ्युदय योजना</a>
+      <button class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="specialty.html">विशेषताएँ</a>
+        <a href="apply.html">प्रवेश प्रक्रिया</a>
+        <a href="formstudents.html">पंजीकरण</a>
+        <a href="contact.html">संपर्क</a>
+        <button class="theme-toggle" id="themeToggle" title="थीम बदलें">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <button class="form-theme-toggle" id="formThemeToggle">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <div class="syllabus-container">
+    <div class="syllabus-header">
+      <h2>IAS/PCS पाठ्यक्रम</h2>
+      <p>अपनी तैयारी के लिए पाठ्यक्रम को हिंदी या अंग्रेजी में डाउनलोड करें।</p>
+    </div>
+
+    <!-- Hindi Syllabus -->
+    <div class="syllabus-section" id="hindiSyllabus">
+      <h3>हिंदी पाठ्यक्रम</h3>
+      <table class="syllabus-table hindi-text">
+        <thead>
+          <tr>
+            <th>क्रमांक</th>
+            <th>विषय</th>
+            <th>प्रश्नों की संख्या</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>इतिहास</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>भूगोल</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>राज्यव्यवस्था</td>
+            <td>08</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>सामान्य विज्ञान</td>
+            <td>08</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>अर्थव्यवस्था</td>
+            <td>08</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>३०/० सामान्य जानकारी</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>समसामयिकी</td>
+            <td>08</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>सामान्य ज्ञान</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>सामान्य तकनीकी / रीज़निंग</td>
+            <td>08</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>सामान्य गणित</td>
+            <td>08</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>अंग्रेजी (हाईस्कूल स्तर)</td>
+            <td>05</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>पर्यावरण एवं पारिस्थितिकी</td>
+            <td>05</td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="download-btn" id="downloadHindiBtn" onclick="downloadSyllabus('hindiSyllabus', 'IAS_Syllabus_Hindi.jpg', this)">
+        <i class="fas fa-download"></i> हिंदी पाठ्यक्रम डाउनलोड करें (JPG)
+      </button>
+    </div>
+
+    <!-- English Syllabus -->
+    <div class="syllabus-section" id="englishSyllabus">
+      <h3>English Syllabus</h3>
+      <table class="syllabus-table">
+        <thead>
+          <tr>
+            <th>S.No.</th>
+            <th>Subject</th>
+            <th>Number of Questions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>History</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Geography</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Polity</td>
+            <td>08</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>General Science</td>
+            <td>08</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Economy</td>
+            <td>08</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>30/0 General Knowledge</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Current Affairs</td>
+            <td>08</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>General Knowledge</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>General Technical / Reasoning</td>
+            <td>08</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>General Mathematics</td>
+            <td>08</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>English (High School Level)</td>
+            <td>05</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Environment & Ecology</td>
+            <td>05</td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="download-btn" id="downloadEnglishBtn" onclick="downloadSyllabus('englishSyllabus', 'IAS_Syllabus_English.jpg', this)">
+        <i class="fas fa-download"></i> Download English Syllabus (JPG)
+      </button>
+    </div>
+  </div>
+
+  <!-- Updated Footer -->
+  <footer>
+    <div class="container">
+      <p>मुख्यमंत्री अभ्युदय योजना कार्यालय, लखनऊ, उत्तर प्रदेश, भारत</p>
+      <p>संपर्क करें: +91-1234567890 | ईमेल: info@abhyudayyojana.in</p>
+      <p class="tagline">आपके उज्जवल भविष्य के लिए - मुख्यमंत्री अभ्युदय योजना</p>
+    </div>
+  </footer>
+
+  <script>
+    // Check if html2canvas is loaded
+    window.addEventListener('load', () => {
+      if (typeof html2canvas === 'undefined') {
+        console.error('html2canvas library not loaded. Please ensure the script is included and you have an internet connection.');
+        alert('Unable to download syllabus: html2canvas library failed to load. Please check your internet connection or try again later.');
+        document.querySelectorAll('.download-btn').forEach(btn => {
+          btn.disabled = true;
+          btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Library Failed to Load';
+        });
+      }
+    });
+
+    // Hamburger Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.innerHTML = navLinks.classList.contains('active')
+        ? '<i class="fas fa-times"></i>'
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    // Theme Toggling (Navbar)
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    body.setAttribute('data-theme', savedTheme);
+    themeToggle.innerHTML = savedTheme === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      body.setAttribute('data-theme', newTheme);
+      themeToggle.innerHTML = newTheme === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+      localStorage.setItem('theme', newTheme);
+    });
+
+    // Form Theme Toggling (Content)
+    const formThemeToggle = document.getElementById('formThemeToggle');
+    const savedFormTheme = localStorage.getItem('formTheme') || 'night';
+    body.setAttribute('data-form-theme', savedFormTheme);
+    updateFormThemeIcon(savedFormTheme);
+
+    formThemeToggle.addEventListener('click', () => {
+      const currentFormTheme = body.getAttribute('data-form-theme');
+      const newFormTheme = currentFormTheme === 'night' ? 'day' : 'night';
+      body.setAttribute('data-form-theme', newFormTheme);
+      localStorage.setItem('formTheme', newFormTheme);
+      updateFormThemeIcon(newFormTheme);
+    });
+
+    function updateFormThemeIcon(theme) {
+      formThemeToggle.innerHTML = theme === 'night' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+    }
+
+    // Download Syllabus as JPG
+    async function downloadSyllabus(sectionId, fileName, button) {
+      const section = document.getElementById(sectionId);
+      if (!section) {
+        console.error(`Syllabus section with ID "${sectionId}" not found.`);
+        alert('Error: Syllabus section not found.');
+        return;
+      }
+
+      // Show loading state
+      button.disabled = true;
+      button.classList.add('loading');
+      const originalText = button.innerHTML;
+
+      try {
+        // Add a small delay to ensure rendering
+        await new Promise(resolve => setTimeout(resolve, 500));
+
+        // Capture the section with html2canvas
+        const canvas = await html2canvas(section, {
+          backgroundColor: body.getAttribute('data-form-theme') === 'night' ? '#1e1e1e' : '#ffffff',
+          scale: 2,
+          useCORS: true,
+          logging: true,
+          windowWidth: section.scrollWidth,
+          windowHeight: section.scrollHeight
+        });
+
+        // Log canvas size for debugging
+        console.log(`Canvas size for ${sectionId}: ${canvas.width}x${canvas.height}`);
+
+        // Convert canvas to blob for better download handling
+        const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', 1.0));
+        if (!blob) {
+          throw new Error('Failed to convert canvas to blob.');
+        }
+
+        // Create a download link
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+
+        // Clean up
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+      } catch (error) {
+        console.error('Error capturing syllabus:', error);
+        alert(`Error downloading syllabus: ${error.message || 'Unknown error. Check the console for details.'}`);
+      } finally {
+        // Reset button state
+        button.disabled = false;
+        button.classList.remove('loading');
+        button.innerHTML = originalText;
+      }
+    }
+
+    // Navbar Enforcement
+    function enforceNavbarStyles() {
+      const navbar = document.querySelector('.navbar');
+      if (navbar) {
+        navbar.style.background = 'linear-gradient(135deg, #ff6200, #ff8533) !important';
+        navbar.style.backgroundColor = '#ff6200 !important';
+        navbar.style.opacity = '1 !important';
+        navbar.style.visibility = 'visible !important';
+        navbar.style.transform = 'none !important';
+        navbar.style.position = 'fixed !important';
+        navbar.style.top = '0 !important';
+        navbar.style.width = '100% !important';
+        navbar.style.zIndex = '10000 !important';
+      }
+      requestAnimationFrame(enforceNavbarStyles);
+    }
+
+    window.addEventListener('scroll', enforceNavbarStyles);
+    window.addEventListener('load', enforceNavbarStyles);
+    enforceNavbarStyles();
+  </script>
+</body>
+</html>
