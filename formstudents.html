@@ -1563,153 +1563,431 @@
   </script>
 </body>
 </html>
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Expired</title>
+    <title>Form Submission Closed</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a2a6c, #0a3d62, #1a2a6c);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Floating background elements */
+        .floating {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 100px rgba(255, 255, 255, 0.1);
+            z-index: -1;
+            animation: float 15s infinite linear;
+        }
+        
+        .floating:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 5%;
+            animation-duration: 20s;
+        }
+        
+        .floating:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            bottom: 15%;
+            right: 10%;
+            animation-duration: 25s;
+            animation-delay: 2s;
+        }
+        
+        .floating:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            top: 40%;
+            right: 20%;
+            animation-duration: 18s;
+            animation-delay: 1s;
+        }
+        
         /* Stylish Modal CSS */
         .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
+            display: flex;
+            position: relative;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
             justify-content: center;
             align-items: center;
             z-index: 1000;
         }
+        
         .modal-content {
-            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(135deg, #ff4d4d, #ff9f43, #4cd137);
+            padding: 60px;
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
             text-align: center;
-            max-width: 600px; /* Larger size for desktop */
+            max-width: 800px;
             width: 90%;
-            min-height: 350px; /* Taller modal */
-            animation: slideIn 0.5s ease-in-out;
+            min-height: 500px;
+            animation: modalAppear 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
         }
+        
+        .modal-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent 70%);
+            transform: rotate(45deg);
+            z-index: -1;
+            animation: rotateBackground 20s linear infinite;
+        }
+        
+        .modal-icon {
+            font-size: 80px;
+            color: #001f3f; /* Dark blue */
+            margin-bottom: 25px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
         .modal-content h2 {
-            color: white;
-            font-family: 'Arial', sans-serif;
+            color: #001f3f; /* Dark blue */
+            font-family: 'Dancing Script', cursive;
+            font-size: 52px;
             margin-bottom: 20px;
-            font-size: 28px; /* Larger heading */
+            text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.4);
+            letter-spacing: 1px;
         }
-        .modal-content p {
-            color: white;
-            font-family: 'Arial', sans-serif;
-            font-size: 18px; /* Larger text */
+        
+        .modal-content .sub-message {
+            color: #001f3f; /* Dark blue */
+            font-family: 'Roboto', sans-serif;
+            font-size: 22px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin: 30px auto;
+            line-height: 1.6;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            font-weight: 600;
+        }
+        
+        .modal-content .contact-info {
+            color: #001f3f; /* Dark blue */
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            line-height: 1.8;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 40px auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+        }
+        
+        .modal-content .contact-info a {
+            color: #001f3f; /* Dark blue */
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            border-bottom: 2px solid rgba(0, 31, 63, 0.5);
+            padding-bottom: 2px;
+            display: inline-block;
+            margin: 0 5px;
+        }
+        
+        .modal-content .contact-info a:hover {
+            color: #003366;
+            border-bottom-color: #001f3f;
+            transform: translateY(-2px);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
             margin-bottom: 15px;
         }
-        .modal-content .contact-info {
-            color: white;
-            font-size: 16px; /* Slightly larger for readability */
-            margin-bottom: 25px;
-            line-height: 1.6;
+        
+        .contact-icon {
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 31, 63, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #001f3f;
         }
-        .modal-content .contact-info a {
-            color: #fff;
-            text-decoration: underline;
-        }
+        
         .close-btn {
-            background-color: #fff;
-            color: #ff6b6b;
-            padding: 12px 30px;
+            background: linear-gradient(45deg, #fff, #f1f1f1);
+            color: #ff4d4d;
+            padding: 18px 50px;
             border: none;
-            border-radius: 25px;
-            font-size: 18px;
+            border-radius: 50px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            margin-top: 20px;
+            letter-spacing: 1px;
         }
+        
+        .close-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff4d4d, #ff9f43);
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
         .close-btn:hover {
-            background-color: #f1f1f1;
-            transform: scale(1.05);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
         }
-        /* Animation for modal */
-        @keyframes slideIn {
-            from {
-                transform: translateY(-100px);
+        
+        .close-btn:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .footer-note {
+            margin-top: 40px;
+            font-size: 18px;
+            color: #001f3f;
+            font-style: italic;
+            font-weight: 600;
+        }
+        
+        /* Animations */
+        @keyframes modalAppear {
+            0% {
+                transform: scale(0.7) translateY(50px);
                 opacity: 0;
             }
-            to {
-                transform: translateY(0);
+            100% {
+                transform: scale(1) translateY(0);
                 opacity: 1;
             }
         }
-        /* Responsive Design for Mobile */
-        @media screen and (max-width: 600px) {
-            .modal-content {
-                max-width: 90%; /* Full width on small screens */
-                padding: 20px;
-                min-height: 300px;
+        
+        @keyframes rotateBackground {
+            0% {
+                transform: rotate(0deg);
             }
-            .modal-content h2 {
-                font-size: 22px; /* Smaller heading for mobile */
-            }
-            .modal-content p {
-                font-size: 16px; /* Smaller text for mobile */
-            }
-            .modal-content .contact-info {
-                font-size: 14px;
-            }
-            .close-btn {
-                font-size: 16px;
-                padding: 10px 20px;
+            100% {
+                transform: rotate(360deg);
             }
         }
-        /* Form hide karne ke liye */
-        .hidden {
-            display: none;
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(20px, 30px) rotate(90deg);
+            }
+            50% {
+                transform: translate(0, 60px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-20px, 30px) rotate(270deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .modal-content {
+                padding: 40px 20px;
+                min-height: 450px;
+            }
+            
+            .modal-content h2 {
+                font-size: 40px;
+            }
+            
+            .modal-content .sub-message {
+                font-size: 18px;
+            }
+            
+            .modal-content .contact-info {
+                font-size: 18px;
+                padding: 20px;
+            }
+            
+            .close-btn {
+                font-size: 20px;
+                padding: 15px 40px;
+            }
+            
+            .modal-icon {
+                font-size: 60px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .modal-content {
+                padding: 30px 15px;
+            }
+            
+            .modal-content h2 {
+                font-size: 32px;
+            }
+            
+            .modal-content .sub-message {
+                font-size: 16px;
+            }
+            
+            .modal-content .contact-info {
+                font-size: 16px;
+            }
+            
+            .close-btn {
+                font-size: 18px;
+                padding: 12px 30px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Aapka form ya content yahan hoga -->
-    <h1>Form Page</h1>
-    <form id="myForm">
-        <input type="text" placeholder="Sample Field">
-        <button type="submit">Submit</button>
-    </form>
-
-    <!-- Stylish Modal with Contact Details -->
-    <div id="expiredModal" class="modal">
+    <!-- Background floating elements -->
+    <div class="floating"></div>
+    <div class="floating"></div>
+    <div class="floating"></div>
+    
+    <!-- Stylish Modal -->
+    <div class="modal">
         <div class="modal-content">
-            <h2>Form Expired!</h2>
-            <p>फॉर्म भरने की तिथि समाप्त हो चुकी है </p>
-            <p>अधिक जानकारी हेतु कोचिंग केंद्र कार्यलय में संपर्क करे :</p>
-            <div class="contact-info">
-                <p><strong>Mobile:</strong> <a href="tel:8273684939">8273684939</a></p>
-                <p><strong>Address:</strong> Village Nizampur, Hapur, Uttar Pradesh</p>
-                <p><strong>Email:</strong> <a href="govt.ias.pcs.coaching.hapur@gmail.com">govt.ias.pcs.coaching.hapur@gmail.com</a></p>
+            <div class="modal-icon">
+                <i class="fas fa-calendar-times"></i>
             </div>
-            <button class="close-btn" onclick="closeModal()">बंद करे </button>
+            <h2>Form Band Ho Chuka Hai!</h2>
+            
+            <p class="sub-message">
+                फॉर्म भरने की तिथि समाप्त हो चुकी है अधिक जानकारी हेतु कार्यलय में संपर्क करे 
+            </p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <strong>Mobile:</strong> <a href="tel:8273684939">8273684939</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <strong>Address:</strong> Village Nizampur, Hapur, Uttar Pradesh
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <strong>Email:</strong> <a href="mailto:govt.ias.pcs.coaching.hapur@gmail.com">agovt.ias.pcs.coaching.hapur@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <strong>Working Hours:</strong> Mon-Sat: 8AM-8PM, Sun: 10AM-4PM
+                    </div>
+                </div>
+            </div>
+            
+            <button class="close-btn" onclick="window.location.href='https://govtiaspcscoachingcenternizampurhapur.netlify.app/'">
+                Website Par Wapas Jayein
+            </button>
+            
+            <p class="footer-note">Govt. IAS/PCS Coaching Center, Nizampur, Hapur</p>
         </div>
     </div>
 
     <script>
-        // Expiry date set karen (YYYY, MM, DD format mein)
-        const expiryDate = new Date(2025, 5, 1); // Example: 1 June 2025
-        const currentDate = new Date();
-
-        // Check if current date is past expiry date
-        if (currentDate > expiryDate) {
-            // Modal dikhayen
-            document.getElementById("expiredModal").style.display = "flex";
-            // Form ko hide karen
-            document.getElementById("myForm").classList.add("hidden");
-        }
-
-        // Modal band karne aur redirect karne ka function
-        function closeModal() {
-            document.getElementById("expiredModal").style.display = "none";
-            // Redirect to specified URL
-            window.location.href = "https://govtiaspcscoachingcenternizampurhapur.netlify.app/";
-        }
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.querySelector('.modal-content');
+            
+            // Add slight rotation on mouse move for 3D effect
+            document.addEventListener('mousemove', (e) => {
+                const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+                const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+                modal.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+            });
+            
+            // Reset rotation when mouse leaves the document
+            document.addEventListener('mouseleave', () => {
+                modal.style.transform = 'rotateY(0deg) rotateX(0deg)';
+            });
+        });
     </script>
 </body>
 </html>
