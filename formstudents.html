@@ -1586,7 +1586,7 @@
             justify-content: center;
             align-items: center;
             color: #fff;
-            overflow: hidden;
+            overflow: auto; /* Allow body scrolling */
             position: relative;
         }
         
@@ -1595,34 +1595,34 @@
             position: absolute;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
             z-index: -1;
             animation: float 15s infinite linear;
         }
         
         .floating:nth-child(1) {
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             top: 10%;
             left: 5%;
-            animation-duration: 20s;
+            animation-duration: 18s;
         }
         
         .floating:nth-child(2) {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             bottom: 15%;
             right: 10%;
-            animation-duration: 25s;
+            animation-duration: 22s;
             animation-delay: 2s;
         }
         
         .floating:nth-child(3) {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             top: 40%;
             right: 20%;
-            animation-duration: 18s;
+            animation-duration: 20s;
             animation-delay: 1s;
         }
         
@@ -1638,22 +1638,23 @@
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            overflow: auto; /* Allow modal scrolling */
         }
         
         .modal-content {
             background: linear-gradient(135deg, #ff4d4d, #ff9f43, #4cd137);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             text-align: center;
-            max-width: 500px; /* Compact pop-up size */
-            width: 90%;
-            min-height: 350px; /* Smaller height */
-            animation: modalAppear 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            max-width: 400px; /* Compact pop-up size */
+            width: 85%;
+            max-height: 80vh; /* Max height for scrolling */
+            overflow-y: auto; /* Enable vertical scrolling */
+            animation: modalAppear 0.5s ease-in-out;
             position: relative;
-            overflow: hidden;
             border: 2px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(5px);
         }
         
         .modal-content::before {
@@ -1663,54 +1664,54 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
             transform: rotate(45deg);
             z-index: -1;
-            animation: rotateBackground 20s linear infinite;
+            animation: rotateBackground 15s linear infinite;
         }
         
         .modal-icon {
-            font-size: 50px;
+            font-size: 40px;
             color: #001f3f;
-            margin-bottom: 20px;
-            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             animation: pulse 2s infinite;
         }
         
         .modal-content h2 {
             color: #001f3f;
             font-family: 'Dancing Script', cursive;
-            font-size: 36px; /* Smaller for pop-up */
-            margin-bottom: 15px;
-            text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.4);
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.4);
             letter-spacing: 1px;
         }
         
         .modal-content .sub-message {
             color: #001f3f;
             font-family: 'Roboto', sans-serif;
-            font-size: 18px;
-            margin-bottom: 20px;
+            font-size: 16px;
+            margin-bottom: 15px;
             max-width: 90%;
-            margin: 20px auto;
+            margin: 15px auto;
             line-height: 1.5;
             background: rgba(255, 255, 255, 0.3);
-            padding: 15px;
-            border-radius: 10px;
+            padding: 10px;
+            border-radius: 8px;
             font-weight: 600;
         }
         
         .modal-content .contact-info {
             color: #001f3f;
             font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            line-height: 1.7;
+            font-size: 14px;
+            line-height: 1.6;
             background: rgba(255, 255, 255, 0.3);
-            padding: 20px;
-            border-radius: 10px;
+            padding: 15px;
+            border-radius: 8px;
             max-width: 90%;
-            margin: 20px auto;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            margin: 15px auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             font-weight: 600;
         }
         
@@ -1719,30 +1720,30 @@
             text-decoration: none;
             font-weight: 700;
             transition: all 0.3s;
-            border-bottom: 2px solid rgba(0, 31, 63, 0.5);
-            padding-bottom: 2px;
+            border-bottom: 1px solid rgba(0, 31, 63, 0.5);
+            padding-bottom: 1px;
             display: inline-block;
-            margin: 0 5px;
+            margin: 0 3px;
         }
         
         .modal-content .contact-info a:hover {
             color: #003366;
             border-bottom-color: #001f3f;
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
         
         .contact-item {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 10px;
+            gap: 8px;
+            margin-bottom: 8px;
         }
         
         .contact-icon {
-            font-size: 20px;
-            width: 40px;
-            height: 40px;
+            font-size: 16px;
+            width: 30px;
+            height: 30px;
             background: rgba(0, 31, 63, 0.2);
             border-radius: 50%;
             display: flex;
@@ -1754,19 +1755,19 @@
         .close-btn {
             background: linear-gradient(45deg, #fff, #f1f1f1);
             color: #ff4d4d;
-            padding: 12px 30px;
+            padding: 10px 25px;
             border: none;
-            border-radius: 30px;
+            border-radius: 25px;
             font-family: 'Roboto', sans-serif;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.4s;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
             position: relative;
             overflow: hidden;
             z-index: 1;
-            margin-top: 15px;
+            margin-top: 10px;
             letter-spacing: 1px;
         }
         
@@ -1781,13 +1782,13 @@
             z-index: -1;
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform 0.4s ease;
+            transition: transform 0.3s ease;
         }
         
         .close-btn:hover {
             color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
         }
         
         .close-btn:hover::before {
@@ -1795,8 +1796,8 @@
         }
         
         .footer-note {
-            margin-top: 20px;
-            font-size: 14px;
+            margin-top: 15px;
+            font-size: 12px;
             color: #001f3f;
             font-style: italic;
             font-weight: 600;
@@ -1805,11 +1806,11 @@
         /* Animations */
         @keyframes modalAppear {
             0% {
-                transform: scale(0.7) translateY(50px);
+                transform: scale(0.8);
                 opacity: 0;
             }
             100% {
-                transform: scale(1) translateY(0);
+                transform: scale(1);
                 opacity: 1;
             }
         }
@@ -1843,13 +1844,13 @@
                 transform: translate(0, 0) rotate(0deg);
             }
             25% {
-                transform: translate(10px, 15px) rotate(90deg);
+                transform: translate(8px, 12px) rotate(90deg);
             }
             50% {
-                transform: translate(0, 30px) rotate(180deg);
+                transform: translate(0, 24px) rotate(180deg);
             }
             75% {
-                transform: translate(-10px, 15px) rotate(270deg);
+                transform: translate(-8px, 12px) rotate(270deg);
             }
             100% {
                 transform: translate(0, 0) rotate(360deg);
@@ -1859,49 +1860,9 @@
         /* Responsive Design */
         @media screen and (max-width: 768px) {
             .modal-content {
-                max-width: 90%;
-                padding: 25px;
-                min-height: 300px;
-            }
-            
-            .modal-content h2 {
-                font-size: 30px;
-            }
-            
-            .modal-content .sub-message {
-                font-size: 16px;
-                padding: 12px;
-            }
-            
-            .modal-content .contact-info {
-                font-size: 14px;
-                padding: 15px;
-            }
-            
-            .close-btn {
-                font-size: 16px;
-                padding: 10px 25px;
-            }
-            
-            .modal-icon {
-                font-size: 40px;
-            }
-            
-            .contact-icon {
-                font-size: 18px;
-                width: 35px;
-                height: 35px;
-            }
-            
-            .floating {
-                display: none; /* Hide floating elements on tablet for performance */
-            }
-        }
-        
-        @media screen and (max-width: 480px) {
-            .modal-content {
+                max-width: 85%;
                 padding: 20px;
-                min-height: 280px;
+                max-height: 75vh; /* Slightly smaller for tablets */
             }
             
             .modal-content h2 {
@@ -1910,7 +1871,7 @@
             
             .modal-content .sub-message {
                 font-size: 14px;
-                padding: 10px;
+                padding: 8px;
             }
             
             .modal-content .contact-info {
@@ -1928,10 +1889,58 @@
             }
             
             .contact-icon {
-                font-size: 16px;
-                width: 30px;
-                height: 30px;
+                font-size: 14px;
+                width: 25px;
+                height: 25px;
             }
+            
+            .floating {
+                display: none; /* Hide floating elements for performance */
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .modal-content {
+                padding: 15px;
+                max-height: 70vh; /* Smaller for mobile */
+            }
+            
+            .modal-content h2 {
+                font-size: 20px;
+            }
+            
+            .modal-content .sub-message {
+                font-size: 12px;
+                padding: 6px;
+            }
+            
+            .modal-content .contact-info {
+                font-size: 12px;
+                padding: 10px;
+            }
+            
+            .close-btn {
+                font-size: 13px;
+                padding: 6px 15px;
+            }
+            
+            .modal-icon {
+                font-size: 30px;
+            }
+            
+            .contact-icon {
+                font-size: 12px;
+                width: 20px;
+                height: 20px;
+            }
+            
+            .modal-content::before {
+                animation: none; /* Disable heavy animation on mobile */
+            }
+        }
+        
+        .hidden {
+            display: none;
         }
     </style>
 </head>
@@ -1956,9 +1965,8 @@
             <h2>Form Band Ho Chuka Hai!</h2>
             
             <p class="sub-message">
-                Humare coaching center mein admission ke liye aapka bahut-bahut dhanyavaad. 
-                Agle session ke liye registration jald hi shuru honge. Adhik jankari ke liye 
-                humse sampark karein:
+                फॉर्म भरने की अंतिम तिथि 10 जून 2025 तक थी जो की समाप्त हो चुकी है अधिक जानकारी के लिए 
+                कोचिंग केंद्र के कार्यलय में संपर्क करे 
             </p>
             
             <div class="contact-info">
@@ -1985,7 +1993,7 @@
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div>
-                        <strong>Email:</strong> <a href="mailto:ankushkumar5214@gmail.com">ankushkumar5214@gmail.com</a>
+                        <strong>Email:</strong> <a href="mailto:govt.ias.pcs.coaching.hapur@gmail.com">govt.ias.pcs.coaching.hapur@gmail.comm</a>
                     </div>
                 </div>
                 
@@ -2026,21 +2034,20 @@
             window.location.href = "https://govtiaspcscoachingcenternizampurhapur.netlify.app/";
         }
 
-        // Add interactive 3D effect
+        // Add interactive 3D effect only for desktop
         document.addEventListener('DOMContentLoaded', function() {
             const modal = document.querySelector('.modal-content');
-            
-            // Add slight rotation on mouse move for 3D effect
-            document.addEventListener('mousemove', (e) => {
-                const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
-                const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
-                modal.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-            });
-            
-            // Reset rotation when mouse leaves
-            document.addEventListener('mouseleave', () => {
-                modal.style.transform = 'rotateY(0deg) rotateX(0deg)';
-            });
+            if (window.innerWidth > 768) { // Apply only on desktop
+                document.addEventListener('mousemove', (e) => {
+                    const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
+                    const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+                    modal.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+                });
+                
+                document.addEventListener('mouseleave', () => {
+                    modal.style.transform = 'rotateY(0deg) rotateX(0deg)';
+                });
+            }
         });
     </script>
 </body>
