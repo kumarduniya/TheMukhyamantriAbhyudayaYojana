@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Expired</title>
+    <style>
+        /* Stylish Modal CSS */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            max-width: 600px; /* Larger size for desktop */
+            width: 90%;
+            min-height: 350px; /* Taller modal */
+            animation: slideIn 0.5s ease-in-out;
+        }
+        .modal-content h2 {
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin-bottom: 20px;
+            font-size: 28px; /* Larger heading */
+        }
+        .modal-content p {
+            color: white;
+            font-family: 'Arial', sans-serif;
+            font-size: 18px; /* Larger text */
+            margin-bottom: 15px;
+        }
+        .modal-content .contact-info {
+            color: white;
+            font-size: 16px; /* Slightly larger for readability */
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .modal-content .contact-info a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .close-btn {
+            background-color: #fff;
+            color: #ff6b6b;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .close-btn:hover {
+            background-color: #f1f1f1;
+            transform: scale(1.05);
+        }
+        /* Animation for modal */
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        /* Responsive Design for Mobile */
+        @media screen and (max-width: 600px) {
+            .modal-content {
+                max-width: 90%; /* Full width on small screens */
+                padding: 20px;
+                min-height: 300px;
+            }
+            .modal-content h2 {
+                font-size: 22px; /* Smaller heading for mobile */
+            }
+            .modal-content p {
+                font-size: 16px; /* Smaller text for mobile */
+            }
+            .modal-content .contact-info {
+                font-size: 14px;
+            }
+            .close-btn {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+        /* Form hide karne ke liye */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Aapka form ya content yahan hoga -->
+    <h1>Form Page</h1>
+    <form id="myForm">
+        <input type="text" placeholder="Sample Field">
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Stylish Modal with Contact Details -->
+    <div id="expiredModal" class="modal">
+        <div class="modal-content">
+            <h2>Form Expired!</h2>
+            <p>Form bharne ki tithi samapt ho chuki hai.</p>
+            <p>Adhik jankari ke liye karyalaya mein sampark kare:</p>
+            <div class="contact-info">
+                <p><strong>Mobile:</strong> <a href="tel:8273684939">8273684939</a></p>
+                <p><strong>Address:</strong> Village Nizampur, Hapur, Uttar Pradesh</p>
+                <p><strong>Email:</strong> <a href="mailto:ankushkumar5214@gmail.com">ankushkumar5214@gmail.com</a></p>
+            </div>
+            <button class="close-btn" onclick="closeModal()">Band Karein</button>
+        </div>
+    </div>
+
+    <script>
+        // Expiry date set karen (YYYY, MM, DD format mein)
+        const expiryDate = new Date(2025, 5, 1); // Example: 1 June 2025
+        const currentDate = new Date();
+
+        // Check if current date is past expiry date
+        if (currentDate > expiryDate) {
+            // Modal dikhayen
+            document.getElementById("expiredModal").style.display = "flex";
+            // Form ko hide karen
+            document.getElementById("myForm").classList.add("hidden");
+        }
+
+        // Modal band karne aur redirect karne ka function
+        function closeModal() {
+            document.getElementById("expiredModal").style.display = "none";
+            // Redirect to specified URL
+            window.location.href = "https://govtiaspcscoachingcenternizampurhapur.netlify.app/";
+        }
+    </script>
+</body>
+</html>
