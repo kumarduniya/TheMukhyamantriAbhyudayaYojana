@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admit Card Download</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background: linear-gradient(135deg, #ff4b1f, #1f8cff);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 1rem;
+    }
+    .form-container {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 0.625rem;
+      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+      max-width: 90%;
+      width: 400px;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .form-container h2 {
+      margin: 0 0 1rem;
+      color: #007BFF;
+      font-size: 1.25rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .form-container h2::before {
+      content: "👤";
+      margin-right: 0.375rem;
+    }
+    label {
+      display: block;
+      margin-top: 0.625rem;
+      font-weight: 700;
+      color: #333;
+      font-size: 0.875rem;
+      text-align: left;
+    }
+    input[type="text"], input[type="date"] {
+      width: 100%;
+      padding: 0.625rem;
+      margin-top: 0.3125rem;
+      border: 1px solid #ccc;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      box-sizing: border-box;
+    }
+    input[type="date"] {
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.9375rem;
+      position: relative;
+    }
+    button {
+      padding: 0.625rem 1.25rem;
+      border: none;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 700;
+      transition: transform 0.2s;
+    }
+    button#get-admit-card {
+      background: #007BFF;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    button#get-admit-card:hover {
+      transform: scale(1.05);
+    }
+    button#get-admit-card.loading::after {
+      content: '';
+      position: absolute;
+      width: 1rem;
+      height: 1rem;
+      border: 2px dotted #fff;
+      border-top: 2px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    button#reset {
+      background: #6c757d;
+      color: #fff;
+    }
+    button#reset:hover {
+      transform: scale(1.05);
+    }
+    .hint {
+      margin-top: 0.5rem;
+      color: #6c757d;
+      font-size: 0.75rem;
+      text-align: center;
+    }
+    .page-wrapper {
+      max-width: 90%;
+      width: 550px;
+      margin: 0 auto;
+    }
+    .admit-card {
+      display: none;
+      background: #fff;
+      padding: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+      font-family: 'Roboto', 'Noto Sans Devanagari', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .content-wrapper {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 0.5rem;
+    }
+    .admit-card-header {
+      text-align: center;
+      margin-bottom: 0.625rem;
+      position: relative;
+    }
+    .admit-card-header img.logo {
+      width: 6.25rem;
+      height: auto;
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+    .admit-card-header img.logo::after {
+      content: "";
+      position: absolute;
+      bottom: -0.625rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3.75rem;
+      height: 1.25rem;
+      background: linear-gradient(to right, #ff0000, #ff4500);
+      border-radius: 0.625rem;
+      z-index: -1;
+    }
+    .admit-card-header h2 {
+      margin: 0;
+      color: #007BFF;
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      word-wrap: break-word;
+    }
+    .photo-container {
+      overflow: hidden;
+      margin-bottom: 0.625rem;
+    }
+    .photo {
+      float: left;
+      width: 6.25rem;
+      height: 7.5rem;
+      border: 2px solid #007BFF;
+      border-radius: 0.25rem;
+      background: #fff;
+      object-fit: cover;
+      margin-right: 0.5rem;
+    }
+    .barcode {
+      float: right;
+      width: 6.25rem;
+    }
+    .barcode svg {
+      width: 100%;
+      height: 7.5rem;
+    }
+    .field-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 0.5rem;
+      font-size: 0.75rem;
+    }
+    .field-table th, .field-table td {
+      padding: 0.25rem;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    .field-table th {
+      background: #007BFF;
+      color: #fff;
+      font-weight: 700;
+      width: 30%;
+    }
+    .field-table td {
+      background: #f0f0f0;
+      color: #333;
+    }
+    .exam-details-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.5rem;
+      margin-bottom: 0.625rem;
+      font-size: 0.75rem;
+    }
+    .exam-details-table th, .exam-details-table td {
+      padding: 0.25rem;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    .exam-details-table th {
+      background: #007BFF;
+      color: #fff;
+      font-weight: 700;
+    }
+    .exam-details-table td {
+      background: #fff;
+    }
+    .admit-card-footer {
+      margin-top: 0.5in; /* 0.5-inch gap from tables */
+      text-align: left;
+      font-size: 0.875rem; /* Increased from 0.75rem */
+      color: #333;
+      border-top: 1px solid #ddd;
+      padding-top: 0.5rem;
+      clear: both;
+    }
+    .admit-card-footer h4 {
+      margin: 0 0 0.25rem;
+      font-size: 0.875rem; /* Increased from 0.75rem */
+      color: #007BFF;
+    }
+    .admit-card-footer ul {
+      margin: 0;
+      padding-left: 0.625rem;
+    }
+    .admit-card-footer ul li {
+      margin-bottom: 0.1875rem;
+    }
+    .admit-card-footer .signature {
+      margin-top: 0.625rem;
+      text-align: center;
+    }
+    .admit-card-footer .signature img {
+      width: 9.375rem;
+      height: auto;
+    }
+    .admit-card-footer .signature span {
+      display: block;
+      margin-top: 0.3125rem;
+      font-size: 0.875rem; /* Increased from 0.75rem */
+      font-weight: 700;
+      color: #007BFF;
+    }
+    .download-button {
+      text-align: center;
+      margin-top: 0.625rem;
+    }
+    .download-button button {
+      padding: 0.625rem 1.5625rem;
+      background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+      color: #fff;
+      border: none;
+      border-radius: 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 0.1875rem 0.625rem rgba(255, 107, 107, 0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .download-button button:hover {
+      transform: translateY(-0.125rem);
+      box-shadow: 0 0.25rem 0.9375rem rgba(255, 107, 107, 0.6);
+    }
+    @keyframes spin {
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    @media print {
+      body {
+        background: #fff;
+        display: block;
+        padding: 0;
+        margin: 0;
+      }
+      .form-container {
+        display: none;
+      }
+      .page-wrapper {
+        width: 595px; /* A4 width in points (8.27in * 72pt/in) */
+        height: 842px; /* A4 height in points (11.69in * 72pt/in) */
+        margin: 0 auto;
+        box-sizing: border-box;
+        display: block;
+        padding: 0;
+      }
+      .admit-card {
+        display: block !important;
+        width: 595px;
+        min-height: 842px;
+        padding: 1rem;
+        box-shadow: none;
+        margin: 0;
+        box-sizing: border-box;
+        page-break-after: avoid;
+      }
+      .content-wrapper {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .admit-card-footer {
+        margin-top: 0.5in; /* 0.5-inch gap in print */
+      }
+      .download-button {
+        display: none;
+      }
+      @page {
+        size: A4;
+        margin: 0;
+      }
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+    @media (max-width: 768px) {
+      .form-container {
+        padding: 1rem;
+      }
+      .form-container h2 {
+        font-size: 1rem;
+      }
+      label, input, button {
+        font-size: 0.75rem;
+      }
+      .button-group {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      button {
+        width: 100%;
+      }
+      .admit-card {
+        padding: 0.75rem;
+      }
+      .admit-card-header h2 {
+        font-size: 1rem;
+      }
+      .photo {
+        width: 5rem;
+        height: 6rem;
+      }
+      .barcode {
+        width: 5rem;
+      }
+      .barcode svg {
+        height: 6rem;
+      }
+      .field-table, .exam-details-table {
+        font-size: 0.625rem;
+      }
+      .admit-card-footer {
+        font-size: 0.75rem; /* Adjusted for mobile */
+      }
+      .admit-card-footer h4 {
+        font-size: 0.75rem; /* Adjusted for mobile */
+      }
+      .admit-card-footer .signature img {
+        width: 6.25rem;
+      }
+      .admit-card-footer .signature span {
+        font-size: 0.75rem; /* Adjusted for mobile */
+      }
+      .download-button button {
+        font-size: 0.75rem;
+      }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .admit-card-header h2 {
+        font-size: 1.125rem;
+      }
+      .photo {
+        width: 5.5rem;
+        height: 6.5rem;
+      }
+      .barcode {
+        width: 5.5rem;
+      }
+      .barcode svg {
+        height: 6.5rem;
+      }
+      .field-table, .exam-details-table {
+        font-size: 0.7rem;
+      }
+      .admit-card-footer {
+        font-size: 0.8rem; /* Adjusted for tablet */
+      }
+      .admit-card-footer h4 {
+        font-size: 0.8rem; /* Adjusted for tablet */
+      }
+      .admit-card-footer .signature span {
+        font-size: 0.8rem; /* Adjusted for tablet */
+      }
+    }
+    @media (min-width: 1025px) {
+      .photo {
+        margin-right: 0.5rem;
+      }
+      .field-table, .exam-details-table {
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Admit Card Download</h2>
+    <label for="reg">Registration Number:</label>
+    <input type="text" id="reg" placeholder="Enter Registration Number" />
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" min="1900-01-01" />
+
+    <div class="button-group">
+      <button id="get-admit-card" onclick="fetchData()">Get Admit Card</button>
+      <button id="reset" onclick="resetForm()">Reset</button>
+    </div>
+    <div class="hint">Enter details to fetch admit card</div>
+  </div>
+
+  <div class="page-wrapper">
+    <div class="admit-card" id="card">
+      <div class="content-wrapper">
+        <div class="admit-card-header">
+          <img class="logo" src="https://i.postimg.cc/76Q3w4Lf/photo-2024-10-20-10-51-20.jpg" alt="Coaching Logo">
+          <h2>Government IAS/PCS Coaching Centre Nizampur Hapur, Abhyudaya Admission 2025 Admit Card</h2>
+        </div>
+        <div class="photo-container">
+          <div class="barcode">
+            <svg id="barcode"></svg>
+          </div>
+          <img id="photo" class="photo" alt="Student Photo"/>
+        </div>
+        <table class="field-table">
+          <tr><th>Name</th><td><span id="name"></span></td></tr>
+        </table>
+        <table class="field-table">
+          <tr><th>Roll No</th><td><span id="roll"></span></td></tr>
+        </table>
+        <table class="field-table">
+          <tr><th>Class</th><td><span id="class">01A</span></td></tr>
+        </table>
+        <table class="field-table">
+          <tr><th>Registration No</th><td><span id="regno"></span></td></tr>
+        </table>
+        <table class="field-table">
+          <tr><th>Date of Birth</th><td><span id="dob_val"></span></td></tr>
+        </table>
+        <table class="field-table">
+          <tr><th>Father's Name</th><td><span id="father"></span></td></tr>
+        </table>
+        <table class="field-table">
+          <tr><th>District</th><td><span id="district"></span></td></tr>
+        </table>
+        <table class="field-table">
+          <tr><th>Category</th><td><span id="category"></span></td></tr>
+        </table>
+        
+        <table class="exam-details-table">
+          <tr>
+            <th>Exam Details</th>
+            <th>Information</th>
+          </tr>
+          <tr>
+            <td>Date</td>
+            <td><span id="exam_date">22/06/2025</span></td>
+          </tr>
+          <tr>
+            <td>Time</td>
+            <td><span id="exam_time">11:00 AM</span></td>
+          </tr>
+          <tr>
+            <td>Exam Center</td>
+            <td><span id="exam_center">Government IAS PCS Coaching Centre, Nizampur, Hapur</span></td>
+          </tr>
+          <tr>
+            <td>Reporting Time</td>
+            <td><span id="reporting_time">10:00 AM</span></td>
+          </tr>
+          <tr>
+            <td>Entry Closing Time</td>
+            <td><span id="closing_time">11:00 AM</span></td>
+          </tr>
+          <tr>
+            <td>Exam Duration</td>
+            <td>11:00 AM to 12:30 PM</td>
+          </tr>
+        </table>
+        
+        <div class="admit-card-footer">
+          <h4>Instructions (English):</h4>
+          <ul>
+            <li>Students must bring their admit card, Aadhaar card, one passport-size photo, and a black ballpoint pen to the exam center.</li>
+            <li>Students must fill the OMR sheet carefully, ensuring roll number, class, name, date, etc., are filled accurately.</li>
+            <li>All electronic devices, including mobile phones, smart watches, and calculators, are strictly prohibited.</li>
+            <li>Candidates must report 60 minutes before the exam starts. No entry will be allowed after the closing time.</li>
+          </ul>
+          <h4>निर्देश (हिंदी):</h4>
+          <ul>
+            <li>छात्रों को परीक्षा केंद्र पर अपना प्रवेश पत्र, आधार कार्ड, एक पासपोर्ट साइज फोटो और एक काला बॉलपॉइंट पेन अवश्य लाना होगा।</li>
+            <li>छात्रों को OMR शीट को सावधानीपूर्वक भरना होगा, यह सुनिश्चित करते हुए कि रोल नंबर, कक्षा, नाम, तारीख आदि सटीक रूप से भरे गए हों।</li>
+            <li>मोबाइल फोन, स्मार्ट वॉच, कैलकुलेटर सहित सभी इलेक्ट्रॉनिक उपकरणों को सख्त वर्जित है।</li>
+            <li>उम्मीदवारों को परीक्षा शुरू होने से 60 मिनट पहले रिपोर्ट करना होगा। समापन समय के बाद किसी को भी प्रवेश नहीं दिया जाएगा।</li>
+          </ul>
+          <div class="signature">
+            <img src="https://i.postimg.cc/hjwVxPbH/Doc-Scanner-20-Jun-2025-10-08-am.jpg" alt="Exam Controller Signature">
+            <span>Exam Controller</span>
+          </div>
+        </div>
+      </div>
+      <div class="download-button">
+        <button onclick="window.print()">Download PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function fetchData() {
+      const button = document.getElementById('get-admit-card');
+      button.classList.add('loading');
+      button.disabled = true;
+
+      const reg = document.getElementById('reg').value.trim();
+      const dob = document.getElementById('dob').value.trim();
+      const url = "https://opensheet.elk.sh/1zcoDAyoTMQPAVZNgFdIKUa3lagWDwDhDG50u199GryU/Sheet1";
+
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('Network response was not ok');
+        const data = await response.json();
+
+        const student = data.find(s => s["Registration No"] === reg && s["DOB"] === dob);
+
+        if (student) {
+          document.getElementById('name').innerText = student["Name"] || '';
+          document.getElementById('roll').innerText = student["Roll No"] || '';
+          document.getElementById('class').innerText = student["Class"] || '01A';
+          document.getElementById('regno').innerText = student["Registration No"] || '';
+          document.getElementById('dob_val').innerText = student["DOB"] || '';
+          document.getElementById('father').innerText = student["Father Name"] || '';
+          document.getElementById('district').innerText = student["District"] || '';
+          document.getElementById('category').innerText = student["Category"] || '';
+          document.getElementById('exam_date').innerText = student["Exam Date"] || '22/06/2025';
+          document.getElementById('exam_time').innerText = student["Exam Time"] || '11:00 AM';
+          document.getElementById('exam_center').innerText = student["Exam Center"] || 'Government IAS PCS Coaching Centre, Nizampur, Hapur';
+          document.getElementById('reporting_time').innerText = student["Reporting Time"] || '10:00 AM';
+          document.getElementById('closing_time').innerText = student["Closing Time"] || '11:00 AM';
+          document.getElementById('photo').src = student["Photo URL"] || 'https://via.placeholder.com/120x140';
+          JsBarcode("#barcode", reg, {
+            format: "CODE128",
+            displayValue: true,
+            width: 2,
+            height: 120,
+            fontSize: 10
+          });
+          document.getElementById('card').style.display = 'block';
+        } else {
+          alert("No matching record found!");
+          document.getElementById('card').style.display = 'none';
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        alert("Failed to fetch data. Please check your input or try again later.");
+        document.getElementById('card').style.display = 'none';
+      }
+
+      button.classList.remove('loading');
+      button.disabled = false;
+    }
+
+    function resetForm() {
+      document.getElementById('reg').value = '';
+      document.getElementById('dob').value = '';
+      document.getElementById('card').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
